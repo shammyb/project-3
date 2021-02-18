@@ -14,7 +14,7 @@ async function getCity(req, res, next) {
 
 async function searchCity(req, res, next) {
   try {
-    const cityList = await City.find( { name: { $regex: req.params.name, $options: 'i' } } )
+    const cityList = await City.find({ name: { $regex: req.params.name, $options: 'i' } })
       .populate('user')
       .populate('comments.user')
     res.send(cityList)
@@ -25,7 +25,7 @@ async function searchCity(req, res, next) {
 
 async function makeCity(req, res, next) {
   const body = req.body
- 
+
   body.user = req.currentUser
   try {
     const newCity = await City.create(body)
@@ -52,15 +52,18 @@ async function removeCity(req, res, next) {
 
   try {
 
-    const cityToRemove = await City.findById(id).populate('user').populate('comments.user')
+    const cityToRemove = await City.findById(id)
 
-    if (!currentUser.isAdmin && !currentUser._id.equals(cityToRemove.user)) {
+    if (currentUser.isAdmin || currentUser._id.equals(cityToRemove.user)) {
+      console.log('bbbb')
+      await cityToRemove.deleteOne()
+
+      res.send(cityToRemove)
+    } else {
+      console.log('aaaaa')
       return res.status(401).send({ message: 'Unauthorized' })
     }
 
-    await cityToRemove.deleteOne()
-
-    res.send(cityToRemove)
   } catch (err) {
     next(err)
   }
@@ -73,22 +76,24 @@ async function updateCity(req, res, next) {
 
   try {
     const cityToUpdate = await City.findById(id)
-    
+
     if (!cityToUpdate) {
       return res.send({ message: 'No pokemon found' })
     }
 
-    
-    
-    if (!currentUser.isAdmin && !currentUser._id.equals(cityToUpdate.user)) {
+
+
+    if (currentUser.isAdmin || currentUser._id.equals(cityToUpdate.user)) {
+      cityToUpdate.set(body)
+
+      cityToUpdate.save()
+
+      res.send(cityToUpdate)
+
+    } else {
       return res.status(401).send({ message: 'Unauthorized' })
     }
-    
-    cityToUpdate.set(body)
-    
-    cityToUpdate.save()
 
-    res.send(cityToUpdate)
 
   } catch (err) {
     next()

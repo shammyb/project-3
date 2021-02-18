@@ -21,8 +21,8 @@ router.route('/cityscapes')
 
 router.route('/cityscapes/:id')
   .get(city.getSingleCity)
-  .put(city.updateCity)
-  .delete(city.removeCity)
+  .put(secureRoute,city.updateCity)
+  .delete(secureRoute,city.removeCity)
 
 
 router.route('/register')
