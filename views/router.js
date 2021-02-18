@@ -4,7 +4,7 @@ import user from '../controllers/user.js'
 import comment from '../controllers/comment.js'
 
 
-
+import secureRoute from '../middleware/secureRoute.js'
 
 
 
@@ -15,7 +15,7 @@ const router = express.Router()
 
 router.route('/cityscapes')
   .get(city.getCity)
-  .post(city.makeCity)
+  .post(secureRoute,city.makeCity)
 
 
 
@@ -33,10 +33,10 @@ router.route('/login')
 
 
 router.route('cityscapes/:cityid/comment')
-  .post(comment.makeComment)
+  .post(secureRoute,comment.makeComment)
 
 router.route('cityscapes/:cityid/comment/:commentId')
-  .put(comment.updateComment)
-  .delete(comment.removeComment)
+  .put(secureRoute,comment.updateComment)
+  .delete(secureRoute,comment.removeComment)
 
 export default router
