@@ -4,6 +4,7 @@ export default function getUserData() {
       username: 'benjani',
       email: 'benjani@benjani.benjani',
       password: 'benjani69',
+      passwordConfirmation: 'benjani69',
       profilePic: '',
       isAdmin: true
     },
@@ -11,6 +12,7 @@ export default function getUserData() {
       username: 'abdi',
       email: 'abdi@abdizzle.abdi',
       password: 'abdi96',
+      passwordConfirmation: 'abdi96',
       profilePic: '',
       isAdmin: true
     },
@@ -18,6 +20,7 @@ export default function getUserData() {
       username: 'nat',
       email: 'natasha@nateroni.natnat',
       password: 'nattan',
+      passwordConfirmation: 'nattan',
       profilePic: '',
       isAdmin: true
     },
@@ -25,6 +28,7 @@ export default function getUserData() {
       username: 'eva',
       email: 'ave@eva.vea',
       password: 'eav',
+      passwordConfirmation: 'eav',
       profilePic: '',
       isAdmin: true
     }
