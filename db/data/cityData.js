@@ -45,7 +45,8 @@ export default function getCityData() {
       language: 'English',
       image: 'https://lh3.googleusercontent.com/proxy/41fKSeWH4Eq-nnzbwGpRCPT-OXlGXgm3nRPjlYtZWmbcY4YjEZT-SByY5bqJlJsQAO-97oY24looWhTGZOVQZhg-iZXmdxSESXx4Ybfe5VwLFalbxdLvqw',
       long: '-0.118092',
-      lat: '51.509865'
+      lat: '51.509865',
+      user: users[0]
     },
     {
       city: 'Barcelona',
@@ -56,7 +57,8 @@ export default function getCityData() {
       language: 'Spanish',
       image: 'https://capaworld.capa.org/hs-fs/hubfs/CAPA_Redesign_2017/Basic%20Cards/CAPAStudyAbroad_Barcelona_Summer2017_Parc%20Guell.jpg?width=640&name=CAPAStudyAbroad_Barcelona_Summer2017_Parc%20Guell.jpg',
       long: '2.154007',
-      lat: '41.390205'
+      lat: '41.390205',
+      user: users[0]
     },
     {
       city: 'Paris',
@@ -67,7 +69,8 @@ export default function getCityData() {
       language: 'French',
       image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/1200px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg',
       long: '2.349014',
-      lat: '48.864716'
+      lat: '48.864716',
+      user: users[0]
     },
     {
       city: 'Prague',
@@ -78,7 +81,8 @@ export default function getCityData() {
       language: 'Korunas',
       image: 'http://easyconferences.eu/aea2017/images/prague1.jpg',
       long: '14.418540',
-      lat: '50.073658'
+      lat: '50.073658',
+      user: users[0]
     },
     {
       city: 'Lisbon',
@@ -89,7 +93,8 @@ export default function getCityData() {
       language: 'Portuguese',
       image: 'http://magnolia-portugal.dunegestion.com/upload4mail/magnolia-portugal/op_56341_experiencia-em-lisboa-portugal-por-simone-68818959579123ff8acad97d62959a19.jpg',
       long: '-9.142685',
-      lat: '38.736946'
+      lat: '38.736946',
+      user: users[0]
     },
     {
       city: 'Oslo',
@@ -100,7 +105,8 @@ export default function getCityData() {
       language: 'Norwegian',
       image: 'http://www.visitoslo.com/globalassets/bilder-oslo/byliv-and-omrader/byen-og-fjorden_fwfoto.jpg',
       long: '10.757933',
-      lat: '59.911491'
+      lat: '59.911491',
+      user: users[0]
     },
     {
       city: 'Madrid',
@@ -111,7 +117,8 @@ export default function getCityData() {
       language: 'Spanish',
       image: 'https://www.travelanddestinations.com/wp-content/uploads/2019/06/Madrid-cityscape.jpg',
       long: '-3.703790',
-      lat: '40.416775'
+      lat: '40.416775',
+      user: users[0]
     },
     {
       city: 'Rome',
@@ -122,7 +129,8 @@ export default function getCityData() {
       language: 'Italian',
       image: 'https://media.timeout.com/images/105211701/image.jpg',
       long: '12.496366',
-      lat: '41.902782'
+      lat: '41.902782',
+      user: users[0]
     },
     {
       city: 'Athens',
@@ -133,7 +141,8 @@ export default function getCityData() {
       language: 'Greek',
       image: 'https://traveler.marriott.com/wp-content/uploads/2019/02/GI_1076721978_MonastirakiPlace.jpg',
       long: '23.727539',
-      lat: '37.983810'
+      lat: '37.983810',
+      user: users[0]
     },
     {
       city: 'Stockholm',
@@ -144,7 +153,8 @@ export default function getCityData() {
       language: 'Swedish',
       image: 'https://images.contentstack.io/v3/assets/blte962564a7ccdad95/blt6673351f18e18b68/5d0a6279b58121dc58ed5303/5.2.1Stockholm.jpg?auto=webp&format=pjpg&quality=80&width=1200&height=1200&fit=crop&crop=1200:630,smart',
       long: '18.063240',
-      lat: '59.334591'
+      lat: '59.334591',
+      user: users[0]
     },
     {
       city: 'Istanbul',
@@ -155,7 +165,8 @@ export default function getCityData() {
       language: 'Turkish',
       image: 'https://aic.azureedge.net/pgl-release/Images/ArticleImages/17/17764.jpg',
       long: '28.979530',
-      lat: '41.015137'
+      lat: '41.015137',
+      user: users[0]
     },
     {
       city: 'Budapest',
@@ -166,7 +177,8 @@ export default function getCityData() {
       language: 'Hungarian',
       image: 'https://450alliance.org/wp-content/uploads/2017/02/budapest-2016-5.jpg',
       long: '19.040236',
-      lat: '47.497913'
+      lat: '47.497913',
+      user: users[0]
     }
   ]
 }
