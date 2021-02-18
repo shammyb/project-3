@@ -1,8 +1,8 @@
-export default function getCityData() {
+export default function getCityData(users) {
   return [
     {
       city: 'Amsterdam',
-      about: 'Amsterdam is the Netherlands’ capital, known for its artistic heritage, elaborate canal system and narrow houses with gabled facades, legacies of the city’s 17th-century Golden Age. Its Museum District houses the Van Gogh Museum, works by Rembrandt and Vermeer at the Rijksmuseum, and modern art at the Stedelijk. Cycling is key to the city’s character, and there are numerous bike paths.',
+      about: 'Amsterdam is the Netherlands capital, known for its artistic heritage, elaborate canal system and narrow houses with gabled facades, legacies of the citys 17th-century Golden Age. Its Museum District houses the Van Gogh Museum, works by Rembrandt and Vermeer at the Rijksmuseum, and modern art at the Stedelijk. Cycling is key to the citys character, and there are numerous bike paths.',
       country: 'The Netherlands',
       currency: 'Euro',
       continent: 'Europe',
@@ -14,7 +14,7 @@ export default function getCityData() {
     },
     {
       city: 'Berlin',
-      about: 'Berlin, Germany’s capital, dates to the 13th century. Reminders of the city's turbulent 20th-century history include its Holocaust memorial and the Berlin Wall's graffitied remains. Divided during the Cold War, its 18th-century Brandenburg Gate has become a symbol of reunification. The citys also known for its art scene and modern landmarks like the gold-colored, swoop-roofed Berliner Philharmonie, built in 1963.',
+      about: 'Berlin, Germanys capital, dates to the 13th century. Reminders of the citys turbulent 20th-century history include its Holocaust memorial and the Berlin Walls graffitied remains. Divided during the Cold War, its 18th-century Brandenburg Gate has become a symbol of reunification. The citys also known for its art scene and modern landmarks like the gold-colored, swoop-roofed Berliner Philharmonie, built in 1963.',
       country: 'Germany',
       currency: 'Euro',
       continent: 'Europe',
@@ -26,7 +26,7 @@ export default function getCityData() {
     },
     {
       city: 'Copenhagen',
-      about: 'Copenhagen, Denmark’s capital, sits on the coastal islands of Zealand and Amager. It’s linked to Malmo in southern Sweden by the Öresund Bridge. Indre By, the citys historic center, contains Frederiksstaden, an 18th-century rococo district, home to the royal family’s Amalienborg Palace. Nearby is Christiansborg Palace and the Renaissance-era Rosenborg Castle, surrounded by gardens and home to the crown jewels.',
+      about: 'Copenhagen, Denmarks capital, sits on the coastal islands of Zealand and Amager. Its linked to Malmo in southern Sweden by the Öresund Bridge. Indre By, the citys historic center, contains Frederiksstaden, an 18th-century rococo district, home to the royal familys Amalienborg Palace. Nearby is Christiansborg Palace and the Renaissance-era Rosenborg Castle, surrounded by gardens and home to the crown jewels.',
       country: 'Denmark',
       currency: 'Danish Krone',
       continent: 'Europe',
@@ -38,7 +38,7 @@ export default function getCityData() {
     },
     {
       city: 'London',
-      about: 'London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. At its centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of British monarch coronations. Across the Thames River, the London Eye observation wheel provides panoramic views of the South Bank cultural complex, and the entire city.',
+      about: 'London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. At its centre stand the imposing Houses of Parliament, the iconic Big Ben clock tower and Westminster Abbey, site of British monarch coronations. Across the Thames River, the London Eye observation wheel provides panoramic views of the South Bank cultural complex, and the entire city.',
       country: 'England',
       currency: 'Pound Sterling',
       continent: 'Europe',
@@ -50,7 +50,7 @@ export default function getCityData() {
     },
     {
       city: 'Barcelona',
-      about: 'Barcelona, the cosmopolitan capital of Spain’s Catalonia region, is known for its art and architecture. The fantastical Sagrada Família church and other modernist landmarks designed by Antoni Gaudí dot the city. Museu Picasso and Fundació Joan Miró feature modern art by their namesakes. City history museum MUHBA, includes several Roman archaeological sites.',
+      about: 'Barcelona, the cosmopolitan capital of Spains Catalonia region, is known for its art and architecture. The fantastical Sagrada Família church and other modernist landmarks designed by Antoni Gaudí dot the city. Museu Picasso and Fundació Joan Miró feature modern art by their namesakes. City history museum MUHBA, includes several Roman archaeological sites.',
       country: 'Spain',
       currency: 'Euro',
       continent: 'Europe',
@@ -74,7 +74,7 @@ export default function getCityData() {
     },
     {
       city: 'Prague',
-      about: 'Prague, capital city of the Czech Republic, is bisected by the Vltava River. Nicknamed “the City of a Hundred Spires,” its known for its Old Town Square, the heart of its historic core, with colorful baroque buildings, Gothic churches and the medieval Astronomical Clock, which gives an animated hourly show. Completed in 1402, pedestrian Charles Bridge is lined with statues of Catholic saints.',
+      about: 'Prague, capital city of the Czech Republic, is bisected by the Vltava River. Nicknamed the City of a Hundred Spires, its known for its Old Town Square, the heart of its historic core, with colorful baroque buildings, Gothic churches and the medieval Astronomical Clock, which gives an animated hourly show. Completed in 1402, pedestrian Charles Bridge is lined with statues of Catholic saints.',
       country: 'Czech Republic',
       currency: 'Czech',
       continent: 'Europe',
@@ -86,7 +86,7 @@ export default function getCityData() {
     },
     {
       city: 'Lisbon',
-      about: 'Lisbon is Portugals hilly, coastal capital city. From imposing São Jorge Castle, the view encompasses the old city’s pastel-colored buildings, Tagus Estuary and Ponte 25 de Abril suspension bridge. Nearby, the National Azulejo Museum displays 5 centuries of decorative ceramic tiles. Just outside Lisbon is a string of Atlantic beaches, from Cascais to Estoril.',
+      about: 'Lisbon is Portugals hilly, coastal capital city. From imposing São Jorge Castle, the view encompasses the old citys pastel-colored buildings, Tagus Estuary and Ponte 25 de Abril suspension bridge. Nearby, the National Azulejo Museum displays 5 centuries of decorative ceramic tiles. Just outside Lisbon is a string of Atlantic beaches, from Cascais to Estoril.',
       country: 'Portugal',
       currency: 'Euro',
       continent: 'Europe',
@@ -98,7 +98,7 @@ export default function getCityData() {
     },
     {
       city: 'Oslo',
-      about: 'Oslo, the capital of Norway, sits on the country’s southern coast at the head of the Oslofjord. It’s known for its green spaces and museums. Many of these are on the Bygdøy Peninsula, including the waterside Norwegian Maritime Museum and the Viking Ship Museum, with Viking ships from the 9th century. The Holmenkollbakken is a ski-jumping hill with panoramic views of the fjord. It also has a ski museum.',
+      about: 'Oslo, the capital of Norway, sits on the countrys southern coast at the head of the Oslofjord. Its known for its green spaces and museums. Many of these are on the Bygdøy Peninsula, including the waterside Norwegian Maritime Museum and the Viking Ship Museum, with Viking ships from the 9th century. The Holmenkollbakken is a ski-jumping hill with panoramic views of the fjord. It also has a ski museum.',
       country: 'Norway',
       currency: 'Kroner',
       continent: 'Europe',
@@ -110,7 +110,7 @@ export default function getCityData() {
     },
     {
       city: 'Madrid',
-      about: 'Madrid, Spains central capital, is a city of elegant boulevards and expansive, manicured parks such as the Buen Retiro. It’s renowned for its rich repositories of European art, including the Prado Museum’s works by Goya, Velázquez and other Spanish masters. The heart of old Hapsburg Madrid is the portico-lined Plaza Mayor, and nearby is the baroque Royal Palace and Armory, displaying historic weaponry.',
+      about: 'Madrid, Spains central capital, is a city of elegant boulevards and expansive, manicured parks such as the Buen Retiro. Its renowned for its rich repositories of European art, including the Prado Museums works by Goya, Velázquez and other Spanish masters. The heart of old Hapsburg Madrid is the portico-lined Plaza Mayor, and nearby is the baroque Royal Palace and Armory, displaying historic weaponry.',
       country: 'Spain',
       currency: 'Euro',
       continent: 'Europe',
@@ -170,7 +170,7 @@ export default function getCityData() {
     },
     {
       city: 'Budapest',
-      about: 'Budapest, Hungary’s capital, is bisected by the River Danube. Its 19th-century Chain Bridge connects the hilly Buda district with flat Pest. A funicular runs up Castle Hill to Buda’s Old Town, where the Budapest History Museum traces city life from Roman times onward. Trinity Square is home to 13th-century Matthias Church and the turrets of the Fishermen’s Bastion, which offer sweeping views.',
+      about: 'Budapest, Hungarys capital, is bisected by the River Danube. Its 19th-century Chain Bridge connects the hilly Buda district with flat Pest. A funicular runs up Castle Hill to Budas Old Town, where the Budapest History Museum traces city life from Roman times onward. Trinity Square is home to 13th-century Matthias Church and the turrets of the Fishermens Bastion, which offer sweeping views.',
       country: 'Hungary',
       currency: 'Hungarian Forints',
       continent: 'Europe',
