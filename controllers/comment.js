@@ -1,4 +1,4 @@
-import City from '../models/cities.js'
+import City from '../models/city.js'
 
 
 async function makeComment(req, res, next) {
