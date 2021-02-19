@@ -16,6 +16,10 @@ import ThingsToDo from './components/ThingsToDo'
 import UpdateCity from './components/UpdateCity'
 import PostCity from './components/PostCity'
 
+
+//for testing purposes 
+import testRestaurants from './components/testRestaurants'
+
 import 'bulma'
 import './styles/style.scss'
 
@@ -34,6 +38,7 @@ const App = () => (
       <Route exact path="/cityscapes/discover/:cityname/thingstodo" component={ThingsToDo} />
       <Route exact path="/cityscapes/discover/:cityname/updatecity" component={UpdateCity} />
       <Route exact path="/cityscapes/discover/postcity" component={PostCity} />
+      <Route exact path="/testrestaurants" component={testRestaurants} />
     </Switch>
   </BrowserRouter>
 )

@@ -12,16 +12,7 @@ async function getCity(req, res, next) {
 }
 
 
-async function searchCity(req, res, next) {
-  try {
-    const cityList = await City.find({ name: { $regex: req.params.name, $options: 'i' } })
-      .populate('user')
-      .populate('comments.user')
-    res.send(cityList)
-  } catch (err) {
-    next(err)
-  }
-}
+
 
 async function makeCity(req, res, next) {
   const body = req.body
@@ -102,7 +93,6 @@ async function updateCity(req, res, next) {
 
 export default {
   getCity,
-  searchCity,
   makeCity,
   getSingleCity,
   removeCity,
