@@ -4,20 +4,21 @@ import { useHistory } from "react-router-dom"
 
 export default function City({ match }) {
 
-  const cityName = match.params.cityName
+  const cityname = match.params.cityname
   const [city, updateCity] = useState({})
 
   useEffect(() => {
     async function fetchCityData() {
       try {
-        const { data } = await axios.get(`/api/cityscapes/discover/${cityName}`)
+        const { data } = await axios.get(`/api/cityscapes/discover/${cityname}`)
         updateCity(data)
       } catch (err) {
         console.log(err)
       }
     }
     fetchCityData()
-  }, [])
+  }, {})
+  console.log(cityname)
 
   const history = useHistory()
 

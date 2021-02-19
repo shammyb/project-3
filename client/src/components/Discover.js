@@ -6,7 +6,7 @@ export default function Discover() {
   const [cities, updateCities] = useState([])
 
   useEffect(() => {
-    axios.get('/api/cityscapes/discover')
+    axios.get('/api/cityscapes')
       .then(resp => {
         updateCities(resp.data)
 

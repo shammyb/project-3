@@ -5,7 +5,8 @@ export default function Login({ history }) {
 
   const [formData, updateFormData] = useState({
     email: '',
-    password: ''
+    password: '',
+    passwordConfirmation: ''
   })
 
   function handleChange(event) {
