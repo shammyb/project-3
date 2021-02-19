@@ -33,12 +33,19 @@ const App = () => (
       <Route exact path="/cityscapes/discover/postcity" component={PostCity} />
       <Route exact path="/cityscapes/discover" component={Discover}/>
       <Route exact path="/cityscapes/flights" component={Flights} />
+<<<<<<< HEAD
       <Route exact path="/cityscapes/discover/:city" component={City} />
+=======
+      <Route exact path="/cityscapes/discover/:id" component={City} />
+>>>>>>> development
       <Route exact path="/cityscapes/discover/:cityname/experiences" component={Experiences} />
       <Route exact path="/cityscapes/discover/:cityname/restaurants" component={Restaurants} />
       <Route exact path="/cityscapes/discover/:cityname/thingstodo" component={ThingsToDo} />
       <Route exact path="/cityscapes/discover/:cityname/updatecity" component={UpdateCity} />
+<<<<<<< HEAD
      
+=======
+>>>>>>> development
       <Route exact path="/testrestaurants" component={testRestaurants} />
     </Switch>
   </BrowserRouter>

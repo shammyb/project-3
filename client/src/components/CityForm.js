@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-import Select from 'react-select'
+// import Select from 'react-select'
 
 const inputFields = ['city', 'about', 'country', 'currency', 'continent', 'language', 'image', 'long', 'lat']
 
