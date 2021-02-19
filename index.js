@@ -15,7 +15,7 @@ async function startServer() {
 
   await connectToDb()
 
-  console.log(' 🏙  Welcome to Cityscape You are now connected to mongo!')
+  console.log(' 🏙  Welcome to Cityscapes You are now connected to mongo!')
 
   app.use(express.json())
 
