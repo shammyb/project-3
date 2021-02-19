@@ -6,11 +6,16 @@ export default function Discover() {
   const [cities, updateCities] = useState([])
 
   useEffect(() => {
-    axios.get('/api/cityscapes/discover')
-      .then(resp => {
-        updateCities(resp.data)
-
-      })
+    async function getCities() {
+      try {
+        const { data } = await axios.get('/api/cityscapes')
+        updateCities(data)
+        console.log(data)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    getCities()
   }, [])
 
 
@@ -19,20 +24,20 @@ export default function Discover() {
       <div className="columns is-multiline is-mobile">
         {cities.map((city, index) => {
           return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
-            <Link to={`/cityscapes/discover/${city.name}`}>
+            <Link to={`/cityscapes/discover/${city.city}`}>
               <div className="card">
                 <div className="card-content">
                   <div className="media">
                     <div className="media-content">
-                      <p className="title is-4">{city.name}</p>
+                      <p className="title is-4">{city.city}</p>
                       <p className="subtitle is-6">{'Currency: ' + city.currency}</p>
-                      <p className="subtitle is-6">{'Langugage: ' + city.langugage}</p>
+                      <p className="subtitle is-6">{'language: ' + city.language}</p>
                     </div>
                   </div>
                 </div>
                 <div className="card-image">
                   <figure className="image is-4by3">
-                    <img src={city.image} alt={city.name} />
+                    <img src={city.image} alt={city.city} />
                   </figure>
                 </div>
               </div>

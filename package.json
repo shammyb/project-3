@@ -18,7 +18,9 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.15",
     "mongoose-hidden": "^1.9.1",
-    "mongoose-unique-validator": "^2.0.3"
+    "mongoose-unique-validator": "^2.0.3",
+    "run": "^1.4.0",
+    "start": "^5.1.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
