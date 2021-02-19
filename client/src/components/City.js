@@ -51,40 +51,41 @@ export default function City({ match }) {
   return <div className="cities">
 
     <section key className="city" >
-      <div className="name-image-about">
+      <div className="city-image">
         <h1>{cities.city}</h1>
-        <h2>{cities.currency}</h2>
-        <p>{cities.continent}</p>
-
-
         <img src={cities.image} alt={cities.name} />
+      </div>
+      <div className="name-about-country-currency">
         <p>{cities.about}</p>
+        <h3>{cities.country}</h3>
+        <h3>{cities.currency}</h3>
+        <h3>{cities.continent}</h3>
       </div>
       <div className="search-buttons">
-        <div className="things-to-do">
-          <h2>Search Things to Do</h2>
-          <img />
+        <div className="search-box">
+          <h2>Things to Do</h2>
+          <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
           <button onClick={routeChangeTTD}>
             Search
           </button>
         </div>
-        <div className="flights">
-          <h2>Search Flights</h2>
-          <img />
+        <div className="search-box">
+          <h2>Flights</h2>
+          <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
           <button onClick={routeChangeFlights}>
             Search
           </button>
         </div>
-        <div className="restaurants">
-          <h2>Search Restaurants</h2>
-          <img />
+        <div className="search-box">
+          <h2>Restaurants</h2>
+          <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
           <button onClick={routeChangeRestaurants}>
             Search
           </button>
         </div>
-        <div className="experiences">
-          <h2>Search Experiences</h2>
-          <img />
+        <div className="search-box">
+          <h2>Experiences</h2>
+          <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
           <button onClick={routeChangeExperiences}>
             Search
           </button>
