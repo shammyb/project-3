@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import CityForm from './CityForm'
 
 
-export default function PostCity() {
+export default function PostCity(history) {
   const [formData, updateFormData] = useState({
     city: '',
     about: '',
@@ -19,20 +19,17 @@ export default function PostCity() {
   function handleChange(event) {
     updateFormData({ ...formData, [event.target.name]: event.target.value })
   }
+  console.log(formData)
 
   async function handleSubmit(event) {
     event.preventDefault()
     const token = localStorage.getItem('token')
-
-    const newFormData = {
-      ...formData
-    }
-
     try {
-      const { data } = await axios.post('/api/cityscapes', newFormData, {
+      const { data } = await axios.post('/api/cityscapes/', formData, {
         headers: { Authorization: `Bearer ${token}` }
       })
       console.log(data._id)
+      console.log(data)
       history.push(`/cityscapes/${data._id}`)
     } catch (err) {
       console.log(err.response.data)

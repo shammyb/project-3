@@ -6,8 +6,5 @@ import axios from 'axios'
 
 
 export default function Navbar() {
-  return <section>
-
-
-  </section>
+  return <div></div>
 }

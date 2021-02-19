@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 export default function City({ match }) {
+
+
+
+
   const id = match.params.id
   const [cities, updateCities] = useState({})
   useEffect(() => {
@@ -9,15 +13,22 @@ export default function City({ match }) {
       try {
         const { data } = await axios.get(`/api/cityscapes/${id}`)
         updateCities(data)
+
+
       } catch (err) {
         console.log(err)
       }
     }
     fetchCityData()
+
   }, [])
+  // console.log(cityname)
+
+
   // console.log('name:' + id)
   // console.log(match.params)
   console.log(cities)
+
 
 
   const history = useHistory()
@@ -80,6 +91,6 @@ export default function City({ match }) {
         </div>
       </div>
     </section>
-    
+
   </div>
 }
