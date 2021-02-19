@@ -28,12 +28,12 @@ const App = () => (
     <Navbar />
     <Switch>
       <Route exact path="/cityscapes" component={Home}/>
-      <Route exact path="/cityscapes/discover/postcity" component={PostCity} />
       <Route exact path="/register" component={Register}/>
       <Route exact path="/login" component={Login}/>
+      <Route exact path="/cityscapes/discover/postcity" component={PostCity} />
       <Route exact path="/cityscapes/discover" component={Discover}/>
       <Route exact path="/cityscapes/flights" component={Flights} />
-      <Route exact path="/cityscapes/discover/:cityname" component={City} />
+      <Route exact path="/cityscapes/discover/:id" component={City} />
       <Route exact path="/cityscapes/discover/:cityname/experiences" component={Experiences} />
       <Route exact path="/cityscapes/discover/:cityname/restaurants" component={Restaurants} />
       <Route exact path="/cityscapes/discover/:cityname/thingstodo" component={ThingsToDo} />
