@@ -17,7 +17,7 @@ import UpdateCity from './components/UpdateCity'
 import PostCity from './components/PostCity'
 
 
-//for testing purposes
+//for testing purposes 
 import testRestaurants from './components/testRestaurants'
 
 import 'bulma'
