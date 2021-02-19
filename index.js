@@ -3,7 +3,7 @@ import router from './views/router.js'
 import logger from './middleware/logger.js'
 import connectToDb from './lib/connectToDb.js'
 import errorHandler from './middleware/errorHandler.js'
-import { secret } from  './config/environment.js'
+// import { secret } from  './config/environment.js'
 
 
 import dotenv from 'dotenv'
