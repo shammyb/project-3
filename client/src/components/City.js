@@ -7,7 +7,7 @@ export default function City({ match }) {
   useEffect(() => {
     async function fetchCityData() {
       try {
-        const { data } = await axios.get('/api/cityscapes')
+        const { data } = await axios.get(`/api/cityscapes/${id}`)
         updateCity(data)
       } catch (err) {
         console.log(err)
@@ -76,6 +76,6 @@ export default function City({ match }) {
         </div>
       </div>
     </section>
-    }
+    
   </div>
 }
