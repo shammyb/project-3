@@ -3,12 +3,12 @@ import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 export default function City({ match }) {
   const id = match.params.id
-  const [cities, updateCity] = useState({})
+  const [cities, updateCities] = useState({})
   useEffect(() => {
     async function fetchCityData() {
       try {
-        const { data } = await axios.get('/api/cityscapes')
-        updateCity(data)
+        const { data } = await axios.get(`/api/cityscapes/${id}`)
+        updateCities(data)
       } catch (err) {
         console.log(err)
       }
@@ -39,11 +39,15 @@ export default function City({ match }) {
   }
   return <div className="cities">
 
-    return <section key={index} className="city" >
+    <section key className="city" >
       <div className="name-image-about">
-        <h1>{result.city}</h1>
-        <img src={result.image} alt={result.name} />
-        <p>{result.about}</p>
+        <h1>{cities.city}</h1>
+        <h2>{cities.currency}</h2>
+        <p>{cities.continent}</p>
+
+
+        <img src={cities.image} alt={cities.name} />
+        <p>{cities.about}</p>
       </div>
       <div className="search-buttons">
         <div className="things-to-do">
@@ -76,6 +80,6 @@ export default function City({ match }) {
         </div>
       </div>
     </section>
-    }
+    
   </div>
 }
