@@ -1,7 +1,41 @@
 import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+import Register from './components/Register'
+import Login from './components/Login'
+import Home from './components/Home'
+import Navbar from './components/Navbar'
+import Discover from './components/Discover'
+import Flights from './components/Flights'
+
+import City from './components/City'
+import Experiences from './components/Experiences'
+import Restaurants from './components/Restaurants'
+import ThingsToDo from './components/ThingsToDo'
+
+import UpdateCity from './components/UpdateCity'
+import PostCity from './components/PostCity'
+
+import 'bulma'
+import './styles/style.scss'
 
 const App = () => (
-  <h1>Hello world</h1>
+  <BrowserRouter>
+    <Navbar />
+    <Switch>
+      <Route exact path="/cityscapes" component={Home}/>
+      <Route exact path="/register" component={Register}/>
+      <Route exact path="/login" component={Login}/>
+      <Route exact path="/cityscapes/discover" component={Discover}/>
+      <Route exact path="/cityscapes/flights" component={Flights} />
+      <Route exact path="/cityscapes/discover/:cityname" component={City} />
+      <Route exact path="/cityscapes/discover/:cityname/experiences" component={Experiences} />
+      <Route exact path="/cityscapes/discover/:cityname/restaurants" component={Restaurants} />
+      <Route exact path="/cityscapes/discover/:cityname/thingstodo" component={ThingsToDo} />
+      <Route exact path="/cityscapes/discover/:cityname/updatecity" component={UpdateCity} />
+      <Route exact path="/cityscapes/discover/postcity" component={PostCity} />
+    </Switch>
+  </BrowserRouter>
 )
 
 export default App
