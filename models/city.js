@@ -18,7 +18,7 @@ const citySchema = new mongoose.Schema({
   country: { type: String },
   currency: { type: String },
   continent: { type: String },
-  langugage: { type: String },
+  language: { type: String },
   image: { type: String, required: true },
   long: { type: String },
   lat: { type: String },
