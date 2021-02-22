@@ -33,7 +33,7 @@ export default function City({ match }) {
 
   const history = useHistory()
   const routeChangeTTD = () => {
-    const pathTTD = '/cityscapes/discover/:cityname/thingstodo'
+    const pathTTD = `/cityscapes/discover/${city}/thingstodo`
     history.push(pathTTD)
   }
   const routeChangeFlights = () => {
@@ -41,7 +41,7 @@ export default function City({ match }) {
     history.push(pathFlights)
   }
   const routeChangeRestaurants = () => {
-    const pathRestaurants = '/cityscapes/discover/:cityname/restaurants'
+    const pathRestaurants = `/cityscapes/discover/${city}/restaurants`
     history.push(pathRestaurants)
   }
   const routeChangeExperiences = () => {
