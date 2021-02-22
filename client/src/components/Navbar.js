@@ -1,5 +1,5 @@
-import { Link, withRouter } from 'react-router-dom'
-import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import React from 'react'
 //import axios from 'axios'
 export default function Navbar() {
   return <nav className="navbar" role="navigation" aria-label="main navigation">

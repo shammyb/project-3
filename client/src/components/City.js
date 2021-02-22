@@ -2,8 +2,15 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 export default function City({ match }) {
+  
+  const token = localStorage.getItem('token')
 
-
+  async function handleDelete() {
+    await axios.delete(`/api/cityscapes/${city}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    history.push('/cityscapes')
+  }
 
 
   const city = match.params.city
