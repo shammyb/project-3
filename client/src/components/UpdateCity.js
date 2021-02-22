@@ -4,7 +4,7 @@ import axios from 'axios'
 import CityForm from './CityForm'
 
 export default function UpdateCity({ history, match }) {
-  const cityId = match.params.cityId
+  const city = match.params.city
 
   const [formData, updateFormData] = useState({
     city: '',
@@ -18,11 +18,18 @@ export default function UpdateCity({ history, match }) {
     lat: ''
   })
 
+  
   useEffect(() => {
-    axios.get(`/api/cityscapes/${cityId}`)
+    axios.get(`/api/cityscapes/${city}`)
       .then(({ data }) => {
 
-        updateFormData(data)
+        const mappedFormData = {
+          ...data,
+          types: data.types.map(type => {
+            return { value: type, label: type[0].toUpperCase() + type.slice(1) }
+          })
+        }
+        updateFormData(mappedFormData)
       })
   }, [])
 
@@ -39,11 +46,10 @@ export default function UpdateCity({ history, match }) {
       ...formData
     }
     try {
-      const { data } = await axios.put(`/api/cityscapes/${cityId}`, newFormData, {
+      const { data } = await axios.put(`/api/cityscapes/${city}`, newFormData, {
         headers: { Authorization: `Bearer ${token}` }
       })
-      console.log(data._id)
-      history.push(`/cityscapes/${data._id}`)
+      history.push(`/cityscapes/discover/${data._id}`)
     } catch (err) {
       console.log(err.response.data)
     }
