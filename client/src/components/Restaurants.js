@@ -69,10 +69,10 @@ export default function Restaurants({ match }) {
 
   return <div>
 
-    <div className="city-image">
+    {/* <div className="city-image">
       <h1>{cities.city}</h1>
       <img src={cities.image} alt={cities.name} />
-    </div>
+    </div> */}
 
 
     <div className="container">

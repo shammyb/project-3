@@ -55,13 +55,19 @@ export default function City({ match }) {
         <h1>{cities.city}</h1>
         <img src={cities.image} alt={cities.name} />
       </div>
-      <div className="name-about-country-currency">
-        <p>{cities.about}</p>
-        <h3>{cities.country}</h3>
-        <h3>{cities.currency}</h3>
-        <h3>{cities.continent}</h3>
-      </div>
-      <div className="search-buttons">
+
+      <article id="citylayout">
+
+  
+   
+      <div className="citymenu">
+      <div className="search-box">
+          <h2>About</h2>
+          <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
+          <button onClick={routeChangeExperiences}>
+            Search
+          </button>
+        </div>
         <div className="search-box">
           <h2>Things to Do</h2>
           <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
@@ -69,13 +75,13 @@ export default function City({ match }) {
             Search
           </button>
         </div>
-        <div className="search-box">
+        {/* <div className="search-box">
           <h2>Flights</h2>
           <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
           <button onClick={routeChangeFlights}>
             Search
           </button>
-        </div>
+        </div> */}
         <div className="search-box">
           <h2>Restaurants</h2>
           <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
@@ -90,7 +96,16 @@ export default function City({ match }) {
             Search
           </button>
         </div>
+
+        
       </div>
+      <div className="name-about-country-currency">
+        <p>{cities.about}</p>
+        <h3>{cities.country}</h3>
+        <h3>{cities.currency}</h3>
+        <h3>{cities.continent}</h3>
+      </div>
+      </article>
     </section>
 
   </div>

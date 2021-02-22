@@ -102,12 +102,12 @@ export default function Restaurants({ match }) {
   // console.log(restaurantData[0].venue.name)
 
   return <div className="thingstodo">
-    <div className="container1">
+    {/* <div className="container1">
       <div className="city-image">
         <h1>{cities.city}</h1>
         <img src={cities.image} alt={cities.name} />
       </div>
-    </div>
+    </div> */}
 
     <div className="container2">
       <h1 className="title is-1">Look for the best things to do in {city} </h1>

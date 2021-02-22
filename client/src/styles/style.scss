@@ -6,15 +6,16 @@
 .city-image {
   display: flex;
   flex-direction: column;
-  width: 33.3%;
+  width: 100%;
   border: solid red 2px;
-  margin: 5px;
+  margin: 10px;
+  
 }
 
 .name-about-country-currency {
   display: flex;
   flex-direction: column;
-  width: 33.3%;
+  width: 60%;
   border: solid red 2px;
   margin: 5px;
 }
@@ -53,3 +54,18 @@
 // flex-direction: row;
 
 // }
+
+//! city layout
+
+#citylayout {
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.citymenu  {
+  display: flex;
+  flex-direction: row;
+
+}
