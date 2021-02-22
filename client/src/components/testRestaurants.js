@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import ClipLoader from 'react-spinners/ClipLoader'
 
-export default function Restaurants() {
+export default function Restaurants({ match }) {
   const [restaurantData, updateRestaurantData] = useState({})
-
   const [loading, updateLoading] = useState(true)
+  const city = match.params.city
+  console.log('print the city: ' + city)
+  const [cities, updateCities] = useState({})
+
+  //use effect for the Foursquare API
 
   useEffect(() => {
 
@@ -29,8 +33,19 @@ export default function Restaurants() {
       }
     }
     getData()
-  }, [])
 
+    async function fetchCityData() {
+      try {
+        const { data } = await axios.get(`/api/cityscapes/${city}`)
+        updateCities(data)
+
+
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    fetchCityData()
+  }, [])
 
 
   if (loading) {
@@ -40,14 +55,23 @@ export default function Restaurants() {
 
 
 
-  console.log('this is returning the data')
-  console.log(restaurantData)
-  console.log('specific thing')
-  console.log(restaurantData[0].venue.name)
+ 
+
+  // console.log('this is returning the data')
+  // console.log(restaurantData)
+  // console.log('specific thing')
+  // console.log(restaurantData[0].venue.name)
 
   return <div>
-    <h1>These are the restaurants yo </h1>
+
+    <div className="city-image">
+      <h1>{cities.city}</h1>
+      <img src={cities.image} alt={cities.name} />
+    </div>
+
+
     <div className="container">
+      <h1>Look for the best restaurants in the city </h1>
       <div className="columns is-multiline is-mobile"></div>
 
 
@@ -68,12 +92,10 @@ export default function Restaurants() {
             </div>
 
           </div>
-
-
         })
       }
     </div>
   </div>
 
- 
+
 }
