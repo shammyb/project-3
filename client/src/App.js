@@ -40,7 +40,11 @@ const App = () => (
       <Route exact path="/cityscapes/discover/:cityname/experiences" component={Experiences} />
       <Route exact path="/cityscapes/discover/:cityname/restaurants" component={Restaurants} />
       <Route exact path="/cityscapes/discover/:cityname/thingstodo" component={ThingsToDo} />
+<<<<<<< HEAD
       
+=======
+      <Route exact path="/cityscapes/discover/:city/updatecity" component={UpdateCity} />
+>>>>>>> development
       {/* <Route exact path="/testrestaurants" component={testRestaurants} /> */}
     </Switch>
   </BrowserRouter>
