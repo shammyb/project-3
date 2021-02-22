@@ -15,6 +15,7 @@ import ThingsToDo from './components/ThingsToDo'
 
 import UpdateCity from './components/UpdateCity'
 import PostCity from './components/PostCity'
+import Map from './components/Map'
 
 
 //for testing purposes 
@@ -31,9 +32,10 @@ const App = () => (
       <Route exact path="/register" component={Register}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/cityscapes/discover/postcity" component={PostCity} />
+      <Route exact path="/cityscapes/discover/map" component={Map}/>
       <Route exact path="/cityscapes/discover" component={Discover}/>
       <Route exact path="/cityscapes/flights" component={Flights} />
-      <Route exact path="/cityscapes/discover/:id" component={City} />
+      <Route exact path="/cityscapes/discover/:city" component={City} />
       <Route exact path="/cityscapes/discover/:cityname/experiences" component={Experiences} />
       <Route exact path="/cityscapes/discover/:cityname/restaurants" component={Restaurants} />
       <Route exact path="/cityscapes/discover/:cityname/thingstodo" component={ThingsToDo} />

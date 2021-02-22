@@ -19,8 +19,7 @@
     "mongoose": "^5.11.15",
     "mongoose-hidden": "^1.9.1",
     "mongoose-unique-validator": "^2.0.3",
-    "react-mapbox-gl": "^5.1.1",
-    "react-spinners": "^0.10.6",
+    "react-map-gl": "^6.1.9",
     "run": "^1.4.0",
     "start": "^5.1.0"
   },

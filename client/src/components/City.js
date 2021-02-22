@@ -6,12 +6,12 @@ export default function City({ match }) {
 
 
 
-  const id = match.params.id
+  const city = match.params.city
   const [cities, updateCities] = useState({})
   useEffect(() => {
     async function fetchCityData() {
       try {
-        const { data } = await axios.get(`/api/cityscapes/${id}`)
+        const { data } = await axios.get(`/api/cityscapes/${city}`)
         updateCities(data)
 
 
