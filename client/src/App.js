@@ -36,11 +36,20 @@ const App = () => (
       <Route exact path="/cityscapes/discover" component={Discover}/>
       <Route exact path="/cityscapes/flights" component={Flights} />
       <Route exact path="/cityscapes/discover/:city" component={City} />
+<<<<<<< HEAD
       <Route exact path="/cityscapes/discover/:cityname/experiences" component={Experiences} />
       <Route exact path="/cityscapes/discover/:city/restaurants" component={Restaurants} />
       <Route exact path="/cityscapes/discover/:city/thingstodo" component={ThingsToDo} />
       <Route exact path="/cityscapes/discover/:cityname/updatecity" component={UpdateCity} />
       <Route exact path="/testrestaurants" component={testRestaurants} />
+=======
+      <Route exact path="/cityscapes/discover/:city/updatecity" component={UpdateCity} />
+      <Route exact path="/cityscapes/discover/:city/experiences" component={Experiences} />
+      <Route exact path="/cityscapes/discover/:city/restaurants" component={Restaurants} />
+      <Route exact path="/cityscapes/discover/:city/thingstodo" component={ThingsToDo} />
+      <Route exact path="/cityscapes/discover/:city/updatecity" component={UpdateCity} />
+      {/* <Route exact path="/testrestaurants" component={testRestaurants} /> */}
+>>>>>>> dbf1b7e5873701cdba031686a5171bbb158dde7f
     </Switch>
   </BrowserRouter>
 )

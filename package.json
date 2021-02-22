@@ -21,7 +21,10 @@
     "mongoose-unique-validator": "^2.0.3",
     "react-map-gl": "^6.1.9",
     "react-mapbox-gl": "^5.1.1",
+<<<<<<< HEAD
     "react-spinners": "^0.10.6",
+=======
+>>>>>>> dbf1b7e5873701cdba031686a5171bbb158dde7f
     "run": "^1.4.0",
     "slick-carousel": "^1.8.1",
     "start": "^5.1.0"
