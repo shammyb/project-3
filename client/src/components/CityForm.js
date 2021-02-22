@@ -8,10 +8,12 @@ const inputFields = ['city', 'about', 'country', 'currency', 'continent', 'langu
 
 
 export default function CityForm({ formData, handleSubmit, handleChange }) {
+  console.log(formData)
   return <div className="section">
     <div className="container">
       <form onSubmit={handleSubmit}>
         {inputFields.map(field => {
+          console.log(formData[field])
           return <div key={field} className="field">
             <label className="label">
               {field[0].toUpperCase() + field.slice(1)}

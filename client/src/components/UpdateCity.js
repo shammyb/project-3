@@ -4,7 +4,9 @@ import axios from 'axios'
 import CityForm from './CityForm'
 
 export default function UpdateCity({ history, match }) {
-  const cityId = match.params.cityId
+  const city = match.params.city
+
+  const [loading, updateLoading] = useState(true)
 
   const [formData, updateFormData] = useState({
     city: '',
@@ -18,12 +20,19 @@ export default function UpdateCity({ history, match }) {
     lat: ''
   })
 
-  useEffect(() => {
-    axios.get(`/api/cityscapes/${cityId}`)
-      .then(({ data }) => {
+  
 
-        updateFormData(data)
-      })
+  useEffect(() => {
+    async function getFormData() {
+      const { data } = await axios.get(`/api/cityscapes/${city}`)
+      
+      console.log(data)
+      updateFormData(data)
+      updateLoading(false)
+    }
+
+
+    getFormData()
   }, [])
 
   function handleChange(event) {
@@ -39,16 +48,18 @@ export default function UpdateCity({ history, match }) {
       ...formData
     }
     try {
-      const { data } = await axios.put(`/api/cityscapes/${cityId}`, newFormData, {
+      const { data } = await axios.put(`/api/cityscapes/${city}`, newFormData, {
         headers: { Authorization: `Bearer ${token}` }
       })
       console.log(data._id)
-      history.push(`/cityscapes/${data._id}`)
+      history.push(`/cityscapes/${data.city}`)
     } catch (err) {
       console.log(err.response.data)
     }
   }
-
+  if (loading) {
+    return <h1>wagwan</h1>
+  }
   return <CityForm
     handleChange={handleChange}
     handleSubmit={handleSubmit}
