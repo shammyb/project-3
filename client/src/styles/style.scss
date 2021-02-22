@@ -1,0 +1,46 @@
+.city {
+  display: flex;
+  flex-direction: row;
+}
+
+.city-image {
+  display: flex;
+  flex-direction: column;
+  width: 33.3%;
+  border: solid red 2px;
+  margin: 5px;
+}
+
+.name-about-country-currency {
+  display: flex;
+  flex-direction: column;
+  width: 33.3%;
+  border: solid red 2px;
+  margin: 5px;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: solid red 2px;
+  width: 33.3%;
+  margin: 5px;
+}
+
+.search-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  width: 50%;
+}
+
+.search-image {
+  width: 100px;
+}
