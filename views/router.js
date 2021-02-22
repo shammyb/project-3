@@ -19,7 +19,7 @@ router.route('/cityscapes')
 
 
 
-router.route('/cityscapes/:id')
+router.route('/cityscapes/:city')
   .get(city.getSingleCity)
   .put(secureRoute,city.updateCity)
   .delete(secureRoute,city.removeCity)
