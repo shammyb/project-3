@@ -10,8 +10,8 @@ import Flights from './components/Flights'
 
 import City from './components/City'
 // import Experiences from './components/Experiences'
-// import Restaurants from './components/Restaurants'
-// import ThingsToDo from './components/ThingsToDo'
+import Restaurants from './components/Restaurants'
+import ThingsToDo from './components/ThingsToDo'
 
 import UpdateCity from './components/UpdateCity'
 import PostCity from './components/PostCity'
@@ -28,7 +28,7 @@ const App = () => (
   <BrowserRouter>
     <Navbar />
     <Switch>
-      {/* <Route exact path="/cityscapes" component={Home}/> */}
+      <Route exact path="/cityscapes" component={Home}/>
       <Route exact path="/register" component={Register}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/cityscapes/discover/postcity" component={PostCity} />

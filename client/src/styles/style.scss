@@ -121,3 +121,86 @@ font-size: 50px;
 
 
 }
+
+// HOMEPAGE STYLING //
+
+body {
+  height: 100vh;
+}
+
+.heropage {
+  width: 100vw;
+  height: 80vh;
+  position: relative;
+  text-align: center;
+  z-index: 0;
+}
+
+.homepage-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+}
+
+.homepage-title {
+  font-size: 150px;
+  color: white;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-family: 'Playfair Display', serif;
+  color:white;
+}
+
+.homepage-subtitle {
+  font-size: 30px;
+  color: white;
+  margin-top: 0;
+  padding-top: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-logo {
+  width: 75px;
+}
+
+.button {
+  background-color: #05489c;
+  color: white;
+  border: none;
+}
+
+.button:hover {
+  color:#03d6d2;
+}
+
+#reg-log-button {
+  background-color:#03d6d2 !important;
+}
+
+#reg-log-button:hover {
+  color:#05489c !important;
+}
+
+// DISCOVER STYLING //
+
+.card {
+  background-color: white;
+}
+
+.card:hover {
+    background-color: #03d6d2;
+  }
+
+.title {
+  color: #05489c;
+}
+
+// REGISTER / LOGIN STYLING
+
+#register-container {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+}

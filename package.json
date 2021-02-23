@@ -28,7 +28,10 @@
     "start": "^5.1.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
+    "eslint": "^7.20.0",
+    "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "mocha": "^8.2.1",
     "sass": "^1.32.8",
