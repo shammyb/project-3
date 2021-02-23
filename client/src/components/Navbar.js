@@ -4,22 +4,29 @@ import React from 'react'
 export default function Navbar() {
   return <nav className="navbar" role="navigation" aria-label="main navigation">
     <div className="navbar-menu is-active">
+      <div className="navbar-start">
+        <img className="navbar-logo" src="../images/logo_transparent.png"/>
+        <div className="navbar-item">
+          <div className="buttons">
+            <Link to="/cityscapes" className="button">
+              Home
+            </Link>
+            <Link to='/cityscapes/discover' className="button">
+              Discover
+            </Link>
+            <Link to='/cityscapes/flights' className="button">
+              Flights
+            </Link>
+          </div>
+        </div>  
+      </div>
       <div className="navbar-end">
         <div className="navbar-item">
           <div className="buttons">
-            <Link to="/cityscapes" className="button is-dark">
-              Home
-            </Link>
-            <Link to='/cityscapes/discover' className="button is-primary">
-              Discover
-            </Link>
-            <Link to='/cityscapes/flights' className="button is-primary">
-              Flights
-            </Link>
-            <Link to="/register" className="button is-light">
+            <Link to="/register" className="button" id="reg-log-button">
               Register
             </Link>
-            <Link to="/login" className="button is-light">
+            <Link to="/login" className="button" id="reg-log-button">
               Login
             </Link>
           </div>
