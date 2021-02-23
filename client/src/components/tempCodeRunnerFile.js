@@ -1,1 +1,1 @@
-updateFlightData(axiosResp.data)
+}

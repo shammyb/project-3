@@ -1,5 +1,4 @@
 // import React from 'react'
-<<<<<<< HEAD
 // import 'slick-carousel/slick/slick.css'
 // import 'slick-carousel/slick/slick-theme.css'
 // import Slider from 'react-slick'
@@ -33,13 +32,4 @@
 //       </div>
 //     </Slider>
 //   )
-=======
-
-// export default function Home() {
-//   return <section>wagwan my Gs
-
-    
-//   </section>
-
->>>>>>> development
 // }

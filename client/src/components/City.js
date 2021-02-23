@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
+import { isCreator } from '../lib/auth'
 export default function City({ match }) {
   
-  const token = localStorage.getItem('token')
+  
 
   async function handleDelete() {
+    const token = localStorage.getItem('token')
     await axios.delete(`/api/cityscapes/${city}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
@@ -55,12 +57,20 @@ export default function City({ match }) {
     const pathExperiences = '/cityscapes/discover/:cityname/experiences'
     history.push(pathExperiences)
   }
+
+  if (!cities.user) {
+    return null
+  }
   return <div className="cities">
 
     <section key className="city" >
       <div className="city-image">
         <h1>{cities.city}</h1>
         <img src={cities.image} alt={cities.name} />
+        {isCreator(cities.user._id) && <button
+        className="button is-danger"
+        onClick={handleDelete}
+      > Delete City</button>}
       </div>
 
       <article id="citylayout">

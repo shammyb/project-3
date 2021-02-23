@@ -17,6 +17,8 @@ import UpdateCity from './components/UpdateCity'
 import PostCity from './components/PostCity'
 import Map from './components/Map'
 
+import ImageUpload from '../../controllers/ImageUpload'
+
 
 //for testing purposes 
 import testRestaurants from './components/testRestaurants'
@@ -31,6 +33,7 @@ const App = () => (
       {/* <Route exact path="/cityscapes" component={Home}/> */}
       <Route exact path="/register" component={Register}/>
       <Route exact path="/login" component={Login}/>
+      <Route exact path="/cityscapes/:city/images" component={ImageUpload} />
       <Route exact path="/cityscapes/discover" component={Discover}/>
       <Route exact path="/cityscapes/discover/postcity" component={PostCity} />
       <Route exact path="/cityscapes/discover/map" component={Map}/>
