@@ -3,18 +3,19 @@ import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import ClipLoader from 'react-spinners/ClipLoader'
 
-export default function Restaurants({ match }) {
+export default function ThingsToDo({ city }) {
+  
   const [artsData, updateArtsData] = useState({})
   const [outdoorsData, updateOutdoorsData] = useState({})
   const [sightsData, updateSightsData] = useState({})
   const [loading1, updateLoading1] = useState(true)
   const [loading2, updateLoading2] = useState(true)
   const [loading3, updateLoading3] = useState(true)
-  const city = match.params.city
+  
   console.log('print the city: ' + city)
   const [cities, updateCities] = useState({})
 
-
+  
 
   useEffect(() => {
 

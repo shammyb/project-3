@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 import ClipLoader from 'react-spinners/ClipLoader'
 // import { ExternalLink } from 'react-external-link'
 
-export default function Restaurants({ match }) {
+export default function Restaurants({city}) {
   const [restaurantData, updateRestaurantData] = useState({})
   const [loading, updateLoading] = useState(true)
-  const city = match.params.city
+  
   console.log('print the city: ' + city)
   const [cities, updateCities] = useState({})
 
