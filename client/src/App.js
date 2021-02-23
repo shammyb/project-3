@@ -19,7 +19,7 @@ import Map from './components/Map'
 
 
 //for testing purposes 
-// import testRestaurants from './components/testRestaurants'
+import testRestaurants from './components/testRestaurants'
 
 import 'bulma'
 import './styles/style.scss'
@@ -28,7 +28,7 @@ const App = () => (
   <BrowserRouter>
     <Navbar />
     <Switch>
-      <Route exact path="/cityscapes" component={Home}/>
+      {/* <Route exact path="/cityscapes" component={Home}/> */}
       <Route exact path="/register" component={Register}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/cityscapes/discover/postcity" component={PostCity} />
@@ -40,7 +40,6 @@ const App = () => (
       <Route exact path="/cityscapes/discover/:city/experiences" component={Experiences} />
       <Route exact path="/cityscapes/discover/:city/restaurants" component={Restaurants} />
       <Route exact path="/cityscapes/discover/:city/thingstodo" component={ThingsToDo} />
-      <Route exact path="/cityscapes/discover/:city/updatecity" component={UpdateCity} />
       {/* <Route exact path="/testrestaurants" component={testRestaurants} /> */}
     </Switch>
   </BrowserRouter>

@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import ClipLoader from 'react-spinners/ClipLoader'
-
 export default function Flights() {
-
-
-  const [loading, updateLoading] = useState(true)
-
   const [flightData, updateFlightData] = useState({
     country: '',
     currency: '',
@@ -17,34 +11,26 @@ export default function Flights() {
     outboundpartialdate: 'yyyy-mm-dd',
     inboundpartialdate: 'yyyy-mm-dd'
   })
+  const [flightResults, updateFlightResults] = useState({
 
-
+  })
   function handleChange(event) {
-    const { name, value } = event.target
     updateFlightData({ ...flightData, [event.target.name]: event.target.value })
   }
-
   async function handleSubmit(event) {
     event.preventDefault()
+    updateFlightData(axiosResp.data)
     try {
-      const { data } = await axios.get(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/${flightData.country}/${flightData.currency}/${flightData.locale}/${flightData.originplace}/${flightData.destinationplace}/${flightData.outboundpartialdate}`, formData)
+      const { data } = await axios.get(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/${country}/${currency}/${locale}/${originplace}/${destinationplace}/${outboundpartialdate}`, formData)
       if (localStorage) {
         localStorage.setItem('token', data.token)
       }
-
     } catch (err) {
       console.log(err.response.data)
     }
-    updateFlightData(data)
-    updateLoading(false)
+    updateFlightResults(data)
   }
-
-  // if (loading) {
-  //   return <ClipLoader loading={loading} size={100} />
-  // }
-
-  console.log(flightData)
-
+  console.log(flightResults)
   return <section>
     <form onSubmit={handleSubmit}>
       <div className="field">
@@ -67,7 +53,7 @@ export default function Flights() {
             type="text"
             value={flightData.currency}
             onChange={handleChange}
-            name={'currency'}
+            name={'Currency'}
           />
         </div>
         <div className="field">
@@ -78,7 +64,7 @@ export default function Flights() {
               type="text"
               value={flightData.locale}
               onChange={handleChange}
-              name={'locale'}
+              name={'Locale'}
             />
           </div>
         </div>
@@ -87,11 +73,10 @@ export default function Flights() {
           <div className="control">
             <input
               className="input"
-              id=""
               type="text"
               value={flightData.originplace}
               onChange={handleChange}
-              name={'originplace'}
+              name={'Origin'}
             />
           </div>
         </div>
@@ -103,7 +88,7 @@ export default function Flights() {
               type="text"
               value={flightData.destinationplace}
               onChange={handleChange}
-              name={'destinationplace'}
+              name={'Destination'}
             />
           </div>
         </div>
@@ -112,10 +97,10 @@ export default function Flights() {
           <div className="control">
             <input
               className="input"
-              type="text"
+              type="date"
               value={flightData.outboundpartialdate}
               onChange={handleChange}
-              name={'outboundpartialdate'}
+              name={'Outbound'}
             />
           </div>
         </div>
@@ -124,17 +109,15 @@ export default function Flights() {
           <div className="control">
             <input
               className="input"
-              type="text"
+              type="date"
               value={flightData.inboundpartialdate}
               onChange={handleChange}
-              name={'inboundpartialdate'}
+              name={'Inbound'}
             />
           </div>
         </div>
       </div>
       <button className="button">Submit</button>
-    </form >
-
-  </section >
+    </form>
+  </section>
 }
-
