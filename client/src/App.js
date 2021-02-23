@@ -9,9 +9,9 @@ import Discover from './components/Discover'
 import Flights from './components/Flights'
 
 import City from './components/City'
-import Experiences from './components/Experiences'
-import Restaurants from './components/Restaurants'
-import ThingsToDo from './components/ThingsToDo'
+// import Experiences from './components/Experiences'
+// import Restaurants from './components/Restaurants'
+// import ThingsToDo from './components/ThingsToDo'
 
 import UpdateCity from './components/UpdateCity'
 import PostCity from './components/PostCity'
