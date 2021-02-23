@@ -5,7 +5,8 @@ export default function Login({ history }) {
 
   const [formData, updateFormData] = useState({
     email: '',
-    password: ''
+    password: '',
+    passwordConfirmation: ''
   })
 
   function handleChange(event) {
@@ -15,6 +16,7 @@ export default function Login({ history }) {
 
   async function handleSubmit(event) {
     event.preventDefault()
+    console.log(formData)
     try {
       const { data } = await axios.post('/api/login', formData)
       if (localStorage) {
@@ -23,6 +25,7 @@ export default function Login({ history }) {
       history.push('/cityscapes/discover')
     } catch (err) {
       console.log(err.response.data)
+      
     }
   }
 
@@ -50,6 +53,18 @@ export default function Login({ history }) {
               value={formData.password}
               onChange={handleChange}
               name={'password'}
+            />
+          </div>
+        </div>
+        <div className="field">
+          <label className="label">Password confirmation</label>
+          <div className="control">
+            <input
+              className="input"
+              type="password"
+              value={formData.passwordConfirmation}
+              onChange={handleChange}
+              name={'passwordConfirmation'}
             />
           </div>
         </div>

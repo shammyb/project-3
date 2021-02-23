@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import ClipLoader from 'react-spinners/ClipLoader'
 
 export default function Flights() {
+
+
+  const [loading, updateLoading] = useState(true)
 
   const [flightData, updateFlightData] = useState({
     country: '',
@@ -14,35 +18,32 @@ export default function Flights() {
     inboundpartialdate: 'yyyy-mm-dd'
   })
 
-  const [flightResults, updateFlightResults] = useState({
-    
-  })
-
-  // Also need a submit button so can have a handlesubmit function, which then in turn
-  // Fetches the API with those params 
 
   function handleChange(event) {
+    const { name, value } = event.target
     updateFlightData({ ...flightData, [event.target.name]: event.target.value })
   }
 
-  // Need to change the api URL with certain params so think I need to use a template literal?
-
-
   async function handleSubmit(event) {
     event.preventDefault()
-    updateFlightData(axiosResp.data)
     try {
-      const { data } = await axios.get(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/${country}/${currency}/${locale}/${originplace}/${destinationplace}/${outboundpartialdate}`, formData)
+      const { data } = await axios.get(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/${flightData.country}/${flightData.currency}/${flightData.locale}/${flightData.originplace}/${flightData.destinationplace}/${flightData.outboundpartialdate}`, formData)
       if (localStorage) {
         localStorage.setItem('token', data.token)
       }
+
     } catch (err) {
       console.log(err.response.data)
     }
-    updateFlightResults(data)
+    updateFlightData(data)
+    updateLoading(false)
   }
 
-  console.log(flightResults)
+  // if (loading) {
+  //   return <ClipLoader loading={loading} size={100} />
+  // }
+
+  console.log(flightData)
 
   return <section>
     <form onSubmit={handleSubmit}>
@@ -66,7 +67,7 @@ export default function Flights() {
             type="text"
             value={flightData.currency}
             onChange={handleChange}
-            name={'Currency'}
+            name={'currency'}
           />
         </div>
         <div className="field">
@@ -77,7 +78,7 @@ export default function Flights() {
               type="text"
               value={flightData.locale}
               onChange={handleChange}
-              name={'Locale'}
+              name={'locale'}
             />
           </div>
         </div>
@@ -86,10 +87,11 @@ export default function Flights() {
           <div className="control">
             <input
               className="input"
+              id=""
               type="text"
               value={flightData.originplace}
               onChange={handleChange}
-              name={'Origin'}
+              name={'originplace'}
             />
           </div>
         </div>
@@ -101,7 +103,7 @@ export default function Flights() {
               type="text"
               value={flightData.destinationplace}
               onChange={handleChange}
-              name={'Destination'}
+              name={'destinationplace'}
             />
           </div>
         </div>
@@ -110,10 +112,10 @@ export default function Flights() {
           <div className="control">
             <input
               className="input"
-              type="date"
+              type="text"
               value={flightData.outboundpartialdate}
               onChange={handleChange}
-              name={'Outbound'}
+              name={'outboundpartialdate'}
             />
           </div>
         </div>
@@ -122,17 +124,17 @@ export default function Flights() {
           <div className="control">
             <input
               className="input"
-              type="date"
+              type="text"
               value={flightData.inboundpartialdate}
               onChange={handleChange}
-              name={'Inbound'}
+              name={'inboundpartialdate'}
             />
           </div>
         </div>
-       </div> 
-        <button className="button">Submit</button>
-      </form>
+      </div>
+      <button className="button">Submit</button>
+    </form >
 
-  </section>
+  </section >
 }
 

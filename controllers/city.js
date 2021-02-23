@@ -27,23 +27,24 @@ async function makeCity(req, res, next) {
 }
 
 async function getSingleCity(req, res, next) {
-  const id = req.params.id
+  const city = req.params.city
+  // const id = req.params.id
 
   try {
-    const city = await City.findById(id).populate('user').populate('comments.user')
-    res.send(city)
+    const cityFind = await City.findOne({ city: city }).populate('user').populate('comments.user')
+    res.send(cityFind)
   } catch (err) {
     next(err)
   }
 }
 
 async function removeCity(req, res, next) {
-  const id = req.params.id
+  const city = req.params.city
   const currentUser = req.currentUser
 
   try {
 
-    const cityToRemove = await City.findById(id)
+    const cityToRemove = await City.findOne({ city: city })
 
     if (currentUser.isAdmin || currentUser._id.equals(cityToRemove.user)) {
       console.log('bbbb')
@@ -61,12 +62,12 @@ async function removeCity(req, res, next) {
 }
 
 async function updateCity(req, res, next) {
-  const id = req.params.id
+  const city = req.params.city
   const currentUser = req.currentUser
   const body = req.body
 
   try {
-    const cityToUpdate = await City.findById(id)
+    const cityToUpdate = await City.findOne({ city: city })
 
     if (!cityToUpdate) {
       return res.send({ message: 'No pokemon found' })

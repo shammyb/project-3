@@ -15,10 +15,11 @@ import ThingsToDo from './components/ThingsToDo'
 
 import UpdateCity from './components/UpdateCity'
 import PostCity from './components/PostCity'
+import Map from './components/Map'
 
 
 //for testing purposes 
-import testRestaurants from './components/testRestaurants'
+// import testRestaurants from './components/testRestaurants'
 
 import 'bulma'
 import './styles/style.scss'
@@ -31,14 +32,16 @@ const App = () => (
       <Route exact path="/register" component={Register}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/cityscapes/discover/postcity" component={PostCity} />
+      <Route exact path="/cityscapes/discover/map" component={Map}/>
       <Route exact path="/cityscapes/discover" component={Discover}/>
       <Route exact path="/cityscapes/flights" component={Flights} />
-      <Route exact path="/cityscapes/discover/:id" component={City} />
-      <Route exact path="/cityscapes/discover/:cityname/experiences" component={Experiences} />
-      <Route exact path="/cityscapes/discover/:cityname/restaurants" component={Restaurants} />
-      <Route exact path="/cityscapes/discover/:cityname/thingstodo" component={ThingsToDo} />
-      <Route exact path="/cityscapes/discover/:cityname/updatecity" component={UpdateCity} />
-      <Route exact path="/testrestaurants" component={testRestaurants} />
+      <Route exact path="/cityscapes/discover/:city" component={City} />
+      <Route exact path="/cityscapes/discover/:city/updatecity" component={UpdateCity} />
+      <Route exact path="/cityscapes/discover/:city/experiences" component={Experiences} />
+      <Route exact path="/cityscapes/discover/:city/restaurants" component={Restaurants} />
+      <Route exact path="/cityscapes/discover/:city/thingstodo" component={ThingsToDo} />
+      <Route exact path="/cityscapes/discover/:city/updatecity" component={UpdateCity} />
+      {/* <Route exact path="/testrestaurants" component={testRestaurants} /> */}
     </Switch>
   </BrowserRouter>
 )
