@@ -7,6 +7,7 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Discover from './components/Discover'
 import Flights from './components/Flights'
+import FlightResults from './components/FlightResults'
 
 import City from './components/City'
 // import Experiences from './components/Experiences'
@@ -35,6 +36,7 @@ const App = () => (
       <Route exact path="/cityscapes/discover/map" component={Map}/>
       <Route exact path="/cityscapes/discover" component={Discover}/>
       <Route exact path="/cityscapes/flights" component={Flights} />
+      <Route exact path="/cityscapes/flights/results" component={FlightResults} />
       <Route exact path="/cityscapes/discover/:city" component={City} />
       <Route exact path="/cityscapes/discover/:city/updatecity" component={UpdateCity} />
 
