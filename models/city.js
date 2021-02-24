@@ -6,11 +6,13 @@ const commentSchema = new mongoose.Schema({
   title: { type: String, required: true },
   comment: { type: String, required: true },
   image: { type: String },
-  // ! Referenced relationship to a user:
+
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
-}, { // ? Second arg to my schema is options!
+}, { 
   timestamps: true
 })
+
+
 
 const citySchema = new mongoose.Schema({
   city: { type: String, required: true },
@@ -24,6 +26,7 @@ const citySchema = new mongoose.Schema({
   lat: { type: String },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   comments: [ commentSchema ]
+  
 })
 
 citySchema.plugin(uniqueValidator)

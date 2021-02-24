@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-
 export default function Flights() {
   const [flightData, updateFlightData] = useState({
     country: '',
@@ -12,11 +11,9 @@ export default function Flights() {
     outboundpartialdate: 'yyyy-mm-dd',
     inboundpartialdate: 'yyyy-mm-dd'
   })
-
   function handleChange(event) {
     updateFlightData({ ...flightData, [event.target.name]: event.target.value })
   }
-
   console.log(flightData)
 
   return <section className="section">
@@ -39,6 +36,7 @@ export default function Flights() {
           <div className="control">
             <input
               className="input"
+              id=""
               type="text"
               value={flightData.currency}
               onChange={handleChange}

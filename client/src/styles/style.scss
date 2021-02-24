@@ -1,24 +1,4 @@
-.city {
-  display: flex;
-  flex-direction: row;
-}
 
-.city-image {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  border: solid red 2px;
-  margin: 10px;
-  
-}
-
-.name-about-country-currency {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  border: solid red 2px;
-  margin: 5px;
-}
 
 .info {
   display: flex;
@@ -65,8 +45,90 @@
 .citymenu  {
   display: flex;
   flex-direction: row;
+  align-items: stretch;
 
 }
+
+#citybuttons {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  background-color: Transparent;
+  border: none;
+  color: rgb(5, 72, 156);
+  
+}
+
+.city {
+  display: flex;
+  flex-direction: row;
+}
+
+#city-image {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  border: 2px;
+  margin: 10px;
+  
+}
+
+// .name-about-country-currency {
+//   display: flex;
+//   flex-direction: column;
+//   // width: 60%;
+//   border: solid red 2px;
+//   margin: 5px;
+// }
+
+.citycontent {
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#main-title{
+  color: rgb(5, 72, 156);
+}
+
+
+.hero-body {
+  background-color: blue;
+  // background-image: {cities.image};
+  background-size: cover;
+}
+
+#h5-city {
+  margin: 25px 0px 25px 0px;
+}
+#h3-city {
+  margin: 25px 0px 25px 0px;
+  background-color:rgb(99, 214, 210)
+}
+
+
+#hero-title {
+color: rgb(255,255,247);
+font-size: 60px;
+// -webkit-text-stroke: 1px grey; 
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+
+}
+
+
+.panel-heading {
+  background-color: magenta;
+
+}
+
 
 // HOMEPAGE STYLING //
 

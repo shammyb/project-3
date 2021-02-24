@@ -18,9 +18,10 @@ import UpdateCity from './components/UpdateCity'
 import PostCity from './components/PostCity'
 import Map from './components/Map'
 
+import ImageUpload from './components/ImageUpload'
 
-//for testing purposes 
-import testRestaurants from './components/testRestaurants'
+
+
 
 import 'bulma'
 import './styles/style.scss'
@@ -32,9 +33,10 @@ const App = () => (
       <Route exact path="/cityscapes" component={Home}/>
       <Route exact path="/register" component={Register}/>
       <Route exact path="/login" component={Login}/>
+      <Route exact path="/cityscapes/images" component={ImageUpload} />
+      <Route exact path="/cityscapes/discover" component={Discover}/>
       <Route exact path="/cityscapes/discover/postcity" component={PostCity} />
       <Route exact path="/cityscapes/discover/map" component={Map}/>
-      <Route exact path="/cityscapes/discover" component={Discover}/>
       <Route exact path="/cityscapes/flights" component={Flights} />
       <Route exact path="/cityscapes/flights/results" component={FlightResults} />
       <Route exact path="/cityscapes/discover/:city" component={City} />

@@ -4,13 +4,24 @@ import bcrypt from 'bcrypt'
 import mongooseHidden from 'mongoose-hidden'
 import uniqueValidator from 'mongoose-unique-validator'
 
+
+const imageSchema = new mongoose.Schema({
+  caption: { type: String, required: true },
+  url: { type: String, required: true },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+  
+})
+
+
+
+
 const schema = new mongoose.Schema({
   // ! I've updated the 'required' part to give nicer error messages!
   username: { type: String, required: [true, 'Username is required'], unique: true },
   email: { type: String, required: [true, 'Email is required'], unique: true },
   password: { type: String, required: [true, 'Password is required'] },
   isAdmin: { type: Boolean },
-  image: { type: String }
+  image: [ imageSchema ]
 })
 
 schema.pre('save', function(next) {
