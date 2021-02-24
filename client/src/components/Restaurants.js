@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 // import { useHistory, LInk } from 'react-router-dom'
-import { Link } from 'react-router-dom'
 import ClipLoader from 'react-spinners/ClipLoader'
 // import { ExternalLink } from 'react-external-link'
 
