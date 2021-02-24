@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Slider from "react-slick"
+import Slider from 'react-slick'
 
 export default function Home() {
   var settings = {

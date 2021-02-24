@@ -34,6 +34,7 @@ router.route('/login')
 
 
 router.route('/cityscapes/:city/comment')
+  .get(comment.getComments)
   .post(secureRoute, comment.makeComment)
 
 router.route('/cityscapes/:city/comment/:commentId')

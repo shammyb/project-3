@@ -7,6 +7,7 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Discover from './components/Discover'
 import Flights from './components/Flights'
+import FlightResults from './components/FlightResults'
 
 import City from './components/City'
 // import Experiences from './components/Experiences'
@@ -20,8 +21,6 @@ import Map from './components/Map'
 import ImageUpload from './components/ImageUpload'
 
 
-//for testing purposes 
-import testRestaurants from './components/testRestaurants'
 
 import 'bulma'
 import './styles/style.scss'
@@ -38,6 +37,7 @@ const App = () => (
       <Route exact path="/cityscapes/discover/postcity" component={PostCity} />
       <Route exact path="/cityscapes/discover/map" component={Map}/>
       <Route exact path="/cityscapes/flights" component={Flights} />
+      <Route exact path="/cityscapes/flights/results" component={FlightResults} />
       <Route exact path="/cityscapes/discover/:city" component={City} />
       <Route exact path="/cityscapes/discover/:city/updatecity" component={UpdateCity} />
 

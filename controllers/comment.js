@@ -1,5 +1,16 @@
 import City from '../models/city.js'
 
+async function getComments(req, res, next) {
+  const city = req.params.city
+
+  try {
+    const cityFind = await City.findOne({ city: city }).populate('user').populate('comments.user')
+    res.send(cityFind)
+  } catch (err) {
+    next(err)
+  }
+}
+
 
 async function makeComment(req, res, next) {
 
@@ -69,7 +80,7 @@ async function removeComment(req, res, next) {
 
   try {
     
-    const citys = await City.findOne({ city: city })
+    const citys = await City.findOne({ city: city }).populate('user').populate('comments.user')
 
     if (!citys) {
       return res.status(404).send({ message: 'Not found' })
@@ -94,6 +105,7 @@ async function removeComment(req, res, next) {
 }
 
 export default {
+  getComments,
   makeComment,
   updateComment,
   removeComment

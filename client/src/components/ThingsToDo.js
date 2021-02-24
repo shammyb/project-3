@@ -110,94 +110,100 @@ export default function ThingsToDo({ city }) {
       </div>
     </div> */}
 
-    <div className="container2">
+    <div className="container is-centered">
       <h2 className="title is-2">Top things to do in {city} </h2>
 
       <div className="column is-four-fifths-desktop">
         {/* <div className="columns is-multiline is-mobile"> */}
 
         <section id="sights">
-          <h3 className="title is-3 panel-heading" id="h3-city">Top 5 things to do</h3>
-          <div className="columns is-multiline is-mobile">
-            {
-              sightsData.map((item, index) => {
-                return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
-                  <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank">
+          <article className="panel is-info">
+            <h3 className="title is-3 panel-heading" id="h3-city">Top 5 things to do</h3>
+            <div className="columns is-multiline is-mobile">
+              {
+                sightsData.map((item, index) => {
+                  return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
+                    <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank">
 
 
-                    <div className="card">
-                      <div className="card-content">
-                        <p className="title is-4">{item.venue.name}</p>
-                        <p className="subtitle is-6">{item.venue.categories[0].name}</p>
-                        <p className="subtitle is-6">{item.venue.location.address}</p>
+                      <div className="card">
+                        <div className="card-content">
+                          <p className="title is-4">{item.venue.name}</p>
+                          <p className="subtitle is-6">{item.venue.categories[0].name}</p>
+                          <p className="subtitle is-6">{item.venue.location.address}</p>
 
 
+                        </div>
                       </div>
-                    </div>
-                  </a>
-                </div>
-              })
-            }
-          </div>
+                    </a>
+                  </div>
+                })
+              }
+            </div>
+          </article>
         </section>
         <section id="Arts">
-          <h3 className="title is-3 panel-heading" id="h3-city">Arts</h3>
+          <article className="panel is-info">
+            <h3 className="title is-3 panel-heading" id="h3-city">Arts</h3>
 
-          <div className="columns is-multiline is-mobile">
-            {
-              artsData.map((item, index) => {
-                return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile is-multiline">
+            <div className="columns is-multiline is-mobile">
+              {
+                artsData.map((item, index) => {
+                  return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile is-multiline">
 
-                  <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank">
+                    <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank">
 
-                    <div className="card">
-                      <div className="card-content">
-                        <div className="media">
-                          <div className="media-content">
-                            <p className="title is-4">{item.venue.name}</p>
-                            <p className="subtitle is-6">{item.venue.categories[0].name}</p>
-                            <p className="subtitle is-6">{item.venue.location.address}</p>
+                      <div className="card">
+                        <div className="card-content">
+                          <div className="media">
+                            <div className="media-content">
+                              <p className="title is-4">{item.venue.name}</p>
+                              <p className="subtitle is-6">{item.venue.categories[0].name}</p>
+                              <p className="subtitle is-6">{item.venue.location.address}</p>
+                            </div>
                           </div>
-                        </div>
 
+                        </div>
                       </div>
-                    </div>
-                  </a>
-                </div>
-              })
-            }
-          </div>
+                    </a>
+                  </div>
+                })
+              }
+            </div>
+          </article>
         </section>
 
         <section id="Outdoors">
-          <h3 className="title is-3 panel-heading" id="h3-city">Outdoors</h3>
-          <div className="columns is-multiline is-mobile">
-            {
-              outdoorsData.map((item, index) => {
-                return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
+          <article className="panel is-info">
+            <h3 className="title is-3 panel-heading" id="h3-city">Outdoors</h3>
+            <div className="columns is-multiline is-mobile">
+              {
+                outdoorsData.map((item, index) => {
+                  return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
 
 
-                  <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank">
-                    <div className="card">
-                      <div className="card-content">
-                        <p className="title is-4">{item.venue.name}</p>
-                        <p className="subtitle is-6">{item.venue.categories[0].name}</p>
-                        <p className="subtitle is-6">{item.venue.location.address}</p>
+                    <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank">
+                      <div className="card">
+                        <div className="card-content">
+                          <p className="title is-4">{item.venue.name}</p>
+                          <p className="subtitle is-6">{item.venue.categories[0].name}</p>
+                          <p className="subtitle is-6">{item.venue.location.address}</p>
 
 
+                        </div>
                       </div>
-                    </div>
-                  </a>
-                </div>
-              })
-            }
-          </div>
+                    </a>
+                  </div>
+                })
+              }
+            </div>
+          </article>
         </section>
 
       </div>
     </div>
   </div>
   // </div>
-ß
+  ß
 
 }

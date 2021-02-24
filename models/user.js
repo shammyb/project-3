@@ -10,7 +10,7 @@ import uniqueValidator from 'mongoose-unique-validator'
 
 
 const schema = new mongoose.Schema({
-  // ! I've updated the 'required' part to give nicer error messages!
+ 
   username: { type: String, required: [true, 'Username is required'], unique: true },
   email: { type: String, required: [true, 'Email is required'], unique: true },
   password: { type: String, required: [true, 'Password is required'] },

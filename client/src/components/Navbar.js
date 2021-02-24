@@ -5,7 +5,7 @@ export default function Navbar() {
   return <nav className="navbar" role="navigation" aria-label="main navigation">
     <div className="navbar-menu is-active">
       <div className="navbar-start">
-        <img className="navbar-logo" src="../images/logo_transparent.png"/>
+        <img className="navbar-logo" src="..images/logo.png"/>
         <div className="navbar-item">
           <div className="buttons">
             <Link to="/cityscapes" className="button">
