@@ -80,7 +80,7 @@ async function removeComment(req, res, next) {
 
   try {
     
-    const citys = await City.findOne({ city: city })
+    const citys = await City.findOne({ city: city }).populate('user').populate('comments.user')
 
     if (!citys) {
       return res.status(404).send({ message: 'Not found' })
