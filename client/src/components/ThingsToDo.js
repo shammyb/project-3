@@ -12,7 +12,6 @@ export default function ThingsToDo({ city }) {
   const [loading2, updateLoading2] = useState(true)
   const [loading3, updateLoading3] = useState(true)
   
-  console.log('print the city: ' + city)
   const [cities, updateCities] = useState({})
 
   

@@ -7,13 +7,16 @@ import { useHistory } from 'react-router-dom'
 
 
 
+
+
 export default function City({ match }) {
   const [text, setText] = useState('')
   const [buttonNum, updateButtonNum] = useState(0)
   const city = match.params.city
+  const cityId = match.params.cityId
   const token = localStorage.getItem('token')
 
- 
+
 
   const [cities, updateCities] = useState({})
   useEffect(() => {
@@ -38,20 +41,24 @@ export default function City({ match }) {
     history.push('/cityscapes')
   }
 
-  function handleComment() {
-    axios.post(`/api/cityscapes/${city._id}/comment`, { text }, {
+  async function handleComment() {
+    await axios.post(`/api/cityscapes/${cityId}/comment`, { text }, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
         setText('')
         updateCities(resp.data)
+        console.log(resp)
+        console.log(resp.data)
       })
+    console.log(city)
+
   }
   function handleEditComment(commentId) {
     if (!isCreator) {
       return null
     }
-    axios.put(`/api/cityscapes/${city._id}/comment/${commentId}`, { text }, {
+    axios.put(`/api/cityscapes/${cityId}/comment/${commentId}`, { text }, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
@@ -63,7 +70,7 @@ export default function City({ match }) {
     if (!isCreator) {
       return null
     }
-    axios.delete(`/api/cityscapes/${city._id}/comment/${commentId}`, {
+    axios.delete(`/api/cityscapes/${cityId}/comment/${commentId}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
@@ -99,7 +106,7 @@ export default function City({ match }) {
         })
       }
 
-      
+
       <article className="media">
         <div className="media-content">
           <div className="field">
@@ -128,15 +135,21 @@ export default function City({ match }) {
       </article>
     </div>
   }
-
+  if (!cities.user) {
+    return null
+  }
 
   return <div className="cities">
-
     <section key className="city" >
       <div className="city-image">
         <h1>{cities.city}</h1>
         <img src={cities.image} alt={cities.name} />
+        {isCreator(cities.user._id) && <button
+          className="button is-danger"
+          onClick={handleDelete}
+        > Delete City</button>}
       </div>
+
 
       <article id="citylayout">
 
@@ -146,14 +159,14 @@ export default function City({ match }) {
           <div className="search-box">
             <h2>About</h2>
             <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
-            <button onClick={()=> updateButtonNum(1)}>
+            <button onClick={() => updateButtonNum(1)}>
               Search
             </button>
           </div>
           <div className="search-box">
             <h2>Things to Do</h2>
             <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
-            <button onClick={()=> updateButtonNum(2)}>
+            <button onClick={() => updateButtonNum(2)}>
               Search
             </button>
           </div>
@@ -167,14 +180,14 @@ export default function City({ match }) {
           <div className="search-box">
             <h2>Restaurants</h2>
             <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
-            <button onClick={()=> updateButtonNum(3)}>
+            <button onClick={() => updateButtonNum(3)}>
               Search
             </button>
           </div>
           <div className="search-box">
             <h2>Experiences</h2>
             <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
-            <button onClick={()=> updateButtonNum(4)}>
+            <button onClick={() => updateButtonNum(4)}>
               Search
             </button>
           </div>
@@ -189,8 +202,8 @@ export default function City({ match }) {
         </div>
       </article>
     </section>
-    {buttonNum === 3 && <div className="box"><Restaurants city = {city} /></div>}
-    {buttonNum === 2 && <div className="box"><ThingsToDo city = {city}/></div>}
+    {buttonNum === 3 && <div className="box"><Restaurants city={city} /></div>}
+    {buttonNum === 2 && <div className="box"><ThingsToDo city={city} /></div>}
     {buttonNum === 4 && <div className="box"><CommentsAllTogether /></div>}
   </div>
 }

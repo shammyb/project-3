@@ -32,10 +32,10 @@ router.route('/login')
   .post(user.login)
 
 
-router.route('cityscapes/:cityid/comment')
+router.route('/cityscapes/:city/comment')
   .post(secureRoute,comment.makeComment)
 
-router.route('cityscapes/:cityid/comment/:commentId')
+router.route('/cityscapes/:city/comment/:commentId')
   .put(secureRoute,comment.updateComment)
   .delete(secureRoute,comment.removeComment)
 
