@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import ClipLoader from 'react-spinners/ClipLoader'
 // import { ExternalLink } from 'react-external-link'
 
-export default function Weather( { city }) {
+export default function Weather({ city }) {
 
   const [loading, updateLoading] = useState(true)
   const [weathers, updateWeathers] = useState({
@@ -13,12 +13,11 @@ export default function Weather( { city }) {
     weather: []
   })
 
-  const city = match.params.city
-  //use effect for the Foursquare API
+
 
   useEffect(() => {
 
-    async function getData(city) {
+    async function getData() {
 
       try {
 
@@ -28,8 +27,7 @@ export default function Weather( { city }) {
 
         updateWeathers(data.list[0])
         updateLoading(false)
-        // console.log('below the data yay')
-        // updateRestaurantData(restaurantData.items)
+
 
 
       } catch (err) {
@@ -41,9 +39,7 @@ export default function Weather( { city }) {
 
 
 
-    if (loading) {
-      return <ClipLoader loading={loading} size={100} />
-    }
+   
 
 
 
@@ -51,16 +47,20 @@ export default function Weather( { city }) {
 
 
 
-    return <div>
 
-      <h2 className="title is-2"> {Math.round(weathers.main.temp)}°C</h2>
-
-      <div>Feels like {Math.round(weathers.main.feels_like)} °C. {weathers.weather.main}</div>
-      <div>{weathers.weather.icon}</div>
-
-    </div>
+  }, [])
+  if (loading) {
+    return <ClipLoader loading={loading} size={100} />
+  }
 
 
+  return <div>
 
-  })
+    <h2 className="title is-2"> {Math.round(weathers.main.temp)}°C</h2>
+
+    <div>Feels like {Math.round(weathers.main.feels_like)} °C. {weathers.weather.main}</div>
+    <div>{weathers.weather.icon}</div>
+
+  </div>
+
 }
