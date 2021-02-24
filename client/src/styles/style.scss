@@ -1,0 +1,206 @@
+
+
+.info {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: solid red 2px;
+  width: 33.3%;
+  margin: 5px;
+}
+
+.search-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  width: 50%;
+}
+
+.search-image {
+  width: 100px;
+}
+
+
+//things to do
+
+// .thingstodo {
+// display: flex;
+// flex-direction: row;
+
+// }
+
+//! city layout
+
+#citylayout {
+  display: flex;
+  flex-direction: column;
+}
+
+.citymenu  {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+}
+
+#citybuttons {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  background-color: Transparent;
+  border: none;
+  color: rgb(5, 72, 156);
+  
+}
+
+.city {
+  display: flex;
+  flex-direction: row;
+}
+
+#city-image {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  border: 2px;
+  margin: 10px;
+  
+}
+
+// .name-about-country-currency {
+//   display: flex;
+//   flex-direction: column;
+//   // width: 60%;
+//   border: solid red 2px;
+//   margin: 5px;
+// }
+
+.citycontent {
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+#main-title{
+  color: rgb(5, 72, 156);
+}
+
+
+.hero-body {
+  background-color: blue;
+  // background-image: {cities.image};
+  background-size: cover;
+}
+
+#h5-city {
+  margin: 25px 0px 25px 0px;
+}
+#h3-city {
+  margin: 25px 0px 25px 0px;
+  background-color:rgb(99, 214, 210)
+}
+
+
+#hero-title {
+color: white;
+font-size: 50px;
+// -webkit-text-stroke: 0.2px black; 
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+
+}
+
+// HOMEPAGE STYLING //
+
+body {
+  height: 100vh;
+}
+
+.heropage {
+  width: 100vw;
+  height: 80vh;
+  position: relative;
+  text-align: center;
+  z-index: 0;
+}
+
+.homepage-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+}
+
+.homepage-title {
+  font-size: 150px;
+  color: white;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-family: 'Playfair Display', serif;
+  color:white;
+}
+
+.homepage-subtitle {
+  font-size: 30px;
+  color: white;
+  margin-top: 0;
+  padding-top: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-logo {
+  width: 75px;
+}
+
+.button {
+  background-color: #05489c;
+  color: white;
+  border: none;
+}
+
+.button:hover {
+  color:#03d6d2;
+}
+
+#reg-log-button {
+  background-color:#03d6d2 !important;
+}
+
+#reg-log-button:hover {
+  color:#05489c !important;
+}
+
+// DISCOVER STYLING //
+
+.card {
+  background-color: white;
+}
+
+.card:hover {
+    background-color: #03d6d2;
+  }
+
+.title {
+  color: #05489c;
+}
+
+// REGISTER / LOGIN STYLING
+
+#register-container {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+}
