@@ -5,6 +5,7 @@ import axios from 'axios'
 import { isCreator } from '../lib/auth'
 import { useHistory } from 'react-router-dom'
 
+import ClipLoader from 'react-spinners/ClipLoader'
 
 
 export default function City({ match }) {
@@ -16,6 +17,12 @@ export default function City({ match }) {
 
 
   const [cities, updateCities] = useState({})
+
+  const [weathers, updateWeathers] = useState({
+    main: {},
+    weather: []
+  })
+  const [loading4, updateLoading4] = useState(true)
   useEffect(() => {
     async function fetchCityData() {
       try {
@@ -29,6 +36,29 @@ export default function City({ match }) {
     }
     fetchCityData()
 
+    // async function fetchWeatherData() {
+    //   try {
+    //     const weatherData = await axios.get('http://api.openweathermap.org/data/2.5/find?q=London,gb&units=metric&appid=bb9852ea707df495071eb09d564cc4d9')
+    //     updateWeathers(weatherData)
+    //     updateLoading4(false)
+
+
+    //   } catch (err) {
+    //     console.log(err)
+    //   }
+    // }
+    // fetchWeatherData()
+    // console.log(weathers)
+
+  }, [])
+
+  useEffect(() => {
+    console.log('weather use effect')
+    axios.get('http://api.openweathermap.org/data/2.5/find?q=London,gb&units=metric&appid=bb9852ea707df495071eb09d564cc4d9')
+      .then(({ data }) => {
+        updateWeathers(data.list[0])
+        updateLoading4(false)
+      })
   }, [])
 
   async function handleDelete() {
@@ -128,13 +158,45 @@ export default function City({ match }) {
       </article>
     </div>
   }
+
+
+
+  if (loading4) {
+    return <ClipLoader loadin4={loading4} size={100} />
+  }
   function DisplayInfo() {
+
+    // const [weathers, updateWeathers] = useState({
+    //   main: {},
+    //   weather: []
+    // })
+    // const [loading4, updateLoading4] = useState(true)
+
+    // useEffect(() => {
+    //   async function fetchWeatherData() {
+    //     try {
+    //       const { data } = await axios.get(`http://api.openweathermap.org/data/2.5/find?q=London,gb&units=metric&appid=bb9852ea707df495071eb09d564cc4d9`)
+    //       updateWeathers(data)
+    //       updateLoading4(false)
+
+
+    //     } catch (err) {
+    //       console.log(err)
+    //     }
+    //   }
+    //   fetchWeatherData()
+    //   console.log(weathers)
+
+    // }, [])
+    // if (loading4) {
+    //   return <ClipLoader loadin4={loading4} size={100} />
+    // }
 
 
     return <div className="about-section">
       <div className="column is-four-fifths-desktop is-centered">
 
-        {/* <div className="card"> */}
+
         <div className="card-content">
 
           <h2 className="title is-2">About the city </h2>
@@ -143,8 +205,18 @@ export default function City({ match }) {
           <p><strong>Country: </strong>{cities.country}</p>
           <p><strong>Currency: </strong>{cities.currency}</p>
           <p><strong>Continent: </strong>{cities.continent}</p>
+
+
+
+          <h5 className="title is-5" id="h5-city">Current weather</h5>
+
+          {/* <h2 className="title is-2"> {Math.round(weathers.main.temp)}°C</h2>
+
+          <div>Feels like {Math.round(weathers.main.feels_like)} °C. {weathers.weather.main}</div>
+          <div>{weathers.weather.icon}</div> */}
+
         </div>
-        {/* </div> */}
+
       </div>
     </div>
 
