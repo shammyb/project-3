@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import Restaurants from './Restaurants.js'
 import ThingsToDo from './ThingsToDo.js'
 import axios from 'axios'
-import { isCreator } from '../lib/auth'
-import { useHistory } from 'react-router-dom'
+
+import CommentsAllTogether from './Experiences.js'
+
 export default function City({ match }) {
-  const [text, setText] = useState('')
   const [buttonNum, updateButtonNum] = useState(1)
   const city = match.params.city
   const token = localStorage.getItem('token')
@@ -24,102 +24,17 @@ export default function City({ match }) {
     }
     fetchCityData()
   }, [])
+
+
   async function handleDelete() {
     await axios.delete(`/api/cityscapes/${city}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
     history.push('/cityscapes')
   }
-  function handleComment() {
-    axios.post(`/api/cityscapes/${city}/comment`, { text }, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then(resp => {
-        setText('')
-        updateCities(resp.data)
-      })
-  }
-  function handleEditComment(commentId) {
-    if (!isCreator) {
-      return null
-    }
-    axios.put(`/api/cityscapes/${city}/comment/${commentId}`, { text }, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then(resp => {
-        updateCities(resp.data)
-      })
-  }
-  function handleDeleteComment(commentId) {
-    if (!isCreator) {
-      return null
-    }
-    axios.delete(`/api/cityscapes/${city}/comment/${commentId}`, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then(resp => {
-        updateCities(resp.data)
-      })
-  }
-  function CommentsAllTogether() {
-    return <div>
-      {
-        cities.comments && cities.comments.map(comment => {
-          return <article key={comment._id} className="media">
-            <div className="media-content">
-              <div className="content">
-                <p className="subtitle">
-                  {comment.user.username}
-                </p>
-                <p>{comment.text}</p>
-              </div>
-            </div>
-            {isCreator(comment.user._id) && <div className="media-right">
-              <button
-                className="delete"
-                onClick={() => handleDeleteComment(comment._id)}>
-              </button>
-            </div>}
-            {isCreator(comment.user._id) && <div className="media-right">
-              <button
-                className="delete"
-                onClick={() => handleEditComment(comment._id)}>
-              </button>
-            </div>}
-          </article>
-        })
-      }
 
 
-      <article className="media">
-        <div className="media-content">
-          <div className="field">
-            <p className="control">
-              <textarea
-                className="textarea"
-                placeholder="Make a comment.."
-                onChange={event => setText(event.target.value)}
-                value={text}
-              >
-                {text}
-              </textarea>
-            </p>
-          </div>
-          <div className="field">
-            <p className="control">
-              <button
-                onClick={handleComment}
-                className="button is-info"
-              >
-                Submit
-              </button>
-            </p>
-          </div>
-        </div>
-      </article>
-    </div>
-
-  }
+ 
   function DisplayInfo() {
 
 
@@ -193,25 +108,25 @@ export default function City({ match }) {
               <li>
                 <button onClick={() => updateButtonNum(1)} className="button is-info is-light" id="citybuttons">
                   About
-            </button>
+                </button>
               </li>
               <li>
                 <button onClick={() => updateButtonNum(2)} className="button is-info is-light" id="citybuttons">
                   Things to do
-            </button>
+                </button>
 
               </li>
               <li>
                 <button onClick={() => updateButtonNum(3)} className="button is-info is-light" id="citybuttons">
                   Restaurants
-            </button>
+                </button>
 
               </li>
               <li>
                 {/* <li class="is-active"> */}
                 <button onClick={() => updateButtonNum(4)} className="button is-info is-light" id="citybuttons">
                   Experiences
-            </button>
+                </button>
               </li>
             </ul>
           </nav>
@@ -261,7 +176,7 @@ export default function City({ match }) {
           {buttonNum === 1 && <div className="box"><DisplayInfo /></div>}
           {buttonNum === 3 && <div className="box"><Restaurants city={city} /></div>}
           {buttonNum === 2 && <div className="box"><ThingsToDo city={city} /></div>}
-          {buttonNum === 4 && <div className="box"><CommentsAllTogether /></div>}
+          {buttonNum === 4 && <div className="box"><CommentsAllTogether city={city} /></div>}
         </div>
       </article>
 

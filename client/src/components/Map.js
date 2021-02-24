@@ -58,7 +58,7 @@ export default function Map() {
     {console.log(cities)}
 
     <ReactMapGL {...viewport}
-      mapboxApiAccessToken= 
+      mapboxApiAccessToken= 'pk.eyJ1IjoiYW96enkiLCJhIjoiY2trbGk2dWtjMmg4ZTJvbW5udXFhODJzeiJ9.JyCnWImYQtktTI6njEUIcA' 
       mapStyle='mapbox://styles/aozzy/cklf8ryx73w4d17lcit5dzq7e'
       onViewportChange={viewport => {
         setViewport(viewport)
@@ -67,19 +67,19 @@ export default function Map() {
 
     >
 
-      {cities.map( (city, index )=> {
+      {cities.map( city=> (
         <Marker
-          key={index}
+          key={city._id}
           latitude={city.latitude}
           longitude={city.longitude}
           
         >
-          <button>
-            {/* <img src='./images/icon.png' alt='icon' /> */}
+          <button className="marker-btn">
+            {<img src='./images/icon.png' alt='icon' />}
           </button>
         </Marker>
 
-      })}
+      ))}
 
 
 
