@@ -6,9 +6,12 @@ import { isCreator } from '../lib/auth'
 import { useHistory } from 'react-router-dom'
 export default function City({ match }) {
   const [text, setText] = useState('')
-  const [buttonNum, updateButtonNum] = useState(0)
+  const [buttonNum, updateButtonNum] = useState(1)
   const city = match.params.city
   const token = localStorage.getItem('token')
+
+
+
   const [cities, updateCities] = useState({})
   useEffect(() => {
     async function fetchCityData() {
@@ -86,6 +89,8 @@ export default function City({ match }) {
           </article>
         })
       }
+
+
       <article className="media">
         <div className="media-content">
           <div className="field">
@@ -115,36 +120,117 @@ export default function City({ match }) {
     </div>
     
   }
+  function DisplayInfo() {
+
+    
+    return <div className="about-section">
+      <div className="column is-four-fifths-desktop is-centered">
+
+      <div className="card">
+        <div className="card-content">
+
+          <h2 className="title is-2">About the city </h2>
+          <p>{cities.about}</p>
+          <h5 className="title is-5" id="h5-city">Other information </h5>
+          <p><strong>Country: </strong>{cities.country}</p>
+          <p><strong>Currency: </strong>{cities.currency}</p>
+          <p><strong>Continent: </strong>{cities.continent}</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  }
 
   if (!cities.user) {
     return null
   }
+
   return <div className="cities">
+    {/* <h1 className="title is-1" id="main-title">{cities.city}</h1> */}
+
+    <section className="hero is-medium is-primary" >
+      <div className="hero-body"
+        style={{
+          backgroundImage: `url(${cities.image})`
+          
+        }}
+      >
+
+
+
+
+
+        <p className="title" id="hero-title">
+          {cities.city}
+        </p>
+        <p className="subtitle">
+          {/* Small subtitle */}
+        </p>
+      </div>
+    </section>
+
+
     <section key className="city" >
-      <div className="city-image">
-        <h1>{cities.city}</h1>
+      {/* <article className="image" id="city-image">
+
         <img src={cities.image} alt={cities.name} />
         {isCreator(cities.user._id) && <button
-        className="button is-danger"
-        onClick={handleDelete}
-      > Delete City</button>}
-      </div>
+          className="button is-danger"
+          onClick={handleDelete}
+        > Delete City</button>}
+      </article> */}
+
+
+
       <article id="citylayout">
         <div className="citymenu">
-          <div className="search-box">
-            <h2>About</h2>
-            <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
-            <button onClick={()=> updateButtonNum(1)}>
-              Search
+
+
+
+
+          <nav className="breadcrumb is-medium" aria-label="breadcrumbs">
+            <ul>
+              <li>
+                <button onClick={() => updateButtonNum(1)} className="button is-info is-light" id="citybuttons">
+                  About
             </button>
-          </div>
-          <div className="search-box">
-            <h2>Things to Do</h2>
-            <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
-            <button onClick={()=> updateButtonNum(2)}>
-              Search
+              </li>
+              <li>
+                <button onClick={() => updateButtonNum(2)} className="button is-info is-light" id="citybuttons">
+                  Things to do
             </button>
-          </div>
+
+              </li>
+              <li>
+                <button onClick={() => updateButtonNum(3)} className="button is-info is-light" id="citybuttons">
+                  Restaurants
+            </button>
+
+              </li>
+              <li>
+                {/* <li class="is-active"> */}
+                <button onClick={() => updateButtonNum(4)} className="button is-info is-light" id="citybuttons">
+                  Experiences
+            </button>
+              </li>
+            </ul>
+          </nav>
+
+
+          {/* <div className="search-box">
+            {/* <h2>About</h2>
+            <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" /> */}
+          {/* <button onClick={() => updateButtonNum(1)} className="button is-info is-light" id="citybuttons">
+              About
+            </button>
+          </div> */}
+          {/* <div className="search-box"> */}
+          {/* <h2>Things to Do</h2>
+            <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" /> */}
+          {/* <button onClick={() => updateButtonNum(2)} className="button is-info is-light" id="citybuttons">
+              Things to do
+            </button>
+          </div> */}
           {/* <div className="search-box">
           <h2>Flights</h2>
           <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
@@ -152,31 +238,33 @@ export default function City({ match }) {
             Search
           </button>
         </div> */}
-          <div className="search-box">
-            <h2>Restaurants</h2>
-            <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
-            <button onClick={()=> updateButtonNum(3)}>
-              Search
+          {/* <div className="search-box"> */}
+          {/* <h2>Restaurants</h2>
+            <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" /> */}
+          {/* <button onClick={() => updateButtonNum(3)} className="button is-info is-light" id="citybuttons">
+              Restaurants
             </button>
-          </div>
-          <div className="search-box">
-            <h2>Experiences</h2>
-            <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
-            <button onClick={()=> updateButtonNum(4)}>
-              Search
+          </div> */}
+          {/* <div className="search-box"> */}
+          {/* <h2>Experiences</h2>
+            <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" /> */}
+          {/* <button onClick={() => updateButtonNum(4)} className="button is-info is-light" id="citybuttons">
+              Experiences
             </button>
-          </div>
+          </div> */}
+
+
         </div>
-        <div className="name-about-country-currency">
-          <p>{cities.about}</p>
-          <h3>{cities.country}</h3>
-          <h3>{cities.currency}</h3>
-          <h3>{cities.continent}</h3>
+
+        <div className="cityContent">
+
+          {buttonNum === 1 && <div className="box"><DisplayInfo /></div>}
+          {buttonNum === 3 && <div className="box"><Restaurants city={city} /></div>}
+          {buttonNum === 2 && <div className="box"><ThingsToDo city={city} /></div>}
+          {buttonNum === 4 && <div className="box"><CommentsAllTogether /></div>}
         </div>
       </article>
+
     </section>
-    {buttonNum === 3 && <div className="box"><Restaurants city = {city} /></div>}
-    {buttonNum === 2 && <div className="box"><ThingsToDo city = {city}/></div>}
-    {buttonNum === 4 && <div className="box"><CommentsAllTogether /></div>}
-  </div>
+  </div >
 }

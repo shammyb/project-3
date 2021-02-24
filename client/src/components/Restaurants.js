@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 import ClipLoader from 'react-spinners/ClipLoader'
 // import { ExternalLink } from 'react-external-link'
 
-export default function Restaurants({city}) {
+export default function Restaurants({ city }) {
   const [restaurantData, updateRestaurantData] = useState({})
   const [loading, updateLoading] = useState(true)
-  
+
   console.log('print the city: ' + city)
   const [cities, updateCities] = useState({})
 
@@ -76,42 +76,45 @@ export default function Restaurants({city}) {
 
 
     <div className="container">
-      <h1 className="title is-1">Look for the best Restaurants in {city} </h1>
-      <div className="columns is-multiline is-mobile"></div>
+      <h2 className="title is-2">Look for top Restaurants in {city} </h2>
+      <div className="column is-four-fifths-desktop">
+        <div className="columns is-multiline is-mobile">
 
 
-      {
-        restaurantData.map((restaurant, index) => {
-
-
-
-          <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-            <span>
+          {
+            restaurantData.map((restaurant, index) => {
 
 
 
-            </span>
-          </a>
-          return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
+              <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+                <span>
 
 
-            <a href={`https://foursquare.com/v/${restaurant.venue.id}`} target="_blank"> 
+
+                </span>
+              </a>
+              return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
 
 
-            <div className="card">
-              <div className="card-content">
-                <p className="title is-4">{restaurant.venue.name}</p>
-                <p className="subtitle is-6">{restaurant.venue.categories[0].name}</p>
-                <p className="subtitle is-6">{restaurant.venue.location.address}</p>
+                <a href={`https://foursquare.com/v/${restaurant.venue.id}`} target="_blank">
 
 
+                  <div className="card">
+                    <div className="card-content">
+                      <p className="title is-4">{restaurant.venue.name}</p>
+                      <p className="subtitle is-6">{restaurant.venue.categories[0].name}</p>
+                      <p className="subtitle is-6">{restaurant.venue.location.address}</p>
+
+
+                    </div>
+                  </div>
+
+                </a>
               </div>
-            </div>
-            
-           </a>
-          </div>
-        })
-      }
+            })
+          }
+        </div>
+      </div>
     </div>
   </div >
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import ClipLoader from 'react-spinners/ClipLoader'
 export default function Flights() {
   const [loading, updateLoading] = useState(true)
   const [flightData, updateFlightData] = useState({
@@ -19,6 +18,7 @@ export default function Flights() {
   }
   async function handleSubmit(event) {
     event.preventDefault()
+    updateFlightData(data)
     try {
       const { data } = await axios.get(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/${flightData.country}/${flightData.currency}/${flightData.locale}/${flightData.originplace}/${flightData.destinationplace}/${flightData.outboundpartialdate}`, formData)
       if (localStorage) {
@@ -28,11 +28,7 @@ export default function Flights() {
     } catch (err) {
       console.log(err.response.data)
     }
-    updateLoading(false)
   }
-  // if (loading) {
-  //   return <ClipLoader loading={loading} size={100} />
-  // }
   console.log(flightData)
   return <section>
     <form onSubmit={handleSubmit}>

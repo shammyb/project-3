@@ -5,12 +5,6 @@ import mongooseHidden from 'mongoose-hidden'
 import uniqueValidator from 'mongoose-unique-validator'
 
 
-const imageSchema = new mongoose.Schema({
-  caption: { type: String, required: true },
-  url: { type: String, required: true },
-  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
-  
-})
 
 
 
@@ -20,8 +14,8 @@ const schema = new mongoose.Schema({
   username: { type: String, required: [true, 'Username is required'], unique: true },
   email: { type: String, required: [true, 'Email is required'], unique: true },
   password: { type: String, required: [true, 'Password is required'] },
-  isAdmin: { type: Boolean },
-  image: [ imageSchema ]
+  isAdmin: { type: Boolean }
+  
 })
 
 schema.pre('save', function(next) {

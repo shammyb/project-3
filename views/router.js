@@ -40,7 +40,7 @@ router.route('/cityscapes/:city/comment/:commentId')
   .put(secureRoute, comment.updateComment)
   .delete(secureRoute, comment.removeComment)
 
-router.route('/images')
+router.route('/image')
   .get(ImageUpload.getImages)
   .post(ImageUpload.postImage)
 
