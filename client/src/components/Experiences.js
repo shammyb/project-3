@@ -1,5 +1,5 @@
 import { isCreator } from '../lib/auth'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 export default function CommentsAllTogether({ city }) {
   const [title, setTitle] = useState('')
@@ -7,6 +7,19 @@ export default function CommentsAllTogether({ city }) {
   const [cities, updateCities] = useState({})
   const token = localStorage.getItem('token')
   
+  useEffect(() => {
+    async function fetchCommentData() {
+      try {
+        const { data } = await axios.get(`/api/cityscapes/${city}/comment`,)
+        updateCities(data)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    fetchCommentData()
+  }, [])
+
+
   async function handleComment() {
     const { data } = await axios.post(`/api/cityscapes/${city}/comment`, { title, comment }, {
       headers: { Authorization: `Bearer ${token}` }
@@ -17,7 +30,7 @@ export default function CommentsAllTogether({ city }) {
     updateCities(data)
 
   }
-
+ 
 
   async function handleEditComment(commentId) {
     if (!isCreator) {

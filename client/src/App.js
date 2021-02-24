@@ -20,8 +20,7 @@ import Map from './components/Map'
 import ImageUpload from './components/ImageUpload'
 
 
-//for testing purposes 
-import testRestaurants from './components/testRestaurants'
+
 
 import 'bulma'
 import './styles/style.scss'
