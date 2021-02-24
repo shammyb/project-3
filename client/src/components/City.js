@@ -130,11 +130,11 @@ export default function City({ match }) {
   }
   function DisplayInfo() {
 
-    
+
     return <div className="about-section">
       <div className="column is-four-fifths-desktop is-centered">
 
-      <div className="card">
+        {/* <div className="card"> */}
         <div className="card-content">
 
           <h2 className="title is-2">About the city </h2>
@@ -144,10 +144,12 @@ export default function City({ match }) {
           <p><strong>Currency: </strong>{cities.currency}</p>
           <p><strong>Continent: </strong>{cities.continent}</p>
         </div>
+        {/* </div> */}
       </div>
     </div>
-    </div>
+
   }
+
 
   if (!cities.user) {
     return null
@@ -160,7 +162,7 @@ export default function City({ match }) {
       <div className="hero-body"
         style={{
           backgroundImage: `url(${cities.image})`
-          
+
         }}
       >
 
@@ -215,14 +217,14 @@ export default function City({ match }) {
               <li>
                 <button onClick={() => updateButtonNum(3)} className="button is-info is-light" id="citybuttons">
                   Restaurants
-            </button>
+                </button>
 
               </li>
               <li>
                 {/* <li class="is-active"> */}
                 <button onClick={() => updateButtonNum(4)} className="button is-info is-light" id="citybuttons">
                   Experiences
-            </button>
+                </button>
               </li>
             </ul>
           </nav>
@@ -273,6 +275,12 @@ export default function City({ match }) {
           {buttonNum === 3 && <div className="box"><Restaurants city={city} /></div>}
           {buttonNum === 2 && <div className="box"><ThingsToDo city={city} /></div>}
           {buttonNum === 4 && <div className="box"><CommentsAllTogether /></div>}
+
+
+          {isCreator(cities.user._id) && <button
+            className="button is-danger"
+            onClick={handleDelete}
+          > Delete City</button>}
         </div>
       </article>
 
