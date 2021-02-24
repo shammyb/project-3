@@ -4,23 +4,23 @@ import City from '../models/city.js'
 async function makeComment(req, res, next) {
 
   const commentData = req.body
-  const cityId = req.params.cityId
+  const city = req.params.city
   commentData.user = req.currentUser
  
   try {
    
-    const city = await City.findById(cityId).populate('comments.user').populate('user')
+    const citys = await City.findOne({ city: city }).populate('comments.user').populate('user')
 
     // ? guard condition if theres no pokemon
-    if (!city) {
+    if (!citys) {
       return res.status(404).send({ message: 'Not found' })
     }
 
 
-    city.comments.push(commentData)
+    citys.comments.push(commentData)
 
    
-    const savedCity = await city.save()
+    const savedCity = await citys.save()
 
     res.send(savedCity)
 
@@ -32,16 +32,17 @@ async function makeComment(req, res, next) {
 async function updateComment(req, res, next) {
   const commentData = req.body
   const currentUser = req.currentUser
-  const { commentId, cityId } = req.params
+  const { commentId } = req.params
+  const city = req.params.city
 
   try {
-    const city = await City.findById(cityId).populate('user').populate('comments.user')
+    const citys = await City.findOne({ city: city }).populate('user').populate('comments.user')
 
-    if (!city) {
+    if (!citys) {
       return res.status(404).send({ message: 'Not found' })
     }
 
-    const comment = city.comments.id(commentId)
+    const comment = citys.comments.id(commentId)
 
    
     if (!comment.user.equals(currentUser._id)) {
@@ -52,7 +53,7 @@ async function updateComment(req, res, next) {
     comment.set(commentData)
 
   
-    const savedCity = await city.save()
+    const savedCity = await citys.save()
 
     res.send(savedCity)
 
@@ -63,17 +64,18 @@ async function updateComment(req, res, next) {
 
 async function removeComment(req, res, next) {
   const currentUser = req.currentUser
-  const { commentId, cityId } = req.params
+  const { commentId } = req.params
+  const city = req.params.city
 
   try {
     
-    const city = await City.findById(cityId).populate('user').populate('comments.user')
+    const citys = await City.findOne({ city: city })
 
-    if (!city) {
+    if (!citys) {
       return res.status(404).send({ message: 'Not found' })
     }
 
-    const comment = city.comments.id(commentId)
+    const comment = citys.comments.id(commentId)
 
     if (!comment.user.equals(currentUser._id)) {
       return res.status(401).send({ message: 'Unauthorized' })
@@ -82,7 +84,7 @@ async function removeComment(req, res, next) {
     comment.remove()
 
     
-    const savedCity = await city.save()
+    const savedCity = await citys.save()
 
     res.send(savedCity)
 

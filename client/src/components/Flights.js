@@ -122,6 +122,6 @@ export default function Flights() {
         </div>
       </div>
       <button className="button">Submit</button>
-    </form >
-  </section >
+    </form>
+  </section>
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import 'bulma'
 
-export default function ImageUpload()  {
+const ImageUpload = () => {
   const [imageDisplay, updateImageDisplay] = useState([])
   const [button, updateButton] = useState(false)
   const [inputValue, updateInputValue] = useState('')
@@ -14,7 +14,7 @@ export default function ImageUpload()  {
   
   async function fetchImages() {
     try {
-      const { data } = await axios.get('api/cityscapes')
+      const { data } = await axios.get('/api/images')
       
       updateImageDisplay(data.reverse())
     } catch (err) {
@@ -60,7 +60,7 @@ export default function ImageUpload()  {
   async function handleSubmit(event) {
     event.preventDefault()
     try {
-      const { data } = await axios.post('/api/cityscapes', formData)
+      const { data } = await axios.post('/api/images', formData)
       console.log(data)
       updateButton(!button)
       fetchImages()
@@ -115,3 +115,4 @@ export default function ImageUpload()  {
 }
 
 
+export default ImageUpload 

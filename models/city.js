@@ -12,11 +12,7 @@ const commentSchema = new mongoose.Schema({
   timestamps: true
 })
 
-const imageSchema = new mongoose.Schema({
-  caption: { type: String, required: true },
-  url: { type: String, required: true }
-  
-})
+
 
 const citySchema = new mongoose.Schema({
   city: { type: String, required: true },
@@ -29,8 +25,8 @@ const citySchema = new mongoose.Schema({
   long: { type: String },
   lat: { type: String },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-  comments: [ commentSchema ],
-  imageUpload: [ imageSchema ]
+  comments: [ commentSchema ]
+  
 })
 
 citySchema.plugin(uniqueValidator)
