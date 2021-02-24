@@ -75,10 +75,10 @@ export default function Restaurants({ city }) {
     </div> */}
 
 
-    <div className="container">
+    <div className="container is-centered">
       <h2 className="title is-2">Look for top Restaurants in {city} </h2>
       <div className="column is-four-fifths-desktop">
-        <div className="columns is-multiline">
+        <div className="columns is-multiline is-centered">
 
           {/* <div className="card"> */}
           {

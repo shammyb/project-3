@@ -268,19 +268,21 @@ export default function City({ match }) {
 
 
         </div>
+        <div className="container is-centered">
 
-        <div className="cityContent">
+          <div className="cityContent">
 
-          {buttonNum === 1 && <div className="box"><DisplayInfo /></div>}
-          {buttonNum === 3 && <div className="box"><Restaurants city={city} /></div>}
-          {buttonNum === 2 && <div className="box"><ThingsToDo city={city} /></div>}
-          {buttonNum === 4 && <div className="box"><CommentsAllTogether /></div>}
+            {buttonNum === 1 && <div className="box"><DisplayInfo /></div>}
+            {buttonNum === 3 && <div className="box"><Restaurants city={city} /></div>}
+            {buttonNum === 2 && <div className="box"><ThingsToDo city={city} /></div>}
+            {buttonNum === 4 && <div className="box"><CommentsAllTogether /></div>}
 
 
-          {isCreator(cities.user._id) && <button
-            className="button is-danger"
-            onClick={handleDelete}
-          > Delete City</button>}
+            {isCreator(cities.user._id) && <button
+              className="button is-danger"
+              onClick={handleDelete}
+            > Delete City</button>}
+          </div>
         </div>
       </article>
 
