@@ -30,8 +30,6 @@ export default function Discover() {
                   <div className="media">
                     <div className="media-content">
                       <p className="title is-4">{city.city}</p>
-                      <p className="subtitle is-6">{'Currency: ' + city.currency}</p>
-                      <p className="subtitle is-6">{'language: ' + city.language}</p>
                     </div>
                   </div>
                 </div>

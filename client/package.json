@@ -34,8 +34,6 @@
     "react-map-gl": "^6.1.9",
     "react-router-dom": "^5.2.0",
     "react-select": "^4.1.0",
-    "react-slick": "^0.28.0",
-    "react-spinners": "^0.10.6",
-    "slick-carousel": "^1.8.1"
+    "react-spinners": "^0.10.6"
   }
 }

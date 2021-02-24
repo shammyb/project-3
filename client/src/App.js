@@ -9,7 +9,13 @@ import Discover from './components/Discover'
 import Flights from './components/Flights'
 
 import City from './components/City'
+<<<<<<< HEAD
 
+=======
+// import Experiences from './components/Experiences'
+import Restaurants from './components/Restaurants'
+import ThingsToDo from './components/ThingsToDo'
+>>>>>>> f2106097f0aad19cde440d4ac1db7f01dea6530c
 
 import UpdateCity from './components/UpdateCity'
 import PostCity from './components/PostCity'
@@ -26,7 +32,7 @@ const App = () => (
   <BrowserRouter>
     <Navbar />
     <Switch>
-      {/* <Route exact path="/cityscapes" component={Home}/> */}
+      <Route exact path="/cityscapes" component={Home}/>
       <Route exact path="/register" component={Register}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/cityscapes/discover/postcity" component={PostCity} />
