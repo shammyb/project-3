@@ -40,7 +40,7 @@ export default function City({ match }) {
 
 
     return <div className="about-section">
-      <div className="column is-four-fifths-desktop is-centered">
+      <div className="column is-centered">
 
 
         <div className="card-content">
@@ -51,10 +51,10 @@ export default function City({ match }) {
           <p><strong>Country: </strong>{cities.country}</p>
           <p><strong>Currency: </strong>{cities.currency}</p>
           <p><strong>Continent: </strong>{cities.continent}</p>
-  
 
-        <h5 className="title is-5" id="h5-city">Current weather</h5>
-        {<div>< Weather city={city} /></div>}
+
+          <h5 className="title is-5" id="h5-city">Current weather</h5>
+          {<div>< Weather city={city} /></div>}
         </div>
       </div>
     </div>
@@ -66,10 +66,10 @@ export default function City({ match }) {
     return null
   }
 
-  return <section className="section">
+  return <section className="main-city-section">
     <div className="container">
       <div className="cities">
-        {/* <h1 className="title is-1" id="main-title">{cities.city}</h1> */}
+
 
         <section className="hero is-medium is-primary" >
           <div className="hero-body"
@@ -94,7 +94,7 @@ export default function City({ match }) {
 
 
         <section key className="city" >
-          {/* <article className="image" id="city-image">
+          {/* <article className="image" id="city-image"> */}
 
 
 
@@ -110,24 +110,24 @@ export default function City({ match }) {
                   <li>
                     <button onClick={() => updateButtonNum(1)} className="button is-info is-light" id="citybuttons">
                       About
-                  </button>
+                      </button>
                   </li>
                   <li>
                     <button onClick={() => updateButtonNum(2)} className="button is-info is-light" id="citybuttons">
                       Things to do
-                  </button>
+                      </button>
 
                   </li>
                   <li>
                     <button onClick={() => updateButtonNum(3)} className="button is-info is-light" id="citybuttons">
                       Restaurants
-                </button>
+                      </button>
 
-              </li>
-              <li>
-                <button onClick={() => updateButtonNum(4)} className="button is-info is-light" id="citybuttons">
-                  Experiences
-                </button>
+                  </li>
+                  <li>
+                    <button onClick={() => updateButtonNum(4)} className="button is-info is-light" id="citybuttons">
+                      Experiences
+                      </button>
                   </li>
                 </ul>
               </nav>
@@ -136,7 +136,7 @@ export default function City({ match }) {
 
 
             </div>
-            <div className="container is-centered">
+            <div className="container is-centered" id="city-main">
 
               <div className="cityContent">
 
@@ -153,6 +153,7 @@ export default function City({ match }) {
               </div>
             </div>
           </article>
+          {/* </article> */}
 
         </section>
       </div >

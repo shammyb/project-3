@@ -19,11 +19,31 @@
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
-  width: 50%;
+  width: 100%;
 }
 
 .search-image {
   width: 100px;
+}
+#city-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+.about-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 
@@ -62,16 +82,23 @@
 .city {
   display: flex;
   flex-direction: row;
+  // justify-content: center;
 }
-
-#city-image {
+.cities {
   display: flex;
   flex-direction: column;
-  width: 40%;
-  border: 2px;
-  margin: 10px;
-  
+  justify-content: center;
+
 }
+
+// #city-image {
+//   display: flex;
+//   flex-direction: column;
+//   width: 40%;
+//   border: 2px;
+//   margin: 10px;
+  
+// }
 
 // .name-about-country-currency {
 //   display: flex;
@@ -81,16 +108,17 @@
 //   margin: 5px;
 // }
 
-.citycontent {
+.cityContent {
   margin: 5px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  border: magenta !important;
 
 }
 
-#main-title{
+#main-title {
   color: rgb(5, 72, 156);
 }
 
@@ -131,6 +159,8 @@ font-size: 60px;
 
 #weather-picture {
 margin: 0px 5px 0px 0px;
+width: 100px;
+height: 100px;
 
 }
 
@@ -245,7 +275,6 @@ body {
   justify-content: center;
 }
 
-#flight-result-card {
   
 .marker-btn image {
   width: 50px;
@@ -265,6 +294,6 @@ body {
 }
 
 #title-of-the-post {
-  height: 10px;
+  height: 5px;
 }
 
