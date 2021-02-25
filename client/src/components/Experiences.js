@@ -103,6 +103,7 @@ export default function CommentsAllTogether({ city }) {
             >
               {title}
             </textarea>
+            
             <textarea
               className="textarea"
               placeholder="Make a comment.."
