@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Slider from "react-slick"
+import Slider from 'react-slick'
 
 export default function Home() {
   var settings = {
@@ -18,16 +18,16 @@ export default function Home() {
     </div>
     <Slider {...settings}>
       <div>
-        <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3150&q=80" />
+        <img src="https://res.cloudinary.com/dznpk39i0/image/upload/v1614164524/ycbvvupx1wywxptztwot.jpg" />
       </div>
       <div>
-        <img src="https://images.unsplash.com/photo-1474831626379-cfcad2ba6309?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3548&q=80" />
+        <img src="https://res.cloudinary.com/dznpk39i0/image/upload/v1614164540/k3bytggi8u4yelvppsml.jpg" />
       </div>
       <div>
-        <img src="https://images.unsplash.com/photo-1529260830199-42c24126f198?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3455&q=80" />
+        <img src="https://res.cloudinary.com/dznpk39i0/image/upload/v1614164563/snr7upqhkhxackhwucw1.jpg" />
       </div>
       <div>
-        <img src="https://images.unsplash.com/photo-1542379950-b3fc716c16f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3150&q=80" />
+        <img src="https://res.cloudinary.com/dznpk39i0/image/upload/v1614164583/cgj1jrrbuwqwzdquwx3b.jpg" />
       </div>
     </Slider>
   </section>

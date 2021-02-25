@@ -24,7 +24,7 @@ export default function Weather( { city }) {
 
 
 
-        const { data } = await axios.get(`http://api.openweathermap.org/data/2.5/find?q=${city}&units=metric&appid=bb9852ea707df495071eb09d564cc4d9`)
+        const { data } = await axios.get(`http://api.openweathermap.org/data/2.5/find?q=${city}&units=metric&appid=${process.env.weatherAPI}`)
 
         updateWeathers(data.list[0])
         updateLoading(false)
@@ -41,10 +41,13 @@ export default function Weather( { city }) {
 
 
 
+<<<<<<< HEAD
     if (loading) {
       return <ClipLoader loading={loading} size={100} />
     }
 
+=======
+>>>>>>> development
 
 
 
@@ -59,6 +62,7 @@ export default function Weather( { city }) {
 
   return <div>
 
+<<<<<<< HEAD
   <h2 className="title is-2"> {Math.round(weathers.main.temp)}°C</h2>
 
   <div>Feels like {Math.round(weathers.main.feels_like)} °C. {weathers.weather.main}</div>
@@ -75,6 +79,16 @@ export default function Weather( { city }) {
    */}
 
 
+=======
+    <div className="main-weather">
+      <img src={`http://openweathermap.org/img/w/${weathers.weather[0].icon}.png`} id="weather-picture" alt='picture of the weather' width="80" /><h2 className="title is-2" id="weather-title">   {Math.round(weathers.main.temp)}°C</h2>
+    </div>
+    <div>Feels like {Math.round(weathers.main.feels_like)} °C. {weathers.weather.main}</div>
+    <div>{weathers.weather.icon}</div>
+
+
+  </div>
+>>>>>>> development
 
 </div>
 }

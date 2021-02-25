@@ -27,7 +27,7 @@ export default function CommentsAllTogether({ city }) {
 
     setTitle('')
     setComment('')
-    console.log(data)
+    
     updateCities(data)
 
   }
@@ -54,7 +54,7 @@ export default function CommentsAllTogether({ city }) {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
-        console.log(resp.data)
+        
         updateCities(resp.data)
       })
   }
@@ -97,15 +97,17 @@ export default function CommentsAllTogether({ city }) {
           <p className="control">
             <textarea
               className="textarea"
-              placeholder="Title of your comment..."
+              id="title-of-the-post"
+              placeholder="Title of your post..."
               onChange={event => setTitle(event.target.value)}
               value={title}
             >
               {title}
             </textarea>
+            
             <textarea
               className="textarea"
-              placeholder="Make a comment.."
+              placeholder="Share your experience"
               onChange={event => setComment(event.target.value)}
               value={comment}
             >
