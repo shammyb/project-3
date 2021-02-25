@@ -47,13 +47,7 @@ export default function Register({ history }) {
               onChange={handleChange}
               name={'username'}
             />
-            {
-              // ! I can make error messages appear conditionally in here, like this!
-              // ! Or however you like, use your imagination!
-
-              // ! When errors.username = '', nothing will show, so you need an actual
-              // ! error from the b/e this text to appear..
-            }
+           
             {errors.username && <small className="has-text-danger">
               {errors.username}
             </small>}
@@ -69,9 +63,7 @@ export default function Register({ history }) {
               onChange={handleChange}
               name={'email'}
             />
-            {
-              // ! Same idea for email
-            }
+           
             {errors.email && <small className="has-text-danger">
               {errors.email}
             </small>}
@@ -87,9 +79,7 @@ export default function Register({ history }) {
               onChange={handleChange}
               name={'password'}
             />
-            {
-              // ! and passwords
-            }
+           
             {errors.password && <small className="has-text-danger">
               {errors.password}
             </small>}
@@ -105,10 +95,7 @@ export default function Register({ history }) {
               onChange={handleChange}
               name={'passwordConfirmation'}
             />
-            {
-              // ! and password conf. This one is fun because it can show 2 different errors
-              // ! 1) if its missing, 2) if it doesn't match password!
-            }
+            
             {errors.passwordConfirmation && <small className="has-text-danger">
               {errors.passwordConfirmation}
             </small>}

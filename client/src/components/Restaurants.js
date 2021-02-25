@@ -57,21 +57,7 @@ export default function Restaurants({ city }) {
 
 
 
-
-  // console.log('this is returning the data')
-  // console.log(restaurantData)
-  // console.log('specific thing')
-  // console.log(restaurantData[0].venue.name)
-
-
-  // const foursquareLink = 'https://foursquare.com/v/'
-
   return <div>
-
-    {/* <div className="city-image">
-      <h1>{cities.city}</h1>
-      <img src={cities.image} alt={cities.name} />
-    </div> */}
 
 
     <div className="container is-centered">
@@ -79,7 +65,6 @@ export default function Restaurants({ city }) {
       <div className="column is-four-fifths-desktop">
         <div className="columns is-multiline is-centered">
 
-          {/* <div className="card"> */}
           {
             restaurantData.map((restaurant, index) => {
 

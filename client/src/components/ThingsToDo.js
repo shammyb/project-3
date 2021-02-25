@@ -97,18 +97,8 @@ export default function ThingsToDo({ city }) {
 
 
 
-  // console.log('this is returning the data')
-  // console.log(restaurantData)
-  // console.log('specific thing')
-  // console.log(restaurantData[0].venue.name)
-
   return <div className="thingstodo">
-    {/* <div className="container1">
-      <div className="city-image">
-        <h1>{cities.city}</h1>
-        <img src={cities.image} alt={cities.name} />
-      </div>
-    </div> */}
+   
 
     <div className="container is-centered">
       <h2 className="title is-2">Top things to do in {city} </h2>
@@ -203,7 +193,6 @@ export default function ThingsToDo({ city }) {
       </div>
     </div>
   </div>
-  // </div>
-  ß
+  
 
 }

@@ -32,28 +32,11 @@ export default function Map() {
   }, [])
 
 
-  // useEffect(() => {
-  //   fetch('https://weatherbit-v1-mashape.p.rapidapi.com/current?lon=-0.12714&lat=51.506321', {
-  //     headers: {
-
-  //       
-  //     }
-
-  //   }
-
-
-
-  //   )
-  //     .then(resp => resp.json())
-  //     .then(respdata => {
-  //       updateWeatherData(respdata.data)
-  //     })
-  // }, [])
 
   if (loading) {
     return <ClipLoader loading={loading} size={100} />
   }
-  // console.log(weatherData)
+  
   return <div>
     {console.log(cities)}
 

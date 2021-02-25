@@ -8,8 +8,6 @@ export default function FlightResults({ location }) {
 
   const [results, updateResults] = useState([])
 
-  // console.log('hi', location.state.flightData)
-  // console.log(this.state.country.value)
 
   useEffect(() => {
     axios.get(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/${flightData.country}/${flightData.currency}/${flightData.locale}/${flightData.originplace}/${flightData.destinationplace}/${flightData.outboundpartialdate}`, {
@@ -27,10 +25,7 @@ export default function FlightResults({ location }) {
     return null
   }
 
-  // return <div className="card">
-  //   <p>Best Direct Flight Price</p>
-  //   <p>{results.Quotes[0].QuoteDateTime}</p>
-  //   <p>Search more flights here</p>
+ 
 
 
   return <section className="section">
