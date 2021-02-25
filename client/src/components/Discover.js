@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import ClipLoader from 'react-spinners/ClipLoader'
+
+
+
+
 export default function Discover() {
   const [cities, updateCities] = useState([])
+  const [loading, updateLoading] = useState(true)
+
+
+
   useEffect(() => {
     async function getCities() {
       try {
         const { data } = await axios.get('/api/cityscapes')
         updateCities(data)
+        updateLoading(false)
         
       } catch (err) {
         console.log(err)
@@ -15,6 +25,12 @@ export default function Discover() {
     }
     getCities()
   }, [])
+
+  if (loading) {
+    return <ClipLoader loading={loading} size={100} />
+  } 
+
+  
   return <section className="section">
     <div className="container">
       <div className="columns is-multiline is-mobile">

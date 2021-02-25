@@ -7,7 +7,7 @@ export default function getCityData(users) {
       currency: 'Euro',
       continent: 'Europe',
       language: 'Dutch',
-      image: 'https://i1.wp.com/dutchsfcommunity.org/wp-content/uploads/2019/03/Amsterdam-Canals.jpg?fit=2048%2C1536&ssl=1',
+      image: 'https://res.cloudinary.com/dznpk39i0/image/upload/v1614267080/s9zywqovsuez6jwjgsq8.jpg',
       long: '5.2913',
       lat: '52.1326',
       user: users[0]
@@ -19,7 +19,7 @@ export default function getCityData(users) {
       currency: 'Euro',
       continent: 'Europe',
       language: 'German',
-      image: 'https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Germany/Berlin/berlin-guide-lead-2018.jpg',
+      image: 'https://res.cloudinary.com/dznpk39i0/image/upload/v1614267158/sjwvteucuesbegkqhpmf.jpg',
       long: '13.404954',
       lat: '52.520008',
       user: users[0]
@@ -31,7 +31,7 @@ export default function getCityData(users) {
       currency: 'Danish Krone',
       continent: 'Europe',
       language: 'Danish',
-      image: 'https://img.travelawaits.com/filter:centercrop/quill/9/4/b/0/d/6/94b0d69194412db227a9a3007521a4ab9d95ff65.jpg?w=800&h=800',
+      image: 'https://res.cloudinary.com/dznpk39i0/image/upload/v1614264982/pwrgjpyve66yqrhga1ik.jpg',
       long: '12.568337',
       lat: '55.676098',
       user: users[0]
@@ -43,7 +43,7 @@ export default function getCityData(users) {
       currency: 'Pound Sterling',
       continent: 'Europe',
       language: 'English',
-      image: 'https://lh3.googleusercontent.com/proxy/41fKSeWH4Eq-nnzbwGpRCPT-OXlGXgm3nRPjlYtZWmbcY4YjEZT-SByY5bqJlJsQAO-97oY24looWhTGZOVQZhg-iZXmdxSESXx4Ybfe5VwLFalbxdLvqw',
+      image: 'https://res.cloudinary.com/dznpk39i0/image/upload/v1614265172/rfa4cmbldiw63tdtbsdh.jpg',
       long: '-0.118092',
       lat: '51.509865',
       user: users[0]
@@ -55,7 +55,7 @@ export default function getCityData(users) {
       currency: 'Euro',
       continent: 'Europe',
       language: 'Spanish',
-      image: 'https://capaworld.capa.org/hs-fs/hubfs/CAPA_Redesign_2017/Basic%20Cards/CAPAStudyAbroad_Barcelona_Summer2017_Parc%20Guell.jpg?width=640&name=CAPAStudyAbroad_Barcelona_Summer2017_Parc%20Guell.jpg',
+      image: 'https://res.cloudinary.com/dznpk39i0/image/upload/v1614265076/u6cqun1id7jaurdoquu3.jpg',
       long: '2.154007',
       lat: '41.390205',
       user: users[0]
@@ -67,7 +67,7 @@ export default function getCityData(users) {
       currency: 'Euro',
       continent: 'Europe',
       language: 'French',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/1200px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg',
+      image: 'https://res.cloudinary.com/dznpk39i0/image/upload/v1614267434/rpwupippfqwfkhohp38a.jpg',
       long: '2.349014',
       lat: '48.864716',
       user: users[0]
@@ -79,7 +79,7 @@ export default function getCityData(users) {
       currency: 'Czech',
       continent: 'Europe',
       language: 'Korunas',
-      image: 'http://easyconferences.eu/aea2017/images/prague1.jpg',
+      image: 'https://res.cloudinary.com/dznpk39i0/image/upload/v1614267522/d5coundcpszwebybtbde.jpg',
       long: '14.418540',
       lat: '50.073658',
       user: users[0]
@@ -91,7 +91,7 @@ export default function getCityData(users) {
       currency: 'Euro',
       continent: 'Europe',
       language: 'Portuguese',
-      image: 'http://magnolia-portugal.dunegestion.com/upload4mail/magnolia-portugal/op_56341_experiencia-em-lisboa-portugal-por-simone-68818959579123ff8acad97d62959a19.jpg',
+      image: 'https://res.cloudinary.com/dznpk39i0/image/upload/v1614267669/nrcsl2cnfocjv2w04pal.jpg',
       long: '-9.142685',
       lat: '38.736946',
       user: users[0]
@@ -103,7 +103,7 @@ export default function getCityData(users) {
       currency: 'Kroner',
       continent: 'Europe',
       language: 'Norwegian',
-      image: 'http://www.visitoslo.com/globalassets/bilder-oslo/byliv-and-omrader/byen-og-fjorden_fwfoto.jpg',
+      image: 'https://res.cloudinary.com/dznpk39i0/image/upload/v1614267749/ymzwy4adfc2hnbqisqp6.jpg',
       long: '10.757933',
       lat: '59.911491',
       user: users[0]
@@ -115,7 +115,7 @@ export default function getCityData(users) {
       currency: 'Euro',
       continent: 'Europe',
       language: 'Spanish',
-      image: 'https://www.travelanddestinations.com/wp-content/uploads/2019/06/Madrid-cityscape.jpg',
+      image: 'https://res.cloudinary.com/dznpk39i0/image/upload/v1614265034/dzhyzyi2bptvoh6jdar2.jpg',
       long: '-3.703790',
       lat: '40.416775',
       user: users[0]
@@ -127,7 +127,7 @@ export default function getCityData(users) {
       currency: 'Euro',
       continent: 'Europe',
       language: 'Italian',
-      image: 'https://media.timeout.com/images/105211701/image.jpg',
+      image: 'https://res.cloudinary.com/dznpk39i0/image/upload/v1614267801/kpqwrpaelxchni7rhcw0.jpg',
       long: '12.496366',
       lat: '41.902782',
       user: users[0]
@@ -139,7 +139,7 @@ export default function getCityData(users) {
       currency: 'Euro',
       continent: 'Europe',
       language: 'Greek',
-      image: 'https://traveler.marriott.com/wp-content/uploads/2019/02/GI_1076721978_MonastirakiPlace.jpg',
+      image: 'https://res.cloudinary.com/dznpk39i0/image/upload/v1614267856/zvnndoi2obkpxqeoktay.jpg',
       long: '23.727539',
       lat: '37.983810',
       user: users[0]
@@ -151,7 +151,7 @@ export default function getCityData(users) {
       currency: 'Swedish Krona',
       continent: 'Europe',
       language: 'Swedish',
-      image: 'https://images.contentstack.io/v3/assets/blte962564a7ccdad95/blt6673351f18e18b68/5d0a6279b58121dc58ed5303/5.2.1Stockholm.jpg?auto=webp&format=pjpg&quality=80&width=1200&height=1200&fit=crop&crop=1200:630,smart',
+      image: 'https://res.cloudinary.com/dznpk39i0/image/upload/v1614268071/lrtal7mdbcijzlzlvdtp.jpg',
       long: '18.063240',
       lat: '59.334591',
       user: users[0]
@@ -163,7 +163,7 @@ export default function getCityData(users) {
       currency: 'Turkish lira',
       continent: 'Europe',
       language: 'Turkish',
-      image: 'https://aic.azureedge.net/pgl-release/Images/ArticleImages/17/17764.jpg',
+      image: 'https://res.cloudinary.com/dznpk39i0/image/upload/v1614268156/oraanfnlba77w9mieuyo.jpg',
       long: '28.979530',
       lat: '41.015137',
       user: users[0]
@@ -175,7 +175,7 @@ export default function getCityData(users) {
       currency: 'Hungarian Forints',
       continent: 'Europe',
       language: 'Hungarian',
-      image: 'https://450alliance.org/wp-content/uploads/2017/02/budapest-2016-5.jpg',
+      image: 'https://res.cloudinary.com/dznpk39i0/image/upload/v1614268211/u2oiumetiui70x8m2jnq.jpg',
       long: '19.040236',
       lat: '47.497913',
       user: users[0]

@@ -64,7 +64,7 @@ export default function Map() {
             event.preventDefault()
             setChoosenCity(city)
           }} >
-            <img src='https://res.cloudinary.com/dznpk39i0/image/upload/v1614166086/plcnjajk1ggokgpxrauu.png' alt='icon' />
+            <img src='https://res.cloudinary.com/dznpk39i0/image/upload/v1614271161/nuzsszfjm4jyapebuoo4.png' alt='icon' />
           </button>
         </Marker>
 
