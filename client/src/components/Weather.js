@@ -39,7 +39,7 @@ export default function Weather({ city }) {
 
 
 
-   
+
 
 
 
@@ -56,10 +56,12 @@ export default function Weather({ city }) {
 
   return <div>
 
-    <h2 className="title is-2"> {Math.round(weathers.main.temp)}°C</h2>
-
+    <div className="main-weather">
+      <img src={`http://openweathermap.org/img/w/${weathers.weather[0].icon}.png`} id="weather-picture" alt='picture of the weather' width="80" /><h2 className="title is-2" id="weather-title">   {Math.round(weathers.main.temp)}°C</h2>
+    </div>
     <div>Feels like {Math.round(weathers.main.feels_like)} °C. {weathers.weather.main}</div>
     <div>{weathers.weather.icon}</div>
+
 
   </div>
 

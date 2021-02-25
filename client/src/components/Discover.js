@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-
 export default function Discover() {
   const [cities, updateCities] = useState([])
-
   useEffect(() => {
     async function getCities() {
       try {
@@ -17,8 +15,6 @@ export default function Discover() {
     }
     getCities()
   }, [])
-
-
   return <section className="section">
     <div className="container">
       <div className="columns is-multiline is-mobile">
@@ -63,6 +59,4 @@ export default function Discover() {
       </div>
     </div>
   </section>
-
-
 }

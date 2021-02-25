@@ -5,7 +5,8 @@ import comment from '../controllers/comment.js'
 
 
 import secureRoute from '../middleware/secureRoute.js'
-import ImageUpload from '../controllers/ImageUpload.js'
+import images from '../controllers/images.js'
+
 
 
 
@@ -41,8 +42,8 @@ router.route('/cityscapes/:city/comment/:commentId')
   .put(secureRoute, comment.updateComment)
   .delete(secureRoute, comment.removeComment)
 
-router.route('/images')
-  .get(ImageUpload.getImages)
-  .post(ImageUpload.postImage)
+router.route('/image')
+  .get(images.getImages)
+  .post(images.postImage)
 
 export default router

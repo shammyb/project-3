@@ -51,9 +51,12 @@ export default function City({ match }) {
           <p><strong>Country: </strong>{cities.country}</p>
           <p><strong>Currency: </strong>{cities.currency}</p>
           <p><strong>Continent: </strong>{cities.continent}</p>
+
+
+          <h5 className="title is-5" id="h5-city">Current weather</h5>
+          {<div>< Weather city={city} /></div>}
         </div>
       </div>
-      {<div>< Weather city= { city }/></div>}
     </div>
 
   }
