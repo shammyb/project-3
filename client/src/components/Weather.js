@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-// import { useHistory, LInk } from 'react-router-dom'
+
 import { Link } from 'react-router-dom'
 import ClipLoader from 'react-spinners/ClipLoader'
-// import { ExternalLink } from 'react-external-link'
+
 
 export default function Weather({ city }) {
 
@@ -23,7 +23,7 @@ export default function Weather({ city }) {
 
 
 
-        const { data } = await axios.get(`http://api.openweathermap.org/data/2.5/find?q=${city}&units=metric&appid=bb9852ea707df495071eb09d564cc4d9`)
+        const { data } = await axios.get(`http://api.openweathermap.org/data/2.5/find?q=${city}&units=metric&appid=${process.env.weatherAPI}`)
 
         updateWeathers(data.list[0])
         updateLoading(false)

@@ -95,8 +95,15 @@ export default function City({ match }) {
         <section key className="city" >
 
 
+<<<<<<< HEAD
+    </section>
+  </div >
+}
+
+=======
         </section>
       </div >
     </div>
   </section>
 }
+>>>>>>> a863ce9d1614af3008b7383a713a013df1f35a7c

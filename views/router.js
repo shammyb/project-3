@@ -39,6 +39,7 @@ router.route('/cityscapes/:city/comment')
   .post(secureRoute, comment.makeComment)
 
 router.route('/cityscapes/:city/comment/:commentId')
+  .get(secureRoute,comment.getSingleComment)
   .put(secureRoute, comment.updateComment)
   .delete(secureRoute, comment.removeComment)
 

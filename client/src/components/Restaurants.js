@@ -21,7 +21,7 @@ export default function Restaurants({ city }) {
 
 
 
-        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=S4D23OXL5DKZ3F0PNZZCU2SXY4BMPNADQXCZ4HBQ5J0BBVZX&client_secret=DQLUOFKVBLNFJCFZHE4CTM5PVI22YIO24IC5PWPLKSIF3BNW&near=${city}&section=food&limit=20&v=20210222`)
+        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=${process.env.foursquareClientID}&client_secret=${process.env.foursquareClientSecret}&near=${city}&section=food&limit=20&v=20210222`)
 
         updateRestaurantData(data.response.groups[0].items)
         updateLoading(false)
@@ -57,6 +57,9 @@ export default function Restaurants({ city }) {
 
 
 
+<<<<<<< HEAD
+  return <div>
+=======
 
   // console.log('this is returning the data')
   // console.log(restaurantData)
@@ -67,11 +70,7 @@ export default function Restaurants({ city }) {
   // const foursquareLink = 'https://foursquare.com/v/'
 
   return <div className="section">
-
-    {/* <div className="city-image">
-      <h1>{cities.city}</h1>
-      <img src={cities.image} alt={cities.name} />
-    </div> */}
+>>>>>>> a863ce9d1614af3008b7383a713a013df1f35a7c
 
 
     <div className="container is-centered">
@@ -79,7 +78,6 @@ export default function Restaurants({ city }) {
       <div className="column is-four-fifths-desktop">
         <div className="columns is-multiline is-centered">
 
-          {/* <div className="card"> */}
           {
             restaurantData.map((restaurant, index) => {
 

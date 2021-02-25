@@ -22,7 +22,7 @@ export default function ThingsToDo({ city }) {
     async function getArtsData() {
 
       try {
-        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=S4D23OXL5DKZ3F0PNZZCU2SXY4BMPNADQXCZ4HBQ5J0BBVZX&client_secret=DQLUOFKVBLNFJCFZHE4CTM5PVI22YIO24IC5PWPLKSIF3BNW&near=${city}&section=arts&limit=5&v=20210222`)
+        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=${process.env.foursquareClientID}&client_secret=${process.env.foursquareClientSecret}&near=${city}&section=arts&limit=6&v=20210222`)
 
         updateArtsData(data.response.groups[0].items)
         updateLoading1(false)
@@ -39,7 +39,7 @@ export default function ThingsToDo({ city }) {
     async function getOutdoorsData() {
 
       try {
-        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=S4D23OXL5DKZ3F0PNZZCU2SXY4BMPNADQXCZ4HBQ5J0BBVZX&client_secret=DQLUOFKVBLNFJCFZHE4CTM5PVI22YIO24IC5PWPLKSIF3BNW&near=${city}&section=outdoors&limit=5&v=20210222`)
+        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=${process.env.foursquareClientID}&client_secret=${process.env.foursquareClientSecret}&near=${city}&section=outdoors&limit=6&v=20210222`)
 
         updateOutdoorsData(data.response.groups[0].items)
         updateLoading2(false)
@@ -56,7 +56,7 @@ export default function ThingsToDo({ city }) {
     async function getSightsData() {
 
       try {
-        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=S4D23OXL5DKZ3F0PNZZCU2SXY4BMPNADQXCZ4HBQ5J0BBVZX&client_secret=DQLUOFKVBLNFJCFZHE4CTM5PVI22YIO24IC5PWPLKSIF3BNW&near=${city}&section=sights&limit=5&v=20210222`)
+        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=${process.env.foursquareClientID}&client_secret=${process.env.foursquareClientSecret}&near=${city}&section=sights&limit=6&v=20210222`)
 
         updateSightsData(data.response.groups[0].items)
         updateLoading3(false)
@@ -96,10 +96,15 @@ export default function ThingsToDo({ city }) {
 
 
 
+<<<<<<< HEAD
+  return <div className="thingstodo">
+   
+=======
   
 
   return <div className="thingstodo">
     
+>>>>>>> a863ce9d1614af3008b7383a713a013df1f35a7c
 
     <div className="container is-centered">
       <h2 className="title is-2">Top things to do in {city} </h2>
@@ -194,7 +199,6 @@ export default function ThingsToDo({ city }) {
       </div>
     </div>
   </div>
-  // </div>
-  ß
+  
 
 }
