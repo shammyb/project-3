@@ -14,7 +14,7 @@ export default function Flights() {
   function handleChange(event) {
     updateFlightData({ ...flightData, [event.target.name]: event.target.value })
   }
-  console.log(flightData)
+  
   return <section className="section">
     <div className="container">
       <form>

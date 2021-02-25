@@ -16,7 +16,7 @@ export default function Login({ history }) {
 
   async function handleSubmit(event) {
     event.preventDefault()
-    console.log(formData)
+    
     try {
       const { data } = await axios.post('/api/login', formData)
       if (localStorage) {

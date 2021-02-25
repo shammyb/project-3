@@ -8,7 +8,7 @@ export default function Discover() {
       try {
         const { data } = await axios.get('/api/cityscapes')
         updateCities(data)
-        console.log(data)
+        
       } catch (err) {
         console.log(err)
       }
