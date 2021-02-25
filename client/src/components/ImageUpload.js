@@ -14,7 +14,7 @@ const ImageUpload = () => {
   
   async function fetchImages() {
     try {
-      const { data } = await axios.get('/api/images')
+      const { data } = await axios.get('/api/image')
       
       updateImageDisplay(data.reverse())
     } catch (err) {
@@ -60,7 +60,7 @@ const ImageUpload = () => {
   async function handleSubmit(event) {
     event.preventDefault()
     try {
-      const { data } = await axios.post('/api/images', formData)
+      const { data } = await axios.post('/api/image', formData)
       console.log(data)
       updateButton(!button)
       fetchImages()
