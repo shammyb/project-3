@@ -6,7 +6,10 @@ export default function CommentsAllTogether({ city }) {
   const [comment, setComment] = useState('')
   const [cities, updateCities] = useState({})
   const token = localStorage.getItem('token')
-  
+  const [error, updateError] = useState('')
+  const [editNumber, updateEditNumber] = useState(0)
+  const [commentIdentifier, updateCommentIdentifier] = useState('')
+
   useEffect(() => {
     async function fetchCommentData() {
       try {
@@ -21,27 +24,45 @@ export default function CommentsAllTogether({ city }) {
 
 
   async function handleComment() {
+    if (!token) {
+      return updateError('Please log in to make a comment!')
+    }
     const { data } = await axios.post(`/api/cityscapes/${city}/comment`, { title, comment }, {
       headers: { Authorization: `Bearer ${token}` }
     })
 
     setTitle('')
     setComment('')
-    console.log(data)
     updateCities(data)
 
   }
- 
 
-  async function handleEditComment(commentId) {
+
+  
+  async function handleEditCommentOne(commentId) {
     if (!isCreator) {
       return null
     }
-    await axios.put(`/api/cityscapes/${city}/comment/${commentId}`, { title, comment }, {
+    await axios.get(`/api/cityscapes/${city}/comment/${commentId}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    }).then(resp => {
+      setComment(resp.data.comment)
+      setTitle(resp.data.title)
+      updateEditNumber(1)
+      updateCommentIdentifier(commentId)
+    })
+  }
+  async function handleEditCommentTwo() {
+    if (!isCreator) {
+      return null
+    }
+    await axios.put(`/api/cityscapes/${city}/comment/${commentIdentifier}`, { title, comment }, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
         updateCities(resp.data)
+        updateEditNumber(0)
+        updateCommentIdentifier('')
       })
   }
 
@@ -82,16 +103,16 @@ export default function CommentsAllTogether({ city }) {
           </div>}
           {isCreator(commenting.user._id) && <div className="media-right">
             <button
-              className="delete"
-              onClick={() => handleEditComment(commenting._id)}>
+
+              onClick={() => handleEditCommentOne(commenting._id)}>Update
             </button>
           </div>}
         </article>
       })
     }
 
-
-    <article className="media">
+    {(error !== '')}  <div>{error}</div>
+    {(error === '') && <article className="media">
       <div className="media-content">
         <div className="field">
           <p className="control">
@@ -103,7 +124,7 @@ export default function CommentsAllTogether({ city }) {
             >
               {title}
             </textarea>
-            
+
             <textarea
               className="textarea"
               placeholder="Make a comment.."
@@ -116,17 +137,25 @@ export default function CommentsAllTogether({ city }) {
         </div>
         <div className="field">
           <p className="control">
-            <button
+            {editNumber === 0 && <button
               onClick={handleComment}
               className="button is-info"
             >
               Submit
-            </button>
+            </button>}
+            {editNumber === 1 && <button
+              onClick={handleEditCommentTwo}
+              className="button is-info"
+            >
+              Update Comment
+            </button>}
           </p>
         </div>
       </div>
-    </article>
+    </article>}
+
   </div>
+
 
 }
 

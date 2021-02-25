@@ -11,15 +11,42 @@ async function getComments(req, res, next) {
   }
 }
 
+async function getSingleComment(req, res, next) {
+  const city = req.params.city
+  const { commentId } = req.params
+  const currentUser = req.currentUser
+  
+  try {
+    const citys = await City.findOne({ city: city }).populate('user').populate('comments.user')
+    console.log(citys)
+    if (!citys) {
+      return res.status(404).send({ message: 'Not found' })
+    }
+    const comment = citys.comments.id(commentId)
+    console.log(comment)
+    
+
+    if (!comment.user.equals(currentUser._id)) {
+      return res.status(401).send({ message: 'Unauthorized' })
+    }
+    res.send(comment)
+  } catch (err) {
+    next(err)
+  }
+}
+
+
+
+
 
 async function makeComment(req, res, next) {
 
   const commentData = req.body
   const city = req.params.city
   commentData.user = req.currentUser
- 
+
   try {
-   
+
     const citys = await City.findOne({ city: city }).populate('comments.user').populate('user')
 
     // ? guard condition if theres no pokemon
@@ -30,7 +57,7 @@ async function makeComment(req, res, next) {
 
     citys.comments.push(commentData)
 
-   
+
     const savedCity = await citys.save()
 
     res.send(savedCity)
@@ -55,15 +82,15 @@ async function updateComment(req, res, next) {
 
     const comment = citys.comments.id(commentId)
 
-   
+
     if (!comment.user.equals(currentUser._id)) {
       return res.status(401).send({ message: 'Unauthorized' })
     }
 
- 
+
     comment.set(commentData)
 
-  
+
     const savedCity = await citys.save()
 
     res.send(savedCity)
@@ -79,7 +106,7 @@ async function removeComment(req, res, next) {
   const city = req.params.city
 
   try {
-    
+
     const citys = await City.findOne({ city: city }).populate('user').populate('comments.user')
 
     if (!citys) {
@@ -94,7 +121,7 @@ async function removeComment(req, res, next) {
 
     comment.remove()
 
-    
+
     const savedCity = await citys.save()
 
     res.send(savedCity)
@@ -108,5 +135,6 @@ export default {
   getComments,
   makeComment,
   updateComment,
-  removeComment
+  removeComment,
+  getSingleComment
 }
