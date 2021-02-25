@@ -21,7 +21,7 @@ export default function Restaurants({ city }) {
 
 
 
-        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=S4D23OXL5DKZ3F0PNZZCU2SXY4BMPNADQXCZ4HBQ5J0BBVZX&client_secret=DQLUOFKVBLNFJCFZHE4CTM5PVI22YIO24IC5PWPLKSIF3BNW&near=${city}&section=food&limit=20&v=20210222`)
+        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=${process.env.foursquareClientID}&client_secret=${process.env.foursquareClientSecret}&near=${city}&section=food&limit=20&v=20210222`)
 
         updateRestaurantData(data.response.groups[0].items)
         updateLoading(false)

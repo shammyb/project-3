@@ -187,6 +187,12 @@ body {
   width: 75px;
 }
 
+.button:focus {
+  color: #05489c;
+  background-color: white;
+  border: 1px #05489c;
+}
+
 .button {
   background-color: #05489c;
   color: white;
@@ -237,3 +243,14 @@ body {
   border: none;
   cursor: pointer;
 }
+
+//experiences page
+
+.media {
+  width: 100%;
+}
+
+#title-of-the-post {
+  height: 10px;
+}
+
