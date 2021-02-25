@@ -51,10 +51,10 @@ export default function City({ match }) {
           <p><strong>Country: </strong>{cities.country}</p>
           <p><strong>Currency: </strong>{cities.currency}</p>
           <p><strong>Continent: </strong>{cities.continent}</p>
-  
 
-        <h5 className="title is-5" id="h5-city">Current weather</h5>
-        {<div>< Weather city={city} /></div>}
+
+          <h5 className="title is-5" id="h5-city">Current weather</h5>
+          {<div>< Weather city={city} /></div>}
         </div>
       </div>
     </div>
@@ -69,7 +69,6 @@ export default function City({ match }) {
   return <section className="section">
     <div className="container">
       <div className="cities">
-        {/* <h1 className="title is-1" id="main-title">{cities.city}</h1> */}
 
         <section className="hero is-medium is-primary" >
           <div className="hero-body"
@@ -94,65 +93,7 @@ export default function City({ match }) {
 
 
         <section key className="city" >
-          {/* <article className="image" id="city-image">
 
-
-
-
-          <article id="citylayout">
-            <div className="citymenu">
-
-
-
-
-              <nav className="breadcrumb is-medium" aria-label="breadcrumbs">
-                <ul>
-                  <li>
-                    <button onClick={() => updateButtonNum(1)} className="button is-info is-light" id="citybuttons">
-                      About
-                  </button>
-                  </li>
-                  <li>
-                    <button onClick={() => updateButtonNum(2)} className="button is-info is-light" id="citybuttons">
-                      Things to do
-                  </button>
-
-                  </li>
-                  <li>
-                    <button onClick={() => updateButtonNum(3)} className="button is-info is-light" id="citybuttons">
-                      Restaurants
-                </button>
-
-              </li>
-              <li>
-                <button onClick={() => updateButtonNum(4)} className="button is-info is-light" id="citybuttons">
-                  Experiences
-                </button>
-                  </li>
-                </ul>
-              </nav>
-
-
-
-
-            </div>
-            <div className="container is-centered">
-
-              <div className="cityContent">
-
-                {buttonNum === 1 && <div className="box"><DisplayInfo /></div>}
-                {buttonNum === 3 && <div className="box"><Restaurants city={city} /></div>}
-                {buttonNum === 2 && <div className="box"><ThingsToDo city={city} /></div>}
-                {buttonNum === 4 && <div className="box"><CommentsAllTogether city={city} /></div>}
-
-
-                {isCreator(cities.user._id) && <button
-                  className="button is-danger"
-                  onClick={handleDelete}
-                > Delete City</button>}
-              </div>
-            </div>
-          </article>
 
         </section>
       </div >

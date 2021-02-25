@@ -231,6 +231,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 #flight-result-container {
@@ -239,7 +240,6 @@ body {
   justify-content: center;
 }
 
-#flight-result-card {
   
 .marker-btn image {
   width: 50px;
@@ -250,4 +250,28 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+#columns-flex {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+#flights-divider {
+  color: white;
+  margin-top: 20px;
+}
+
+#flights-divider-body {
+  background-color: #05489c !important;
+  border-radius: 12px !important;
+}
+
+#flights-title {
+  color: white !important;
+}
+
+#flights-subtitle {
+  color: white !important;
 }
