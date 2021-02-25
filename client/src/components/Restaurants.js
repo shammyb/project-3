@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-// import { useHistory, LInk } from 'react-router-dom'
+
 import ClipLoader from 'react-spinners/ClipLoader'
-// import { ExternalLink } from 'react-external-link'
+
 
 export default function Restaurants({ city }) {
   const [restaurantData, updateRestaurantData] = useState({})
@@ -10,8 +10,6 @@ export default function Restaurants({ city }) {
 
   console.log('print the city: ' + city)
   const [cities, updateCities] = useState({})
-
-  //use effect for the Foursquare API
 
   useEffect(() => {
 
@@ -57,20 +55,10 @@ export default function Restaurants({ city }) {
 
 
 
-<<<<<<< HEAD
-  return <div>
-=======
-
-  // console.log('this is returning the data')
-  // console.log(restaurantData)
-  // console.log('specific thing')
-  // console.log(restaurantData[0].venue.name)
 
 
-  // const foursquareLink = 'https://foursquare.com/v/'
 
   return <div className="section">
->>>>>>> a863ce9d1614af3008b7383a713a013df1f35a7c
 
 
     <div className="container is-centered">
@@ -93,7 +81,7 @@ export default function Restaurants({ city }) {
               return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
 
 
-                <a href={`https://foursquare.com/v/${restaurant.venue.id}`} target="_blank">
+                <a href={`https://foursquare.com/v/${restaurant.venue.id}`} target="_blank ">
 
 
                   <div className="card">
@@ -110,7 +98,7 @@ export default function Restaurants({ city }) {
               </div>
             })
           }
-          {/* </div> */}
+        
         </div>
       </div>
     </div>
