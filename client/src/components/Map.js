@@ -44,7 +44,7 @@ export default function Map() {
 
     <ReactMapGL {...viewport}
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-      mapStyle='mapbox://styles/aozzy/cklf8ryx73w4d17lcit5dzq7e'
+      mapStyle='mapbox://styles/aozzy/ckll7cr0x22z317nn84cgk3ew'
       onViewportChange={viewport => {
         setViewport(viewport)
       }}
@@ -64,7 +64,7 @@ export default function Map() {
             event.preventDefault()
             setChoosenCity(city)
           }} >
-            <img src='https://res.cloudinary.com/dznpk39i0/image/upload/v1614271161/nuzsszfjm4jyapebuoo4.png' alt='icon' />
+            <img src='https://res.cloudinary.com/dznpk39i0/image/upload/v1614280398/vkaqxh1plbr5n2aya0pb.png' alt='icon' />
           </button>
         </Marker>
 
