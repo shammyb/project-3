@@ -129,6 +129,20 @@ font-size: 60px;
 
 }
 
+#weather-picture {
+margin: 0px 5px 0px 0px;
+
+}
+
+.main-weather{
+  display:flex;
+  flex-direction:row;
+}
+
+#weather-title {
+  padding: 20px 0px 0px 0px;
+  // margin: 20px 0px 0px 0px;
+}
 
 // HOMEPAGE STYLING //
 
