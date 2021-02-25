@@ -27,7 +27,7 @@ export default function CommentsAllTogether({ city }) {
 
     setTitle('')
     setComment('')
-    console.log(data)
+    
     updateCities(data)
 
   }
@@ -54,7 +54,7 @@ export default function CommentsAllTogether({ city }) {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
-        console.log(resp.data)
+        
         updateCities(resp.data)
       })
   }
@@ -103,6 +103,7 @@ export default function CommentsAllTogether({ city }) {
             >
               {title}
             </textarea>
+            
             <textarea
               className="textarea"
               placeholder="Make a comment.."

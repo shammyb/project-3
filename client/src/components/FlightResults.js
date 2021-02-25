@@ -15,11 +15,11 @@ export default function FlightResults({ location }) {
         }
       })
       .then(({ data }) => {
-        console.log('data', data)
+        
         updateResults(data)
       })
   }, [])
-
+  
   if (!results.Carriers) {
     return null
   }

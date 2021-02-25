@@ -12,7 +12,7 @@ export default function ThingsToDo({ city }) {
   const [loading2, updateLoading2] = useState(true)
   const [loading3, updateLoading3] = useState(true)
 
-  console.log('print the city: ' + city)
+  
   const [cities, updateCities] = useState({})
 
 
@@ -51,8 +51,7 @@ export default function ThingsToDo({ city }) {
       }
     }
     getOutdoorsData()
-    console.log('why the hell nothing is apperaing')
-    console.log('this is outdoors data' + outdoorsData)
+    
 
     async function getSightsData() {
 
@@ -97,18 +96,10 @@ export default function ThingsToDo({ city }) {
 
 
 
-  // console.log('this is returning the data')
-  // console.log(restaurantData)
-  // console.log('specific thing')
-  // console.log(restaurantData[0].venue.name)
+  
 
   return <div className="thingstodo">
-    {/* <div className="container1">
-      <div className="city-image">
-        <h1>{cities.city}</h1>
-        <img src={cities.image} alt={cities.name} />
-      </div>
-    </div> */}
+    
 
     <div className="container is-centered">
       <h2 className="title is-2">Top things to do in {city} </h2>
@@ -123,7 +114,7 @@ export default function ThingsToDo({ city }) {
               {
                 sightsData.map((item, index) => {
                   return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
-                    <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank">
+                    <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank ">
 
 
                       <div className="card">
@@ -151,7 +142,7 @@ export default function ThingsToDo({ city }) {
                 artsData.map((item, index) => {
                   return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile is-multiline">
 
-                    <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank">
+                    <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank ">
 
                       <div className="card">
                         <div className="card-content">
@@ -182,7 +173,7 @@ export default function ThingsToDo({ city }) {
                   return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
 
 
-                    <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank">
+                    <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank ">
                       <div className="card">
                         <div className="card-content">
                           <p className="title is-4">{item.venue.name}</p>

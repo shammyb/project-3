@@ -3,7 +3,7 @@ import Restaurants from './Restaurants.js'
 import ThingsToDo from './ThingsToDo.js'
 import axios from 'axios'
 import { isCreator } from '../lib/auth'
-
+import Weather from './Weather.js'
 import CommentsAllTogether from './Experiences.js'
 
 export default function City({ match }) {
@@ -42,7 +42,7 @@ export default function City({ match }) {
     return <div className="about-section">
       <div className="column is-four-fifths-desktop is-centered">
 
-        {/* <div className="card"> */}
+
         <div className="card-content">
 
           <h2 className="title is-2">About the city </h2>
@@ -51,9 +51,12 @@ export default function City({ match }) {
           <p><strong>Country: </strong>{cities.country}</p>
           <p><strong>Currency: </strong>{cities.currency}</p>
           <p><strong>Continent: </strong>{cities.continent}</p>
+  
+
+        <h5 className="title is-5" id="h5-city">Current weather</h5>
+        {<div>< Weather city={city} /></div>}
         </div>
       </div>
-      {/* </div> */}
     </div>
 
   }
@@ -93,12 +96,6 @@ export default function City({ match }) {
         <section key className="city" >
           {/* <article className="image" id="city-image">
 
-        <img src={cities.image} alt={cities.name} />
-        {isCreator(cities.user._id) && <button
-          className="button is-danger"
-          onClick={handleDelete}
-        > Delete City</button>}
-      </article> */}
 
 
 
@@ -126,52 +123,16 @@ export default function City({ match }) {
                       Restaurants
                 </button>
 
-                  </li>
-                  <li>
-                    {/* <li class="is-active"> */}
-                    <button onClick={() => updateButtonNum(4)} className="button is-info is-light" id="citybuttons">
-                      Experiences
+              </li>
+              <li>
+                <button onClick={() => updateButtonNum(4)} className="button is-info is-light" id="citybuttons">
+                  Experiences
                 </button>
                   </li>
                 </ul>
               </nav>
 
 
-              {/* <div className="search-box">
-            {/* <h2>About</h2>
-            <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" /> */}
-              {/* <button onClick={() => updateButtonNum(1)} className="button is-info is-light" id="citybuttons">
-              About
-            </button>
-          </div> */}
-              {/* <div className="search-box"> */}
-              {/* <h2>Things to Do</h2>
-            <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" /> */}
-              {/* <button onClick={() => updateButtonNum(2)} className="button is-info is-light" id="citybuttons">
-              Things to do
-            </button>
-          </div> */}
-              {/* <div className="search-box">
-          <h2>Flights</h2>
-          <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
-          <button onClick={routeChangeFlights}>
-            Search
-          </button>
-        </div> */}
-              {/* <div className="search-box"> */}
-              {/* <h2>Restaurants</h2>
-            <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" /> */}
-              {/* <button onClick={() => updateButtonNum(3)} className="button is-info is-light" id="citybuttons">
-              Restaurants
-            </button>
-          </div> */}
-              {/* <div className="search-box"> */}
-              {/* <h2>Experiences</h2>
-            <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" /> */}
-              {/* <button onClick={() => updateButtonNum(4)} className="button is-info is-light" id="citybuttons">
-              Experiences
-            </button>
-          </div> */}
 
 
             </div>

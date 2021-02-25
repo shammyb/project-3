@@ -1,9 +1,9 @@
-import City from '../models/city.js'
+import Image from '../models/image.js'
 
 async function postImage(req, res, next) {
   const image = req.body
   try {
-    const newImage = await City.create(image)
+    const newImage = await Image.create(image)
     res.status(201).send(newImage)
   } catch (err) {
     next(err)
@@ -12,7 +12,7 @@ async function postImage(req, res, next) {
 
 async function getImages(req, res, next) {
   try {
-    const imageList = await City.find()
+    const imageList = await Image.find()
     res.send(imageList)
   } catch (err) {
     next(err)
