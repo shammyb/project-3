@@ -22,14 +22,11 @@ export default function Map() {
     async function getCities() {
       try {
         const { data } = await axios.get('https://www.trackcorona.live/api/countries')
-        // const update = data.data.filter(country => {
-        //   return country.latitude && country.longitude > 0
-        // }
-        // )
+        
         updateCities(data.data)
 
         updateLoading(false)
-        // console.log(cities)
+        
       } catch (err) {
         console.log(err)
       }
@@ -41,12 +38,12 @@ export default function Map() {
 
   if (loading) {
     return <ClipLoader loading={loading} size={100} />
-  } console.log(cities)
+  } 
 
   return <div>
 
     <ReactMapGL {...viewport}
-      mapboxApiAccessToken='pk.eyJ1IjoiYW96enkiLCJhIjoiY2trbGk2dWtjMmg4ZTJvbW5udXFhODJzeiJ9.JyCnWImYQtktTI6njEUIcA'
+      mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
       mapStyle='mapbox://styles/aozzy/cklf8ryx73w4d17lcit5dzq7e'
       onViewportChange={viewport => {
         setViewport(viewport)
@@ -60,14 +57,7 @@ export default function Map() {
           key={city._id}
           latitude={city.latitude}
           longitude={city.longitude}
-          // closeOnClick={() => {
-
-          //   setChoosenCity(null)
-
-
-          // }
-
-          // }
+          
 
         >
           <button className='marker-btn' onClick={(event) => {

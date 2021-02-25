@@ -66,7 +66,7 @@ export default function Restaurants({ city }) {
 
   // const foursquareLink = 'https://foursquare.com/v/'
 
-  return <div>
+  return <div className="section">
 
     {/* <div className="city-image">
       <h1>{cities.city}</h1>

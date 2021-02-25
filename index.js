@@ -10,7 +10,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 const app = express()
 // const favicon = require('serve-favicon')
-// var path = require('path')
+// const path = require('path')
 
 
 async function startServer() {
