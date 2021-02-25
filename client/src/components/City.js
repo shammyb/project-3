@@ -55,7 +55,7 @@ export default function City({ match }) {
       </div>
       {/* </div> */}
     </div>
-    
+
   }
 
 
@@ -63,33 +63,35 @@ export default function City({ match }) {
     return null
   }
 
-  return <div className="cities">
-    {/* <h1 className="title is-1" id="main-title">{cities.city}</h1> */}
+  return <section className="section">
+    <div className="container">
+      <div className="cities">
+        {/* <h1 className="title is-1" id="main-title">{cities.city}</h1> */}
 
-    <section className="hero is-medium is-primary" >
-      <div className="hero-body"
-        style={{
-          backgroundImage: `url(${cities.image})`
+        <section className="hero is-medium is-primary" >
+          <div className="hero-body"
+            style={{
+              backgroundImage: `url(${cities.image})`
 
-        }}
-      >
-
-
-
-
-
-        <p className="title" id="hero-title">
-          {cities.city}
-        </p>
-        <p className="subtitle">
-          {/* Small subtitle */}
-        </p>
-      </div>
-    </section>
+            }}
+          >
 
 
-    <section key className="city" >
-      {/* <article className="image" id="city-image">
+
+
+
+            <p className="title" id="hero-title">
+              {cities.city}
+            </p>
+            <p className="subtitle">
+              {/* Small subtitle */}
+            </p>
+          </div>
+        </section>
+
+
+        <section key className="city" >
+          {/* <article className="image" id="city-image">
 
         <img src={cities.image} alt={cities.name} />
         {isCreator(cities.user._id) && <button
@@ -100,97 +102,99 @@ export default function City({ match }) {
 
 
 
-      <article id="citylayout">
-        <div className="citymenu">
+          <article id="citylayout">
+            <div className="citymenu">
 
 
 
 
-          <nav className="breadcrumb is-medium" aria-label="breadcrumbs">
-            <ul>
-              <li>
-                <button onClick={() => updateButtonNum(1)} className="button is-info is-light" id="citybuttons">
-                  About
+              <nav className="breadcrumb is-medium" aria-label="breadcrumbs">
+                <ul>
+                  <li>
+                    <button onClick={() => updateButtonNum(1)} className="button is-info is-light" id="citybuttons">
+                      About
+                  </button>
+                  </li>
+                  <li>
+                    <button onClick={() => updateButtonNum(2)} className="button is-info is-light" id="citybuttons">
+                      Things to do
+                  </button>
+
+                  </li>
+                  <li>
+                    <button onClick={() => updateButtonNum(3)} className="button is-info is-light" id="citybuttons">
+                      Restaurants
                 </button>
-              </li>
-              <li>
-                <button onClick={() => updateButtonNum(2)} className="button is-info is-light" id="citybuttons">
-                  Things to do
+
+                  </li>
+                  <li>
+                    {/* <li class="is-active"> */}
+                    <button onClick={() => updateButtonNum(4)} className="button is-info is-light" id="citybuttons">
+                      Experiences
                 </button>
-
-              </li>
-              <li>
-                <button onClick={() => updateButtonNum(3)} className="button is-info is-light" id="citybuttons">
-                  Restaurants
-                </button>
-
-              </li>
-              <li>
-                {/* <li class="is-active"> */}
-                <button onClick={() => updateButtonNum(4)} className="button is-info is-light" id="citybuttons">
-                  Experiences
-                </button>
-              </li>
-            </ul>
-          </nav>
+                  </li>
+                </ul>
+              </nav>
 
 
-          {/* <div className="search-box">
+              {/* <div className="search-box">
             {/* <h2>About</h2>
             <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" /> */}
-          {/* <button onClick={() => updateButtonNum(1)} className="button is-info is-light" id="citybuttons">
+              {/* <button onClick={() => updateButtonNum(1)} className="button is-info is-light" id="citybuttons">
               About
             </button>
           </div> */}
-          {/* <div className="search-box"> */}
-          {/* <h2>Things to Do</h2>
+              {/* <div className="search-box"> */}
+              {/* <h2>Things to Do</h2>
             <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" /> */}
-          {/* <button onClick={() => updateButtonNum(2)} className="button is-info is-light" id="citybuttons">
+              {/* <button onClick={() => updateButtonNum(2)} className="button is-info is-light" id="citybuttons">
               Things to do
             </button>
           </div> */}
-          {/* <div className="search-box">
+              {/* <div className="search-box">
           <h2>Flights</h2>
           <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" />
           <button onClick={routeChangeFlights}>
             Search
           </button>
         </div> */}
-          {/* <div className="search-box"> */}
-          {/* <h2>Restaurants</h2>
+              {/* <div className="search-box"> */}
+              {/* <h2>Restaurants</h2>
             <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" /> */}
-          {/* <button onClick={() => updateButtonNum(3)} className="button is-info is-light" id="citybuttons">
+              {/* <button onClick={() => updateButtonNum(3)} className="button is-info is-light" id="citybuttons">
               Restaurants
             </button>
           </div> */}
-          {/* <div className="search-box"> */}
-          {/* <h2>Experiences</h2>
+              {/* <div className="search-box"> */}
+              {/* <h2>Experiences</h2>
             <img className="search-image" src="https://cdn.iconscout.com/icon/free/png-512/aeroplane-airplane-plane-air-transportation-vehicle-pessanger-people-emoj-symbol-30708.png" /> */}
-          {/* <button onClick={() => updateButtonNum(4)} className="button is-info is-light" id="citybuttons">
+              {/* <button onClick={() => updateButtonNum(4)} className="button is-info is-light" id="citybuttons">
               Experiences
             </button>
           </div> */}
 
 
-        </div>
-        <div className="container is-centered">
+            </div>
+            <div className="container is-centered">
 
-          <div className="cityContent">
+              <div className="cityContent">
 
-            {buttonNum === 1 && <div className="box"><DisplayInfo /></div>}
-            {buttonNum === 3 && <div className="box"><Restaurants city={city} /></div>}
-            {buttonNum === 2 && <div className="box"><ThingsToDo city={city} /></div>}
-            {buttonNum === 4 && <div className="box"><CommentsAllTogether city={city} /></div>}
+                {buttonNum === 1 && <div className="box"><DisplayInfo /></div>}
+                {buttonNum === 3 && <div className="box"><Restaurants city={city} /></div>}
+                {buttonNum === 2 && <div className="box"><ThingsToDo city={city} /></div>}
+                {buttonNum === 4 && <div className="box"><CommentsAllTogether city={city} /></div>}
 
 
-            {isCreator(cities.user._id) && <button
-              className="button is-danger"
-              onClick={handleDelete}
-            > Delete City</button>}
-          </div>
-        </div>
-      </article>
+                {isCreator(cities.user._id) && <button
+                  className="button is-danger"
+                  onClick={handleDelete}
+                > Delete City</button>}
+              </div>
+            </div>
+          </article>
 
-    </section>
-  </div >
+        </section>
+      </div >
+    </div>
+  </section>
 }
