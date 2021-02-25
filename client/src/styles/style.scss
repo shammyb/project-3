@@ -187,6 +187,12 @@ body {
   width: 75px;
 }
 
+.button:focus {
+  color: #05489c;
+  background-color: white;
+  border: 1px #05489c;
+}
+
 .button {
   background-color: #05489c;
   color: white;
@@ -227,6 +233,20 @@ body {
   width: 25%;
 }
 
+#flight-result-card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#flight-result-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#flight-result-card {
+  
 .marker-btn image {
   width: 50px;
   height: 50px;
@@ -237,3 +257,14 @@ body {
   border: none;
   cursor: pointer;
 }
+
+//experiences page
+
+.media {
+  width: 100%;
+}
+
+#title-of-the-post {
+  height: 10px;
+}
+

@@ -75,12 +75,10 @@ export default function CommentsAllTogether({ city }) {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
-        console.log(resp.data)
+        
         updateCities(resp.data)
       })
   }
-
-
 
   return <div>
     {

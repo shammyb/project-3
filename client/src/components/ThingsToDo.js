@@ -12,7 +12,7 @@ export default function ThingsToDo({ city }) {
   const [loading2, updateLoading2] = useState(true)
   const [loading3, updateLoading3] = useState(true)
 
-  console.log('print the city: ' + city)
+  
   const [cities, updateCities] = useState({})
 
 
@@ -22,7 +22,7 @@ export default function ThingsToDo({ city }) {
     async function getArtsData() {
 
       try {
-        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=S4D23OXL5DKZ3F0PNZZCU2SXY4BMPNADQXCZ4HBQ5J0BBVZX&client_secret=DQLUOFKVBLNFJCFZHE4CTM5PVI22YIO24IC5PWPLKSIF3BNW&near=${city}&section=arts&limit=5&v=20210222`)
+        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=${process.env.foursquareClientID}&client_secret=${process.env.foursquareClientSecret}&near=${city}&section=arts&limit=6&v=20210222`)
 
         updateArtsData(data.response.groups[0].items)
         updateLoading1(false)
@@ -39,7 +39,7 @@ export default function ThingsToDo({ city }) {
     async function getOutdoorsData() {
 
       try {
-        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=S4D23OXL5DKZ3F0PNZZCU2SXY4BMPNADQXCZ4HBQ5J0BBVZX&client_secret=DQLUOFKVBLNFJCFZHE4CTM5PVI22YIO24IC5PWPLKSIF3BNW&near=${city}&section=outdoors&limit=5&v=20210222`)
+        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=${process.env.foursquareClientID}&client_secret=${process.env.foursquareClientSecret}&near=${city}&section=outdoors&limit=6&v=20210222`)
 
         updateOutdoorsData(data.response.groups[0].items)
         updateLoading2(false)
@@ -51,13 +51,12 @@ export default function ThingsToDo({ city }) {
       }
     }
     getOutdoorsData()
-    console.log('why the hell nothing is apperaing')
-    console.log('this is outdoors data' + outdoorsData)
+    
 
     async function getSightsData() {
 
       try {
-        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=S4D23OXL5DKZ3F0PNZZCU2SXY4BMPNADQXCZ4HBQ5J0BBVZX&client_secret=DQLUOFKVBLNFJCFZHE4CTM5PVI22YIO24IC5PWPLKSIF3BNW&near=${city}&section=sights&limit=5&v=20210222`)
+        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=${process.env.foursquareClientID}&client_secret=${process.env.foursquareClientSecret}&near=${city}&section=sights&limit=6&v=20210222`)
 
         updateSightsData(data.response.groups[0].items)
         updateLoading3(false)
@@ -97,8 +96,15 @@ export default function ThingsToDo({ city }) {
 
 
 
+<<<<<<< HEAD
   return <div className="thingstodo">
    
+=======
+  
+
+  return <div className="thingstodo">
+    
+>>>>>>> a863ce9d1614af3008b7383a713a013df1f35a7c
 
     <div className="container is-centered">
       <h2 className="title is-2">Top things to do in {city} </h2>
@@ -113,7 +119,7 @@ export default function ThingsToDo({ city }) {
               {
                 sightsData.map((item, index) => {
                   return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
-                    <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank">
+                    <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank ">
 
 
                       <div className="card">
@@ -141,7 +147,7 @@ export default function ThingsToDo({ city }) {
                 artsData.map((item, index) => {
                   return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile is-multiline">
 
-                    <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank">
+                    <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank ">
 
                       <div className="card">
                         <div className="card-content">
@@ -172,7 +178,7 @@ export default function ThingsToDo({ city }) {
                   return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
 
 
-                    <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank">
+                    <a href={`https://foursquare.com/v/${item.venue.id}`} target="_blank ">
                       <div className="card">
                         <div className="card-content">
                           <p className="title is-4">{item.venue.name}</p>

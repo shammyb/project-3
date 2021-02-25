@@ -21,7 +21,7 @@ export default function Restaurants({ city }) {
 
 
 
-        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=S4D23OXL5DKZ3F0PNZZCU2SXY4BMPNADQXCZ4HBQ5J0BBVZX&client_secret=DQLUOFKVBLNFJCFZHE4CTM5PVI22YIO24IC5PWPLKSIF3BNW&near=${city}&section=food&limit=20&v=20210222`)
+        const { data } = await axios.get(`https://api.foursquare.com/v2/venues/explore?client_id=${process.env.foursquareClientID}&client_secret=${process.env.foursquareClientSecret}&near=${city}&section=food&limit=20&v=20210222`)
 
         updateRestaurantData(data.response.groups[0].items)
         updateLoading(false)
@@ -57,7 +57,20 @@ export default function Restaurants({ city }) {
 
 
 
+<<<<<<< HEAD
   return <div>
+=======
+
+  // console.log('this is returning the data')
+  // console.log(restaurantData)
+  // console.log('specific thing')
+  // console.log(restaurantData[0].venue.name)
+
+
+  // const foursquareLink = 'https://foursquare.com/v/'
+
+  return <div className="section">
+>>>>>>> a863ce9d1614af3008b7383a713a013df1f35a7c
 
 
     <div className="container is-centered">

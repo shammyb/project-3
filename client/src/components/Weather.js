@@ -23,7 +23,7 @@ export default function Weather({ city }) {
 
 
 
-        const { data } = await axios.get(`http://api.openweathermap.org/data/2.5/find?q=${city}&units=metric&appid=bb9852ea707df495071eb09d564cc4d9`)
+        const { data } = await axios.get(`http://api.openweathermap.org/data/2.5/find?q=${city}&units=metric&appid=${process.env.weatherAPI}`)
 
         updateWeathers(data.list[0])
         updateLoading(false)
