@@ -33,9 +33,9 @@ const App = () => (
       <Route exact path="/register" component={Register}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/cityscapes/images" component={ImageUpload} />
+      <Route exact path="/cityscapes/map" component={Map}/>
       <Route exact path="/cityscapes/discover" component={Discover}/>
       <Route exact path="/cityscapes/discover/postcity" component={PostCity} />
-      <Route exact path="/cityscapes/discover/map" component={Map}/>
       <Route exact path="/cityscapes/flights" component={Flights} />
       <Route exact path="/cityscapes/flights/results" component={FlightResults} />
       <Route exact path="/cityscapes/discover/:city" component={City} />

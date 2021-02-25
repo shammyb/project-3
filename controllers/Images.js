@@ -1,4 +1,4 @@
-import Image from '../models/image.js'
+import Image from '../models/imageModel.js'
 
 async function postImage(req, res, next) {
   const image = req.body

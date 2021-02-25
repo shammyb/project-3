@@ -57,16 +57,17 @@ export default function Map() {
 
       {cities.map(city => (
         <Marker
-          key={city.locations}
+          key={city._id}
           latitude={city.latitude}
           longitude={city.longitude}
-          onClick= {() => {
-           
-            setChoosenCity(null)
+          // closeOnClick={() => {
 
-          }
+          //   setChoosenCity(null)
 
-          }
+
+          // }
+
+          // }
 
         >
           <button className='marker-btn' onClick={(event) => {
@@ -81,7 +82,10 @@ export default function Map() {
 
 
       {choosenCity ? (
-        <Popup latitude={choosenCity.latitude} longitude={choosenCity.longitude}  >
+        <Popup latitude={choosenCity.latitude}
+          longitude={choosenCity.longitude} onClose={() => {
+            setChoosenCity(null)
+          }} >
           <div>
             <h2> Confirmed Cases: {choosenCity.confirmed} </h2>
             <h2> Death Toll: {choosenCity.dead} </h2>
