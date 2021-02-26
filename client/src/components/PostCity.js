@@ -32,8 +32,8 @@ export default function PostCity({ history }) {
         
       })
       
-      console.log(data._id)
-      console.log(data)
+      
+      
       
       history.push(`/cityscapes/discover/${data._id}`)
     } catch (err) {

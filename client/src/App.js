@@ -16,7 +16,7 @@ import UpdateCity from './components/UpdateCity'
 import PostCity from './components/PostCity'
 import Map from './components/Map'
 
-import ImageUpload from './components/ImageUpload'
+
 
 
 
@@ -30,7 +30,7 @@ const App = () => (
       <Route exact path="/project-3" component={Home}/>
       <Route exact path="/project-3/register" component={Register}/>
       <Route exact path="/project-3/login" component={Login}/>
-      <Route exact path="/project-3/cityscapes/images" component={ImageUpload} />
+      
       <Route exact path="/project-3/cityscapes/map" component={Map}/>
       <Route exact path="/project-3/cityscapes/discover" component={Discover}/>
       <Route exact path="/project-3/cityscapes/discover/postcity" component={PostCity} />
@@ -39,7 +39,7 @@ const App = () => (
       <Route exact path="/project-3/cityscapes/discover/:city" component={City} />
       <Route exact path="/project-3/cityscapes/discover/:city/updatecity" component={UpdateCity} />
 
-      {/* <Route exact path="/testrestaurants" component={testRestaurants} /> */}
+      
     </Switch>
   </BrowserRouter>
 )
