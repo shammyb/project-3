@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha __tests__/*_test.js --require __tests__/helper.js --recursive --exit",
+    "seed": "node db/seed.js",
     "start": "npx nodemon index.js"
   },
   "author": "",
