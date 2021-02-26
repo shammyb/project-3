@@ -36,7 +36,7 @@ export default function Discover() {
       <div className="columns is-multiline is-mobile">
         {cities.map((city, index) => {
           return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
-            <Link to={`/cityscapes/discover/${city.city}`}>
+            <Link to={`/project-3/cityscapes/discover/${city.city}`}>
               <div className="card">
                 <div className="card-content">
                   <div className="media">
@@ -55,7 +55,7 @@ export default function Discover() {
           </div>
         })}
         <div className="column is-one-third-desktop is-half-tablet is-half-mobile">
-          <Link to={'/cityscapes/discover/postcity'}>
+          <Link to={'/project-3/cityscapes/discover/postcity'}>
             <div className="card">
               <div className="card-content">
                 <div className="media">

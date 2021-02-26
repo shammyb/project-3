@@ -8,16 +8,16 @@ export default function Navbar() {
         <img className="navbar-logo" src="https://res.cloudinary.com/dznpk39i0/image/upload/v1614268790/rtdxyxqfxywcygegrrzj.png"/>
         <div className="navbar-item">
           <div className="buttons">
-            <Link to="/cityscapes" className="button">
+            <Link to="/project-3" className="button">
               Home
             </Link>
-            <Link to='/cityscapes/discover' className="button">
+            <Link to='/project-3/cityscapes/discover' className="button">
               Discover
             </Link>
-            <Link to='/cityscapes/flights' className="button">
+            <Link to='/project-3/cityscapes/flights' className="button">
               Flights
             </Link>
-            <Link to='/cityscapes/map' className="button">
+            <Link to='/project-3/cityscapes/map' className="button">
               Covid 19 Map
             </Link>
           </div>
@@ -26,10 +26,10 @@ export default function Navbar() {
       <div className="navbar-end">
         <div className="navbar-item">
           <div className="buttons">
-            <Link to="/register" className="button" id="reg-log-button">
+            <Link to="/project-3/register" className="button" id="reg-log-button">
               Register
             </Link>
-            <Link to="/login" className="button" id="reg-log-button">
+            <Link to="/project-3/login" className="button" id="reg-log-button">
               Login
             </Link>
           </div>

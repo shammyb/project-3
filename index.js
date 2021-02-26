@@ -9,8 +9,7 @@ import errorHandler from './middleware/errorHandler.js'
 import dotenv from 'dotenv'
 dotenv.config()
 const app = express()
-// const favicon = require('serve-favicon')
-// const path = require('path')
+
 
 
 async function startServer() {
@@ -19,7 +18,7 @@ async function startServer() {
 
   console.log(' 🏙  Welcome to Cityscapes You are now connected to mongo!')
   
-  // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+ 
 
   app.use(express.json())
 
