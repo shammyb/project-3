@@ -19,11 +19,31 @@
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
-  width: 50%;
+  width: 100%;
 }
 
 .search-image {
   width: 100px;
+}
+#city-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+.about-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 
@@ -56,35 +76,49 @@
 .city {
   display: flex;
   flex-direction: row;
+  // justify-content: center;
 }
-
-#city-image {
+.cities {
   display: flex;
   flex-direction: column;
-  width: 40%;
-  border: 2px;
-  margin: 10px;
-  
+  justify-content: center;
+
 }
 
+// #city-image {
+//   display: flex;
+//   flex-direction: column;
+//   width: 40%;
+//   border: 2px;
+//   margin: 10px;
+  
+// }
 
+// .name-about-country-currency {
+//   display: flex;
+//   flex-direction: column;
+//   // width: 60%;
+//   border: solid red 2px;
+//   margin: 5px;
+// }
 
-.citycontent {
+.cityContent {
   margin: 5px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  border: magenta !important;
 
 }
 
-#main-title{
+#main-title {
   color: rgb(5, 72, 156);
 }
 
 
 .hero-body {
-  background-color: blue;
+
   // background-image: {cities.image};
   background-size: cover;
 }
@@ -119,6 +153,8 @@ font-size: 60px;
 
 #weather-picture {
 margin: 0px 5px 0px 0px;
+width: 100px;
+height: 100px;
 
 }
 
@@ -225,6 +261,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 #flight-result-container {
@@ -233,7 +270,6 @@ body {
   justify-content: center;
 }
 
-#flight-result-card {
   
 .marker-btn image {
   width: 50px;
@@ -246,14 +282,32 @@ body {
   cursor: pointer;
 }
 
+#columns-flex {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+#flights-divider {
+  color: white;
+  margin-top: 20px;
+}
+
+#flights-divider-body {
+  background-color: #05489c !important;
+  border-radius: 12px !important;
+}
+
+#flights-title {
+  color: white !important;
+}
+
+#flights-subtitle {
+  color: white !important;
+}
 //experiences page
 
 .media {
   width: 100%;
-}
-
-#title-of-the-post {
-  height: 10px;
-}
-
+  margin: 10px;
 }
