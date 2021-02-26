@@ -96,15 +96,10 @@ export default function ThingsToDo({ city }) {
 
 
 
-<<<<<<< HEAD
-  return <div className="thingstodo">
-   
-=======
   
 
   return <div className="thingstodo">
     
->>>>>>> a863ce9d1614af3008b7383a713a013df1f35a7c
 
     <div className="container is-centered">
       <h2 className="title is-2">Top things to do in {city} </h2>

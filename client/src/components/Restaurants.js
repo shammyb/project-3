@@ -57,9 +57,6 @@ export default function Restaurants({ city }) {
 
 
 
-<<<<<<< HEAD
-  return <div>
-=======
 
   // console.log('this is returning the data')
   // console.log(restaurantData)
@@ -70,7 +67,6 @@ export default function Restaurants({ city }) {
   // const foursquareLink = 'https://foursquare.com/v/'
 
   return <div className="section">
->>>>>>> a863ce9d1614af3008b7383a713a013df1f35a7c
 
 
     <div className="container is-centered">
