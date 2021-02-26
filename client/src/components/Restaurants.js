@@ -55,7 +55,16 @@ export default function Restaurants({ city }) {
 
 
 
-  return <div>
+
+  // console.log('this is returning the data')
+  // console.log(restaurantData)
+  // console.log('specific thing')
+  // console.log(restaurantData[0].venue.name)
+
+
+  // const foursquareLink = 'https://foursquare.com/v/'
+
+  return <div className="section">
 
 
     <div className="container is-centered">
