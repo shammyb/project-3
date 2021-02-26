@@ -1,12 +1,13 @@
 import { isCreator } from '../lib/auth'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { getLoggedInUserId } from '../lib/auth'
 export default function CommentsAllTogether({ city }) {
   const [title, setTitle] = useState('')
   const [comment, setComment] = useState('')
   const [cities, updateCities] = useState({})
   const token = localStorage.getItem('token')
-  const [error, updateError] = useState('')
+  const loggedIn = getLoggedInUserId()
   const [editNumber, updateEditNumber] = useState(0)
   const [commentIdentifier, updateCommentIdentifier] = useState('')
 
@@ -24,9 +25,6 @@ export default function CommentsAllTogether({ city }) {
 
 
   async function handleComment() {
-    if (!token) {
-      return updateError('Please log in to make a comment!')
-    }
     const { data } = await axios.post(`/api/cityscapes/${city}/comment`, { title, comment }, {
       headers: { Authorization: `Bearer ${token}` }
     })
@@ -38,7 +36,7 @@ export default function CommentsAllTogether({ city }) {
   }
 
 
-  
+
   async function handleEditCommentOne(commentId) {
     if (!isCreator) {
       return null
@@ -75,83 +73,95 @@ export default function CommentsAllTogether({ city }) {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
-        
+
         updateCities(resp.data)
       })
   }
 
   return <div>
-    {
-      cities.comments && cities.comments.map(commenting => {
-        return <article key={commenting._id} className="media">
-          <div className="media-content">
-            <div className="content">
-              <p className="subtitle">
-                {commenting.user.username}
-              </p>
-              <p>{commenting.title}</p>
-              <p>{commenting.comment}</p>
+    <div>
+      {
+        cities.comments && cities.comments.map(commenting => {
+          return <article key={commenting._id} className="media">
+            <div className="media-content">
+              <div className="content">
+                <p className="subtitle">
+                  {commenting.user.username}
+                </p>
+                <p>{commenting.title}</p>
+                <p>{commenting.comment}</p>
+              </div>
             </div>
+            {isCreator(commenting.user._id) && <div className="media-right">
+              <button
+                className="delete"
+                onClick={() => handleDeleteComment(commenting._id)}>
+              </button>
+            </div>}
+            {isCreator(commenting.user._id) && <div className="media-right">
+              <button
+
+                onClick={() => handleEditCommentOne(commenting._id)}>Update
+              </button>
+            </div>}
+          </article>
+        })
+      }
+
+
+      {loggedIn && <article className="media">
+        <div className="media-content">
+          <div className="field">
+            <p className="control">
+              <textarea
+                className="textarea"
+                placeholder="Title of your comment..."
+                onChange={event => setTitle(event.target.value)}
+                value={title}
+              >
+                {title}
+              </textarea>
+
+              <textarea
+                className="textarea"
+                placeholder="Make a comment.."
+                onChange={event => setComment(event.target.value)}
+                value={comment}
+              >
+                {comment}
+              </textarea>
+            </p>
           </div>
-          {isCreator(commenting.user._id) && <div className="media-right">
-            <button
-              className="delete"
-              onClick={() => handleDeleteComment(commenting._id)}>
-            </button>
-          </div>}
-          {isCreator(commenting.user._id) && <div className="media-right">
-            <button
-
-              onClick={() => handleEditCommentOne(commenting._id)}>Update
-            </button>
-          </div>}
-        </article>
-      })
-    }
-
-    {(error !== '')}  <div>{error}</div>
-    {(error === '') && <article className="media">
-      <div className="media-content">
-        <div className="field">
-          <p className="control">
-            <textarea
-              className="textarea"
-              placeholder="Title of your comment..."
-              onChange={event => setTitle(event.target.value)}
-              value={title}
-            >
-              {title}
-            </textarea>
-
-            <textarea
-              className="textarea"
-              placeholder="Make a comment.."
-              onChange={event => setComment(event.target.value)}
-              value={comment}
-            >
-              {comment}
-            </textarea>
-          </p>
-        </div>
-        <div className="field">
-          <p className="control">
-            {editNumber === 0 && <button
-              onClick={handleComment}
-              className="button is-info"
-            >
-              Submit
+          <div className="field">
+            <p className="control">
+              {editNumber === 0 && <button
+                onClick={handleComment}
+                className="button is-info"
+              >
+                Submit
             </button>}
-            {editNumber === 1 && <button
-              onClick={handleEditCommentTwo}
-              className="button is-info"
-            >
-              Update Comment
+              {editNumber === 1 && <button
+                onClick={handleEditCommentTwo}
+                className="button is-info"
+              >
+                Update Comment
             </button>}
-          </p>
+            </p>
+          </div>
         </div>
+      </article>}
+
+
+    </div>
+    {!loggedIn && <article className="message is-danger">
+      <div className="message-header">
+        <p>Not logged in!</p>
+        
+      </div>
+      <div className="message-body">
+        <strong>You need to be logged in to make a comment!</strong>
       </div>
     </article>}
-
   </div>
 
 
