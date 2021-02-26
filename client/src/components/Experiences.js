@@ -100,13 +100,13 @@ export default function CommentsAllTogether({ city }) {
                     className="button is-danger"
                     onClick={() => handleDeleteComment(commenting._id)}>
                     Delete
-                </button>
+                  </button>
                 </div>}
                 {isCreator(commenting.user._id) && <div className="media-right">
                   <button
                     className="button is-light"
                     onClick={() => handleEditCommentOne(commenting._id)}>Update
-                </button>
+                  </button>
                 </div>}
               </article>
             })
@@ -144,13 +144,13 @@ export default function CommentsAllTogether({ city }) {
                     className="button is-info"
                   >
                     Submit
-            </button>}
+                  </button>}
                   {editNumber === 1 && <button
                     onClick={handleEditCommentTwo}
                     className="button is-info"
                   >
                     Update Comment
-            </button>}
+                  </button>}
                 </p>
               </div>
             </div>
