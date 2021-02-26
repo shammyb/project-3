@@ -124,7 +124,7 @@
 
 
 .hero-body {
-  background-color: blue;
+
   // background-image: {cities.image};
   background-size: cover;
 }
@@ -267,6 +267,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 #flight-result-container {
@@ -287,13 +288,32 @@ body {
   cursor: pointer;
 }
 
+#columns-flex {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+#flights-divider {
+  color: white;
+  margin-top: 20px;
+}
+
+#flights-divider-body {
+  background-color: #05489c !important;
+  border-radius: 12px !important;
+}
+
+#flights-title {
+  color: white !important;
+}
+
+#flights-subtitle {
+  color: white !important;
+}
 //experiences page
 
 .media {
   width: 100%;
+  margin: 10px;
 }
-
-#title-of-the-post {
-  height: 5px;
-}
-

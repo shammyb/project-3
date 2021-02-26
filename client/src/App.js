@@ -10,9 +10,6 @@ import Flights from './components/Flights'
 import FlightResults from './components/FlightResults'
 
 import City from './components/City'
-// import Experiences from './components/Experiences'
-import Restaurants from './components/Restaurants'
-import ThingsToDo from './components/ThingsToDo'
 
 import UpdateCity from './components/UpdateCity'
 import PostCity from './components/PostCity'
@@ -40,8 +37,6 @@ const App = () => (
       <Route exact path="/cityscapes/flights/results" component={FlightResults} />
       <Route exact path="/cityscapes/discover/:city" component={City} />
       <Route exact path="/cityscapes/discover/:city/updatecity" component={UpdateCity} />
-
-      {/* <Route exact path="/testrestaurants" component={testRestaurants} /> */}
     </Switch>
   </BrowserRouter>
 )

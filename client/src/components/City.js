@@ -70,7 +70,6 @@ export default function City({ match }) {
     <div className="container">
       <div className="cities">
 
-
         <section className="hero is-medium is-primary" >
           <div className="hero-body"
             style={{
@@ -94,6 +93,7 @@ export default function City({ match }) {
 
 
         <section key className="city" >
+
           {/* <article className="image" id="city-image"> */}
 
 
@@ -155,8 +155,15 @@ export default function City({ match }) {
           </article>
           {/* </article> */}
 
+
+
+
+
+
+
         </section>
       </div >
     </div>
   </section>
 }
+

@@ -6,6 +6,9 @@ export default function CommentsAllTogether({ city }) {
   const [comment, setComment] = useState('')
   const [cities, updateCities] = useState({})
   const token = localStorage.getItem('token')
+  const [error, updateError] = useState('')
+  const [editNumber, updateEditNumber] = useState(0)
+  const [commentIdentifier, updateCommentIdentifier] = useState('')
 
   useEffect(() => {
     async function fetchCommentData() {
@@ -21,27 +24,45 @@ export default function CommentsAllTogether({ city }) {
 
 
   async function handleComment() {
+    if (!token) {
+      return updateError('Please log in to make a comment!')
+    }
     const { data } = await axios.post(`/api/cityscapes/${city}/comment`, { title, comment }, {
       headers: { Authorization: `Bearer ${token}` }
     })
 
     setTitle('')
     setComment('')
-
     updateCities(data)
 
   }
 
 
-  async function handleEditComment(commentId) {
+
+  async function handleEditCommentOne(commentId) {
     if (!isCreator) {
       return null
     }
-    await axios.put(`/api/cityscapes/${city}/comment/${commentId}`, { title, comment }, {
+    await axios.get(`/api/cityscapes/${city}/comment/${commentId}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    }).then(resp => {
+      setComment(resp.data.comment)
+      setTitle(resp.data.title)
+      updateEditNumber(1)
+      updateCommentIdentifier(commentId)
+    })
+  }
+  async function handleEditCommentTwo() {
+    if (!isCreator) {
+      return null
+    }
+    await axios.put(`/api/cityscapes/${city}/comment/${commentIdentifier}`, { title, comment }, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
         updateCities(resp.data)
+        updateEditNumber(0)
+        updateCommentIdentifier('')
       })
   }
 
@@ -59,16 +80,11 @@ export default function CommentsAllTogether({ city }) {
       })
   }
 
-
-
   return <div>
-
     <div className="container is-centered">
-      <h2 className="title is-2">Share your experiences from {city} </h2>
+      <h2 className="title is-2">Share you experiences from {city} </h2>
       <div className="column">
         <div className="columns is-multiline is-centered">
-
-
           {
             cities.comments && cities.comments.map(commenting => {
               return <article key={commenting._id} className="media">
@@ -85,29 +101,28 @@ export default function CommentsAllTogether({ city }) {
                   <button
                     className="button is-danger"
                     onClick={() => handleDeleteComment(commenting._id)}>
-                      Delete
-                  </button>
+                    Delete
+                </button>
                 </div>}
                 {isCreator(commenting.user._id) && <div className="media-right">
                   <button
                     className="button is-light"
-                    onClick={() => handleEditComment(commenting._id)}>
-                      Edit
-                  </button>
+                    onClick={() => handleEditCommentOne(commenting._id)}>Update
+                </button>
                 </div>}
               </article>
             })
           }
 
-
-          <article className="media">
+          {(error !== '')}  <div>{error}</div>
+          {(error === '') && <article className="media">
             <div className="media-content">
-              <div className="field">
+              <div className="field" >
                 <p className="control">
                   <textarea
                     className="textarea"
-                    id="title-of-the-post"
-                    placeholder="Title of your post..."
+                    placeholder="Title of your post"
+                    height="10px"
                     onChange={event => setTitle(event.target.value)}
                     value={title}
                   >
@@ -116,7 +131,7 @@ export default function CommentsAllTogether({ city }) {
 
                   <textarea
                     className="textarea"
-                    placeholder="Share your experience"
+                    placeholder="Share your experience..."
                     onChange={event => setComment(event.target.value)}
                     value={comment}
                   >
@@ -126,20 +141,28 @@ export default function CommentsAllTogether({ city }) {
               </div>
               <div className="field">
                 <p className="control">
-                  <button
+                  {editNumber === 0 && <button
                     onClick={handleComment}
                     className="button is-info"
                   >
                     Submit
-            </button>
+            </button>}
+                  {editNumber === 1 && <button
+                    onClick={handleEditCommentTwo}
+                    className="button is-info"
+                  >
+                    Update Comment
+            </button>}
                 </p>
               </div>
             </div>
-          </article>
+          </article>}
+
         </div>
       </div>
     </div>
   </div>
+
 
 }
 

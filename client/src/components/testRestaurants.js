@@ -10,7 +10,6 @@ export default function Restaurants({ match }) {
   console.log('print the city: ' + city)
   const [cities, updateCities] = useState({})
 
-  //use effect for the Foursquare API
 
   useEffect(() => {
 
@@ -24,8 +23,7 @@ export default function Restaurants({ match }) {
 
         updateRestaurantData(data.response.groups[0].items)
         updateLoading(false)
-        // console.log('below the data yay')
-        // updateRestaurantData(restaurantData.items)
+      
 
 
       } catch (err) {
@@ -57,10 +55,6 @@ export default function Restaurants({ match }) {
 
  
 
-  // console.log('this is returning the data')
-  // console.log(restaurantData)
-  // console.log('specific thing')
-  // console.log(restaurantData[0].venue.name)
 
   return <div>
 
