@@ -96,15 +96,13 @@ export default function ThingsToDo({ city }) {
 
 
 
-  
-
   return <div className="thingstodo">
-    
+   
 
     <div className="container is-centered">
       <h2 className="title is-2">Top things to do in {city} </h2>
 
-      <div className="column is-four-fifths-desktop">
+      <div className="column ">
         {/* <div className="columns is-multiline is-mobile"> */}
 
         <section id="sights">
@@ -194,7 +192,6 @@ export default function ThingsToDo({ city }) {
       </div>
     </div>
   </div>
-  // </div>
-  ß
+  
 
 }

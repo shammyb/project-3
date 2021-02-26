@@ -11,9 +11,6 @@ import FlightResults from './components/FlightResults'
 
 
 import City from './components/City'
-// import Experiences from './components/Experiences'
-// import Restaurants from './components/Restaurants'
-// import ThingsToDo from './components/ThingsToDo'
 
 import UpdateCity from './components/UpdateCity'
 import PostCity from './components/PostCity'

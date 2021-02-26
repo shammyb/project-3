@@ -1,7 +1,17 @@
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import React from 'react'
+import { getLoggedInUserId } from '../lib/auth'
+
 //import axios from 'axios'
-export default function Navbar() {
+const NavBar = ({ history }) => {
+  function handleLogout() {
+    localStorage.removeItem('token') 
+    history.push('/')
+  }
+
+  const loggedIn = getLoggedInUserId()
+
+
   return <nav className="navbar" role="navigation" aria-label="main navigation">
     <div className="navbar-menu is-active">
       <div className="navbar-start">
@@ -21,7 +31,7 @@ export default function Navbar() {
               Covid 19 Map
             </Link>
           </div>
-        </div>  
+        </div>
       </div>
       <div className="navbar-end">
         <div className="navbar-item">
@@ -32,9 +42,13 @@ export default function Navbar() {
             <Link to="/project-3/login" className="button" id="reg-log-button">
               Login
             </Link>
+            {loggedIn && <button onClick={handleLogout} className="button" id="reg-log-button">
+              Logout
+            </button>}
           </div>
         </div>
       </div>
     </div>
   </nav>
 }
+export default withRouter(NavBar)

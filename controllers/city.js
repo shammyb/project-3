@@ -52,7 +52,7 @@ async function removeCity(req, res, next) {
 
       res.send(cityToRemove)
     } else {
-      console.log('aaaaa')
+      
       return res.status(401).send({ message: 'Unauthorized' })
     }
 
@@ -70,7 +70,7 @@ async function updateCity(req, res, next) {
     const cityToUpdate = await City.findOne({ city: city })
 
     if (!cityToUpdate) {
-      return res.send({ message: 'No pokemon found' })
+      return res.send({ message: 'No Citys found' })
     }
 
 

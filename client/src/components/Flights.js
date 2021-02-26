@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Flights() {
@@ -174,7 +174,7 @@ export default function Flights() {
         </div>
         <Link className="button"
           to={{
-            pathname: '/cityscapes/flights/results',
+            pathname: '/project-3/cityscapes/flights/results',
             state: { flightData }
           }}>
           Search
